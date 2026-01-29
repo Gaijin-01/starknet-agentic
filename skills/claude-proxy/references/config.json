@@ -1,0 +1,73 @@
+{
+  "llm": {
+    "primary": "minimax",
+    "fallback": ["openai", "ollama"],
+    "max_retries": 3,
+    "retry_delay": 2,
+    "providers": {
+      "minimax": {
+        "model": "MiniMax-M2.1"
+      },
+      "openai": {
+        "model": "gpt-4o-mini"
+      },
+      "ollama": {
+        "model": "llama3.1:8b",
+        "base_url": "http://localhost:11434"
+      },
+      "anthropic": {
+        "model": "claude-sonnet-4-20250514"
+      }
+    }
+  },
+  
+  "reasoning": {
+    "max_iterations": 5,
+    "min_confidence": 0.7,
+    "self_reflect": true,
+    "verbose": true,
+    "decompose_complex": true
+  },
+  
+  "code_gen": {
+    "validate_syntax": true,
+    "auto_format": true,
+    "style": "claude",
+    "include_tests": false,
+    "include_docstrings": true
+  },
+  
+  "self_improve": {
+    "dry_run": true,
+    "backup": true,
+    "max_changes_per_run": 5,
+    "auto_apply_types": ["documentation", "formatting"],
+    "require_confirmation": ["logic_change", "refactor"]
+  },
+  
+  "autonomous": {
+    "max_tasks_per_hour": 20,
+    "focus_areas": [
+      "error-fixing",
+      "skill-improvement",
+      "monitoring"
+    ],
+    "alert_on_error": true,
+    "alert_channel": "telegram",
+    "pause_on_critical": true
+  },
+  
+  "memory": {
+    "enabled": true,
+    "max_entries": 1000,
+    "persist_patterns": true,
+    "learn_from_failures": true
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "file": "~/clawd/.claude/logs/claude-proxy.log",
+    "max_size_mb": 10,
+    "backup_count": 5
+  }
+}

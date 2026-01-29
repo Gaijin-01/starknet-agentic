@@ -1,0 +1,73 @@
+# Memory Summary (2026-01-27 update)
+
+## 🔧 Core Stack
+
+| Component | Status | Details |
+|-----------|--------|---------|
+| Clawdbot | ✅ Running | Gateway 18789, uptime ~3 days |
+| MiniMax-M2.1 | ✅ Default | 200k context |
+| Telegram | ✅ Connected | @Groove_Armada |
+
+## 🧠 Adaptive Routing (NEW)
+
+Three-tier query classification:
+- **1-29**: Fast (50k context, concise responses)
+- **30-70**: Standard (200k context, full answers)
+- **71-100**: Deep (reasoning enabled, step-by-step)
+
+## 🐦 Bird/X Stack
+
+**Persona**: SefirotWatch
+- Tone: minimal, cryptic, confident
+- Emoji: 🐺🔥
+- Words: 10 avg
+
+**Skills**: research, prices, x-algorithm-optimizer, style-learner, post-generator, queue-manager
+
+**X Algorithm Weights**:
+- Quote: 3.5x | Reply: 3.0x | Repost: 2.0x | Like: 1.0x
+- Negative: Report (-10), Block (-3), Mute (-2)
+
+**Optimal Daily Mix**: 10 replies + 3 quotes + 1 thread + 2 posts
+
+**Peak Hours**: 6-9, 12-14, 18-21 UTC
+
+## 🌐 Remote Interface
+
+- URL: https://dessie-unexonerated-supercolossally.ngrok-free.dev/webapp
+- Russian localization: ✅
+- Dashboard: ✅
+
+## ⚠️ Known Issues (as of 2026-01-27)
+
+| Issue | Level | Notes |
+|-------|-------|-------|
+| Node v24.13.0 via NVM | Medium | Should be system Node 22+ |
+| Gateway config mismatch | Medium | Entrypoint mismatch |
+| Tailscale not found | Low | serve failed: spawn tailscale ENOENT |
+| Sub-agents stalled | Low | 5 sessions "abort failed: no_active_run" |
+| /home/wner/clawdbot folder | Low | 2GB, may be deletable |
+
+## 📁 Config Paths
+
+- `~/.clawdbot/clawdbot.json` - Main config
+- `~/clawd/skills/` - Skills directory
+- `~/clawd/post_queue/` - Post queue
+
+## 📝 Quick Commands
+
+```bash
+# Gateway
+clawdbot gateway start
+
+# Research
+cd ~/clawd/skills && python3 workflow.py "<query>" --type gm|news|insight
+
+# Queue
+python3 scripts/queue_manager.py list --all
+```
+
+---
+
+*Last updated: 2026-01-27*
+*Backup files cleaned: 6 files removed*

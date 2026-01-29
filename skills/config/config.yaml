@@ -1,0 +1,223 @@
+# ============================================
+# UNIVERSAL BOT CONFIG
+# Change this file to switch between domains
+# ============================================
+
+bot:
+  name: "MyBot"
+  version: "1.0.0"
+  domain: "crypto"  # crypto | news | finance | tech | custom
+
+# ============================================
+# PERSONA
+# ============================================
+persona:
+  name: "SCHIZODIO"
+  handle: "@sefirotwatch"
+  voice: "degen"  # professional | degen | formal | casual | sarcastic
+  
+  style:
+    tone: "cryptic, minimal, edgy"
+    emoji_density: "low"     # none | low | medium | high
+    caps_usage: "rare"       # never | rare | sometimes | often
+    hashtag_usage: "minimal" # none | minimal | moderate | heavy
+    
+  rules:
+    - "Short punchy sentences"
+    - "Technical accuracy matters"
+    - "Show the glitch, then exit"
+    
+  never:
+    - "Motivate or coach"
+    - "Sell hope"
+    - "Use generic phrases"
+    - "Smooth corners"
+
+# ============================================
+# TOPICS
+# ============================================
+topics:
+  primary:
+    - "Starknet"
+    - "STRK"
+    - "ZK proofs"
+    - "L2 scaling"
+    
+  secondary:
+    - "DeFi"
+    - "AI agents"
+    - "Crypto culture"
+    
+  avoid:
+    - "Politics"
+    - "Religion"
+    - "Financial advice"
+
+# ============================================
+# TEMPLATES (per content type)
+# ============================================
+templates:
+  gm:
+    - "gm {emoji} zk summer loading. execution > narratives. higher 🐺"
+    - "gm. {topic} vibes today. lfg"
+    - "gm 🌅 another day of building"
+    
+  price:
+    - "strk ${price} {direction} patience. accumulation zone. higher 🐺"
+    - "${price} strk. zk summer loading. smart money knows 🔥"
+    - "{coin} at ${price}. {sentiment}. {emoji}"
+    
+  news:
+    - "{headline}. bullish if true. 🔥"
+    - "just in: {headline}. thoughts?"
+    - "{headline}\n\nthis is {adjective}. {emoji}"
+    
+  insight:
+    - "hot take: {insight} {emoji}"
+    - "people sleep on {topic}.\n\n{insight}"
+    - "unpopular opinion: {insight}"
+    
+  engagement:
+    - "who else is {action}? {emoji}"
+    - "the {topic} discourse today is wild {emoji}"
+    - "what's everyone building this week?"
+
+# ============================================
+# APIs
+# ============================================
+apis:
+  search:
+    provider: "brave"  # brave | serper | google | duckduckgo
+    env_key: "BRAVE_API_KEY"
+    rate_limit: 100  # per day
+    
+  prices:
+    provider: "coingecko"  # coingecko | coinmarketcap | yahoo_finance | alpha_vantage
+    env_key: null  # coingecko free tier
+    rate_limit: 30  # per minute
+    
+  llm:
+    provider: "anthropic"  # anthropic | openai | minimax | ollama
+    model: "claude-sonnet-4-20250514"
+    env_key: "ANTHROPIC_API_KEY"
+    fallback:
+      - provider: "openai"
+        model: "gpt-4o-mini"
+        env_key: "OPENAI_API_KEY"
+
+# ============================================
+# ASSETS (for price tracking)
+# ============================================
+assets:
+  crypto:
+    - id: "starknet"
+      symbol: "STRK"
+      display: "strk"
+      
+    - id: "ethereum"
+      symbol: "ETH"
+      display: "eth"
+      
+    - id: "bitcoin"
+      symbol: "BTC"
+      display: "btc"
+      
+  # For finance bots:
+  # stocks:
+  #   - symbol: "AAPL"
+  #     display: "Apple"
+  #   - symbol: "TSLA"
+  #     display: "Tesla"
+
+# ============================================
+# QUEUE
+# ============================================
+queue:
+  base_dir: "~/clawd/post_queue"
+  subdirs:
+    ready: "ready"
+    posted: "posted"
+    failed: "failed"
+    drafts: "drafts"
+  
+  max_queue_size: 50
+  retention_days: 7
+
+# ============================================
+# MEMORY
+# ============================================
+memory:
+  base_dir: "~/clawd/memory"
+  daily_log: true
+  format: "{date}.md"  # YYYY-MM-DD.md
+  
+# ============================================
+# SCHEDULE (optional)
+# ============================================
+schedule:
+  timezone: "Asia/Jerusalem"
+  active_hours:
+    start: "05:30"
+    end: "23:00"
+  
+  post_frequency:
+    min_interval_minutes: 30
+    max_daily_posts: 50
+
+# ============================================
+# ENGAGEMENT RULES (Global - shared across all skills)
+# ============================================
+engagement:
+  # Priority accounts to engage with
+  priority_accounts:
+    - "@StarkWareLtd"
+    - "@Starknet"
+    - "@0xPolygon"
+    - "@zabornak"
+  
+  # Topic priorities
+  topics:
+    high:
+      - "starknet"
+      - "cairo"
+      - "zk proof"
+      - "l2"
+    medium:
+      - "ethereum"
+      - "defi"
+      - "rollup"
+    low:
+      - "nft"
+      - "meme"
+  
+  # Keywords/accounts to ignore
+  ignore:
+    keywords:
+      - "giveaway"
+      - "airdrop"
+      - "dm me"
+      - "scam"
+      - "rug"
+      - "buy now"
+      - "100x"
+    accounts: []
+
+# ============================================
+# RATE LIMITS (Global - shared across all skills)
+# ============================================
+rate_limits:
+  # Hourly caps
+  posts_per_hour: 3
+  replies_per_hour: 10
+  likes_per_hour: 20
+  quotes_per_hour: 3
+  
+  # Daily caps
+  posts_per_day: 15
+  replies_per_day: 50
+  total_actions_per_day: 200
+  
+  # Anti-detection delays (ms)
+  min_action_delay_ms: 1500
+  max_action_delay_ms: 5000
+  human_variance: true

@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "version": "2.0.0",
+    "last_updated": "2026-01-23",
+    "description": "Centralized config for all clawd skills"
+  },
+  "x": {
+    "persona": "SefirotWatch",
+    "max_daily_posts": 15,
+    "min_gap_minutes": 20,
+    "max_posts_per_hour": 3,
+    "peak_hours": ["06:00-09:00", "12:00-14:00", "18:00-21:00"],
+    "avoid_hours": ["02:00-05:00"],
+    "hashtag_limit": 2,
+    "link_penalty": 0.7,
+    "engagement_window_seconds": 300,
+    "early_reply_window_seconds": 30
+  },
+  "algorithm": {
+    "weights": {
+      "quote": 3.5,
+      "reply": 3.0,
+      "share": 2.5,
+      "repost": 2.0,
+      "favorite": 1.0
+    },
+    "negative_weights": {
+      "report": -10.0,
+      "not_interested": -5.0,
+      "block": -3.0,
+      "mute": -2.0
+    },
+    "daily_mix": {
+      "replies": 10,
+      "quote_tweets": 3,
+      "threads": 1,
+      "original_posts": 2
+    }
+  },
+  "persona": {
+    "name": "SefirotWatch",
+    "tone": ["minimal", "cryptic", "confident"],
+    "emoji_frequency": {
+      "🐺": 3,
+      "🔥": 2
+    },
+    "avg_word_count": 10,
+    "vocabulary_file": "style-learner/profiles/starter_words.txt",
+    "schizodio_file": "style-learner/profiles/schizodio_vocab.txt"
+  },
+  "api": {
+    "brave": {
+      "enabled": true,
+      "search_endpoint": "https://api.brave.com/v1/search",
+      "api_key_env": "BRAVE_API_KEY"
+    },
+    "coingecko": {
+      "enabled": true,
+      "base_url": "https://api.coingecko.com/api/v3",
+      "api_key_env": "COINGECKO_API_KEY"
+    }
+  },
+  "queue": {
+    "base_dir": "post_queue",
+    "subdirs": ["ready", "posted", "failed", "drafts"],
+    "auto_post": false,
+    "max_queue_size": 50
+  },
+  "skills": {
+    "research": {
+      "enabled": true,
+      "default_results": 10
+    },
+    "prices": {
+      "enabled": true,
+      "default_currency": "usd",
+      "watchlist": ["bitcoin", "ethereum", "starknet"]
+    },
+    "x_algorithm_optimizer": {
+      "enabled": true,
+      "version": "2.0"
+    },
+    "style_learner": {
+      "enabled": true,
+      "profile_path": "style-learner/profiles/style_profile.json"
+    },
+    "post_generator": {
+      "enabled": true,
+      "template_dir": "post-generator/templates"
+    },
+    "queue_manager": {
+      "enabled": true
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "[%(asctime)s] %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/skills.log"
+  }
+}

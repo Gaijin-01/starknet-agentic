@@ -1,0 +1,186 @@
+# Style Learner Configuration
+# Imports global engagement rules from config/config.yaml
+
+import: "../config/config.yaml"
+
+# ============================================
+# X ALGORITHM OPTIMIZATION
+# Based on xai-org/x-algorithm analysis
+# ============================================
+algorithm:
+  # Action weights (from Phoenix scorer)
+  weights:
+    reply: 30.0   # HIGHEST - focus here
+    quote: 25.0   # HIGH - quotable insights
+    repost: 10.0  # MEDIUM
+    favorite: 1.0 # BASE
+    follow: 50.0  # VERY HIGH if achieved
+    dwell: 0.1    # Per second
+  
+  # Negative weights (AVOID)
+  negative:
+    block: -100.0
+    mute: -50.0
+    report: -200.0
+    not_interested: -10.0
+
+  # Optimal daily mix (algorithm-informed)
+  daily_targets:
+    replies: 10   # Highest ROI
+    quotes: 3     # High engagement weight
+    threads: 1    # Dwell time maximizer
+    original_posts: 2  # Brand building
+    likes: 30     # Social graph maintenance
+
+  # Content type priority
+  content_priority:
+    thread: 1.5   # Max dwell time
+    quote: 1.3    # High engagement
+    reply: 1.2    # Visibility boost
+    video: 1.2    # Video views weighted
+    image: 1.1    # Visual engagement
+    text: 1.0     # Baseline
+
+# ============================================
+# TWITTER CONFIG
+# ============================================
+twitter:
+  username: "sefirotwatch"
+  profile_url: "https://x.com/sefirotwatch"
+
+# ============================================
+# REPLY STRATEGY (Highest ROI)
+# ============================================
+reply_strategy:
+  # Target accounts by follower tier
+  priority_tiers:
+    tier_1:
+      min_followers: 100000
+      max_reply_time_seconds: 300  # First 5 min
+      content: "insightful, add value"
+    tier_2:
+      min_followers: 10000
+      max_reply_time_seconds: 900  # First 15 min
+      content: "thoughtful questions"
+    tier_3:
+      min_followers: 1000
+      max_reply_time_seconds: 3600  # First hour
+      content: "community building"
+
+  # Priority accounts (always engage)
+  always_reply:
+    - "@StarkWareLtd"
+    - "@Starknet"
+    - "@0xPolygon"
+    - "@ethereum"
+
+# ============================================
+# TIMING OPTIMIZATION
+# ============================================
+timing:
+  # Peak engagement hours (IST)
+  peak_hours:
+    - "06:00-09:00"  # Morning
+    - "12:00-14:00"  # Lunch
+    - "20:00-23:00"  # Evening
+  
+  # Thread posting (maximize dwell)
+  thread_time: "07:00-08:00"
+  
+  # Minimum gap between posts (author diversity)
+  min_gap_minutes: 20
+  
+  # Avoid (low engagement = bad ratio)
+  dead_hours:
+    - "02:00-05:00"
+
+# ============================================
+# CONTENT RULES (Algorithm-Aware)
+# ============================================
+content:
+  max_hashtags: 2      # >3 = spam signal
+  max_length: 280
+  thread_length: [3, 7]  # Optimal thread size
+  
+  # Avoid patterns that trigger negative signals
+  avoid:
+    - repetitive_phrases
+    - excessive_hashtags
+    - follow_for_follow
+    - dm_me
+    - giveaway_spam
+    - aggressive_language
+  
+  # Encourage patterns that drive engagement
+  encourage:
+    - questions       # Drive replies
+    - insights        # Drive quotes
+    - data_points     # Credibility
+    - threads         # Dwell time
+
+# ============================================
+# BROWSER CONFIG
+# ============================================
+browser:
+  headless: false
+  user_data_dir: null
+  stealth: true
+
+# ============================================
+# MODES
+# ============================================
+modes:
+  learn:
+    observe_only: true
+    log_actions: true
+  assist:
+    generate_drafts: true
+    require_approval: true
+    use_algorithm_scoring: true
+    min_score_threshold: 1.0
+  shadow:
+    delay_minutes: 30
+    max_actions_per_hour: 5
+  auto:
+    enabled: true
+    confidence_min: 0.8
+    use_algorithm_scoring: true
+    prioritize_replies: true  # Highest ROI
+
+# ============================================
+# STYLE
+# ============================================
+style:
+  defaults:
+    tone: ["minimal", "cryptic", "confident"]
+    emoji_style: "sparse"
+    max_length: 280
+    thread_style: "numbered"
+  rules:
+    - "No price predictions"
+    - "No financial advice"
+    - "Add value, not noise"
+    - "Be concise"
+    - "Replies > Quotes > Posts"  # Algorithm-informed priority
+
+# ============================================
+# LOGGING
+# ============================================
+logging:
+  level: "INFO"
+  file: "data/style-learner.log"
+  track_algorithm_scores: true
+
+# ============================================
+# INHERITED FROM GLOBAL CONFIG
+# (See config/config.yaml for source of truth)
+# ============================================
+# engagement:
+#   priority_accounts: [...]   # From config.yaml
+#   topics: {...}              # From config.yaml
+#   ignore: {...}              # From config.yaml
+#
+# rate_limits:
+#   posts_per_hour: 3          # From config.yaml
+#   replies_per_hour: 10       # From config.yaml
+#   ...                        # From config.yaml

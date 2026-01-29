@@ -1,0 +1,101 @@
+{
+  "skills_path": "~/clawd/skills/",
+  "memory_path": "~/clawd/memory/",
+  "backup_path": "~/clawd/backups/",
+  "log_path": "~/clawd/skills/skill-evolver/assets/evolution.log",
+  
+  "auto_apply": false,
+  "dry_run": true,
+  "max_changes_per_run": 5,
+  "require_confirmation": true,
+  
+  "excluded_skills": [
+    "skill-evolver",
+    "config",
+    "x-algorithm-optimizer"
+  ],
+  
+  "metrics": {
+    "track_tokens": true,
+    "track_errors": true,
+    "track_completion": true,
+    "history_days": 30
+  },
+  
+  "analysis": {
+    "score_weights": {
+      "skill_md_exists": 20,
+      "documentation_quality": 15,
+      "scripts_present": 20,
+      "error_handling": 15,
+      "dependencies_declared": 10,
+      "examples_provided": 10,
+      "version_tracking": 10
+    },
+    "severity_thresholds": {
+      "critical": 40,
+      "high": 60,
+      "medium": 80
+    }
+  },
+  
+  "improvements": {
+    "auto_apply_types": [
+      "add_docstring",
+      "add_version",
+      "format_documentation"
+    ],
+    "require_confirmation_types": [
+      "add_error_handling",
+      "secure_credentials",
+      "modify_workflow"
+    ],
+    "never_auto_apply": [
+      "delete_file",
+      "restructure_skill"
+    ]
+  },
+  
+  "custom_rules": [
+    {
+      "name": "check_api_timeout",
+      "pattern": "requests\\.(get|post|put|delete)\\(",
+      "required": "timeout=",
+      "severity": "high",
+      "description": "HTTP requests should have timeout parameter"
+    },
+    {
+      "name": "check_env_credentials",
+      "pattern": "(api_key|apikey|secret|password)\\s*=\\s*['\"][^'\"]{20,}['\"]",
+      "severity": "high",
+      "description": "Credentials should use environment variables"
+    },
+    {
+      "name": "check_error_handling",
+      "pattern": "def\\s+\\w+.*:\\n(?:(?!try:)[^\\n]+\\n){10,}",
+      "severity": "medium",
+      "description": "Long functions should have error handling"
+    }
+  ],
+  
+  "templates": {
+    "retry_decorator": true,
+    "logging_setup": true,
+    "error_handler": true
+  },
+  
+  "reporting": {
+    "format": "markdown",
+    "include_recommendations": true,
+    "max_recommendations": 10,
+    "save_history": true
+  },
+  
+  "integration": {
+    "cron_enabled": true,
+    "cron_schedule": "0 */6 * * *",
+    "cron_command": "python ~/clawd/skills/skill-evolver/scripts/analyze.py --output ~/clawd/memory/evolution.md",
+    "notify_on_changes": false,
+    "notification_channel": ""
+  }
+}

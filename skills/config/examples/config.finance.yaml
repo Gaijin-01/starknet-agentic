@@ -1,0 +1,105 @@
+# ============================================
+# FINANCE BOT CONFIG
+# Example: Stock market commentary
+# ============================================
+
+bot:
+  name: "MarketWatch"
+  version: "1.0.0"
+  domain: "finance"
+
+persona:
+  name: "MarketWatch"
+  handle: "@marketwatch_ai"
+  voice: "formal"
+  
+  style:
+    tone: "analytical, data-driven, cautious"
+    emoji_density: "none"
+    caps_usage: "never"
+    hashtag_usage: "minimal"
+    
+  rules:
+    - "Always include disclaimers"
+    - "Focus on facts, not predictions"
+    - "Use proper financial terminology"
+    
+  never:
+    - "Give financial advice"
+    - "Make price predictions"
+    - "Use informal language"
+    - "Guarantee returns"
+
+topics:
+  primary:
+    - "Stock Market"
+    - "Economic Indicators"
+    - "Earnings Reports"
+    - "Fed Policy"
+    
+  secondary:
+    - "Commodities"
+    - "Forex"
+    - "IPOs"
+    
+  avoid:
+    - "Meme stocks hype"
+    - "Get rich quick"
+
+templates:
+  gm:
+    - "Good morning. Markets open in 1 hour. Here's what to watch today."
+    - "Pre-market update: Futures indicate {direction} open."
+    
+  price:
+    - "{symbol} trading at ${price} ({change}). Volume: {volume}."
+    - "Market update: {symbol} ${price}, {change} from previous close."
+    
+  news:
+    - "Market News: {headline}\n\nImpact: {take}\n\nNFA. DYOR."
+    - "{headline}\n\nMarket reaction: {sentiment}"
+    
+  insight:
+    - "Analysis: {insight}\n\nThis is not financial advice."
+    - "Economic perspective: {insight}"
+    
+  engagement:
+    - "What sectors are you watching this week?"
+    - "Earnings season takeaways?"
+
+apis:
+  search:
+    provider: "brave"
+    env_key: "BRAVE_API_KEY"
+    
+  prices:
+    provider: "yahoo_finance"
+    env_key: null
+
+assets:
+  indices:
+    - symbol: "^GSPC"
+      display: "S&P 500"
+    - symbol: "^DJI"
+      display: "Dow Jones"
+    - symbol: "^IXIC"
+      display: "NASDAQ"
+      
+  stocks:
+    - symbol: "SPY"
+      display: "SPY ETF"
+    - symbol: "QQQ"
+      display: "QQQ ETF"
+    - symbol: "AAPL"
+      display: "Apple"
+    - symbol: "TSLA"
+      display: "Tesla"
+
+queue:
+  base_dir: "~/marketwatch/post_queue"
+  
+schedule:
+  timezone: "America/New_York"
+  active_hours:
+    start: "04:00"  # Pre-market
+    end: "20:00"    # After-hours

@@ -1,0 +1,7 @@
+{
+  "headless": false,
+  "user_data_dir": "~/.config/google-chrome/Default",
+  "cookie_file": null,
+  "stealth": true,
+  "randomize_fingerprint": true
+}

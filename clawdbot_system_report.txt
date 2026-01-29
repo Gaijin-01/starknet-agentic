@@ -1,0 +1,67 @@
+# CLAWDBOT SYSTEM REPORT
+# Generated: 2026-01-23 20:27 GMT+2
+
+=============================================
+GATEWAY STATUS
+=============================================
+Version: 2026.1.21 (update available: 2026.1.22)
+OS: Linux WSL2 x64
+Node: v25.4.0
+Gateway: Running (PID 731)
+Telegram: Connected (Groove_Armada)
+Session: Active (main, MiniMax-M2.1)
+
+=============================================
+GIT REPOSITORY
+=============================================
+origin  -> clawdbot/clawdbot (read-only, behind by 2 commits)
+gaijin  -> Gaijin-01/clawdbot (private fork, synced)
+Local branch: main, 1 commit ahead of origin
+
+Custom commit: 56e97b63b - add custom skills (30 files, 5932 insertions)
+
+=============================================
+MEMORY STATUS
+=============================================
+Daily logs: 14 files (2026-01-22 to 2026-01-23)
+MEMORY.md: MISSING - needs creation
+
+=============================================
+SKILLS (58 total)
+=============================================
+Custom skills (added today):
+  - self-improvement
+  - style-learner
+  - universal-skills
+  - x-algorithm-optimizer
+
+=============================================
+GITHUB REPOS (Gaijin-01)
+=============================================
+Private:
+  - clawdbot (synced)
+  - blockmood
+  - K1max
+
+Public:
+  - threat-classifier
+  - agentator
+  - network-test-one-uniform-load-squid (fork)
+  - zupass (fork)
+  - SepoliaPoWFaucet (fork)
+
+TO DELETE:
+  - clawdbot-1 (duplicate)
+  - Asd1, Asd2, Asd3, Asd4, Asd5 (trash)
+
+=============================================
+ACTION ITEMS
+=============================================
+1. Create MEMORY.md
+2. Delete duplicates (needs delete_repo access)
+3. Russian cleanup - not found in commits
+
+=============================================
+SECURITY WARNINGS
+=============================================
+- State dir is readable by others: chmod 700 /home/wner/.clawdbot

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "mcporter": {
+      "version": "1.0.0",
+      "installedAt": 1769236217107
+    },
+    "camsnap": {
+      "version": "1.0.0",
+      "installedAt": 1769633477980
+    },
+    "songsee": {
+      "version": "1.0.0",
+      "installedAt": 1769633480523
+    }
+  }
+}

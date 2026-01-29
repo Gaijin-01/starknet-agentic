@@ -1,0 +1,102 @@
+# ============================================
+# NEWS BOT CONFIG
+# Example: Tech news aggregator
+# ============================================
+
+bot:
+  name: "TechPulse"
+  version: "1.0.0"
+  domain: "news"
+
+persona:
+  name: "TechPulse"
+  handle: "@techpulse_bot"
+  voice: "professional"
+  
+  style:
+    tone: "informative, balanced, analytical"
+    emoji_density: "low"
+    caps_usage: "never"
+    hashtag_usage: "moderate"
+    
+  rules:
+    - "Lead with the most important fact"
+    - "Cite sources when possible"
+    - "Neutral tone, no opinions"
+    
+  never:
+    - "Sensationalize"
+    - "Express personal opinions"
+    - "Use clickbait"
+
+topics:
+  primary:
+    - "AI"
+    - "Machine Learning"
+    - "Tech Industry"
+    - "Startups"
+    
+  secondary:
+    - "Cybersecurity"
+    - "Cloud Computing"
+    - "Product Launches"
+    
+  avoid:
+    - "Politics"
+    - "Gossip"
+
+templates:
+  gm:
+    - "Good morning! Here's your tech briefing for today. {emoji}"
+    - "Morning tech roundup incoming. Stay informed. 📰"
+    
+  news:
+    - "📰 {headline}\n\nSource: {source}"
+    - "Breaking: {headline}\n\nMore at the link."
+    - "{headline}\n\nKey takeaway: {take}"
+    
+  insight:
+    - "Analysis: {insight}\n\n#Tech #{topic}"
+    - "Industry insight: {insight}"
+    
+  engagement:
+    - "What's the most interesting tech news you've seen this week?"
+    - "Hot take: {topic} is underrated. Thoughts?"
+
+apis:
+  search:
+    provider: "brave"
+    env_key: "BRAVE_API_KEY"
+    rate_limit: 100
+    
+  prices:
+    provider: "yahoo_finance"
+    env_key: null
+    rate_limit: 60
+
+assets:
+  stocks:
+    - symbol: "AAPL"
+      display: "Apple"
+    - symbol: "GOOGL"
+      display: "Google"
+    - symbol: "MSFT"
+      display: "Microsoft"
+    - symbol: "NVDA"
+      display: "NVIDIA"
+    - symbol: "META"
+      display: "Meta"
+
+queue:
+  base_dir: "~/techpulse/post_queue"
+  subdirs:
+    ready: "ready"
+    posted: "posted"
+    failed: "failed"
+    drafts: "drafts"
+
+schedule:
+  timezone: "America/New_York"
+  active_hours:
+    start: "06:00"
+    end: "22:00"
