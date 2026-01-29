@@ -122,7 +122,7 @@ def add_to_queue(content, content_type):
         return True
     return False
 
-def get_current_time():
+def get_current_hour():
     """Get current UTC hour for peak hours check"""
     return datetime.utcnow().hour
 

@@ -69,6 +69,14 @@
       "aggression": 30,
       "meme_density": 90,
       "myth_layer": 20
+    },
+    "sefirot": {
+      "fragmentation": 45,
+      "irony": 50,
+      "aggression": 15,
+      "meme_density": 25,
+      "myth_layer": 40,
+      "description": "Minimal, cryptic, confident, supportive. Strategic emoji. Bimodal length. Starknet/L2 ecosystem, philosophy. Low aggression for ecosystem engagement."
     }
   },
   "safety": {

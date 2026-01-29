@@ -73,6 +73,7 @@ PRESETS = {
     "v-myaso": StyleParams(85, 70, 70, 70, 60),
     "attack": StyleParams(50, 50, 80, 40, 30),
     "meme": StyleParams(60, 40, 30, 90, 20),
+    "sefirot": StyleParams(45, 50, 15, 25, 40),  # Minimal, confident, supportive (low aggression for ecosystem)
 }
 
 

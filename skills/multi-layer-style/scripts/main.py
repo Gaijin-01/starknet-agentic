@@ -264,7 +264,7 @@ def main():
     parser.add_argument("--meme", type=int, help="Meme density 0-100")
     parser.add_argument("--platform", default="twitter", choices=["twitter", "thread", "longpost", "reply"])
     parser.add_argument("--safety-check", help="Text to check safety")
-    parser.add_argument("--auto-topic", action="store_true", auto_detect topic")
+    parser.add_argument("--auto-topic", action="store_true", help="Auto detect topic")
     
     args = parser.parse_args()
     

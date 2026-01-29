@@ -43,6 +43,7 @@ Inspired by xai-org/x-algorithm architecture.
 | ct | (55, 40, 45, 30, 25) | Crypto Twitter |
 | shizo | (70, 60, 50, 45, 40) | Full schizo mode |
 | v-myaso | (85, 70, 70, 70, 60) | Faces melted |
+| sefirot | (45, 50, 15, 25, 40) | Minimal, cryptic, confident, supportive. Strategic emoji. Bimodal length. Starknet/L2 ecosystem, philosophy. Low aggression for engagement. |
 
 **User overrides always take precedence.**
 
