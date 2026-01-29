@@ -303,7 +303,7 @@ class Editor:
         
         # Stage 3: MetaController
         params = self.stage3_meta_controller(topics, intent, preset, custom_params)
-        explanations = self.explain_params(topings, intent, params) if explain else []
+        explanations = self.explain_params(topics, intent, params) if explain else []
         
         # Stage 4: Styler
         styled = self.stage4_styler(clean_text, params)
@@ -340,7 +340,7 @@ def main():
     parser.add_argument("--meme", type=int, help="Meme density 0-100")
     parser.add_argument("--myth", type=int, help="Myth layer 0-100")
     parser.add_argument("--platform", default="twitter", choices=["twitter", "thread", "longpost", "reply"])
-    parser.add_argument("--explain", action="store_true", "Explain parameter choices")
+    parser.add_argument("--explain", action="store_true", help="explain parameter choices")
     parser.add_argument("--safety-check", help="Safety check only")
     
     args = parser.parse_args()
