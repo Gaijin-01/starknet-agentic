@@ -24,6 +24,8 @@
 | camsnap | ✅ | ✅ main.py (NEW) | Ready |
 | mcporter | ✅ | ✅ main.py (NEW) | Ready |
 | songsee | ✅ | ✅ main.py (NEW) | Ready |
+| **editor** | ✅ NEW | ✅ main.py, bot_controller.py, config.json | NEW |
+| **system-manager** | ✅ | ✅ SKILL.md, scripts/main.py | Ready |
 
 **Average Score**: 65.1 → 85+ (after medium priority fixes)
 
@@ -129,10 +131,12 @@ Usage: `sessions_spawn task="..." label="..."`
 | `crontab.conf` | Cron job definitions |
 | `deploy.sh` | Deployment script |
 | `MY_CAPABILITIES.md` | My capabilities reference |
+| `OPERATIONAL_CAPABILITIES.md` | Knowledge scope, reasoning modes, style controls |
 | `~/.clawdbot/clawdbot.json` | Main config |
 | `~/clawd/skills/` | Skills directory |
 | `~/clawd/memory/` | Daily notes |
 | `~/clawd/post_queue/` | Post queue |
+| `skills/editor/` | Autonomous Text Style Engine (EDITOR) |
 
 ## 🔗 Quick Commands
 
@@ -158,6 +162,8 @@ git log --oneline -5                        # Recent commits
 3. **Cron handles scheduled tasks** - everything runs automatically
 4. **Memory is file-based** - daily notes + curated MEMORY.md
 5. **Sub-agents for complex tasks** - sessions_spawn for heavy lifting
+6. **EDITOR skill** - 6-stage autonomous text processing (Intake → Classify → MetaController → Styler → Safety → Formatter)
+7. **BotController** - High-level orchestrator with 6 agents (IntakeAgent, ClassifierAgent, MetaControllerAgent, StylerAgent, SafetyAgent, FormatterAgent)
 
 ## 📝 WRITING STYLE PROTOCOL (2026-01-29)
 
