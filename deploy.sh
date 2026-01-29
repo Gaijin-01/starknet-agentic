@@ -1,201 +1,244 @@
 #!/bin/bash
-# Claude-Proxy Deployment Script
-# Usage: ./deploy.sh [all|cron|verify|test|status]
+# ============================================
+# Claude-Proxy Bot Deployment Script
+# ============================================
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+BOT_HOME="${BOT_HOME:-/home/wner/clawd}"
+LOG_DIR="$BOT_HOME/logs"
 
-# Colors for output
+# Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-log_info() { echo -e "${GREEN}[INFO]${NC} $1"; }
-log_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
-log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+log() { echo -e "${GREEN}[+]${NC} $1"; }
+warn() { echo -e "${YELLOW}[!]${NC} $1"; }
+error() { echo -e "${RED}[x]${NC} $1"; }
 
-# Ensure required directories exist
-setup_directories() {
-    log_info "Setting up directories..."
-    mkdir -p logs
-    mkdir -p memory
-    mkdir -p post_queue/ready
-    mkdir -p post_queue/drafts
+# ============================================
+# 1. Create missing directories
+# ============================================
+create_directories() {
+    log "Creating directory structure..."
     
-    for skill in prices research post-generator style-learner camsnap mcporter songsee adaptive-routing; do
-        mkdir -p "skills/$skill/scripts"
-    done
+    mkdir -p "$BOT_HOME"/{logs,backups,memory,config}
+    mkdir -p "$BOT_HOME/skills"/{adaptive-routing,camsnap,mcporter,songsee}/{scripts,references,assets}
     
-    log_info "Directories created"
+    log "Directories created"
 }
 
-# Install dependencies
-install_deps() {
-    log_info "Installing Python dependencies..."
+# ============================================
+# 2. Fix broken skills
+# ============================================
+fix_broken_skills() {
+    log "Fixing broken skills..."
     
-    # Core dependencies
-    pip3 install requests python-dotenv --quiet 2>/dev/null || true
-    
-    # Check for skill-specific dependencies
-    if [ -f "skills/prices/requirements.txt" ]; then
-        pip3 install -r skills/prices/requirements.txt --quiet 2>/dev/null || true
+    # adaptive-routing - copy SKILL.md if exists locally
+    if [[ -f "./skills/adaptive-routing/SKILL.md" ]]; then
+        cp "./skills/adaptive-routing/SKILL.md" "$BOT_HOME/skills/adaptive-routing/SKILL.md"
+        log "adaptive-routing SKILL.md installed"
     fi
     
-    if [ -f "skills/research/requirements.txt" ]; then
-        pip3 install -r skills/research/requirements.txt --quiet 2>/dev/null || true
-    fi
-    
-    log_info "Dependencies installed"
-}
+    # Create stub main.py for incomplete skills
+    for skill in camsnap mcporter songsee; do
+        MAIN_PY="$BOT_HOME/skills/$skill/scripts/main.py"
+        if [[ ! -f "$MAIN_PY" ]]; then
+            cat > "$MAIN_PY" << 'STUB'
+#!/usr/bin/env python3
+"""
+Stub implementation for skill.
+TODO: Implement actual functionality.
+"""
 
-# Make scripts executable
-make_executable() {
-    log_info "Making scripts executable..."
+def execute(params: dict) -> dict:
+    """
+    Execute skill with given parameters.
     
-    find skills -name "*.py" -type f -exec chmod +x {} \; 2>/dev/null || true
-    
-    # Ensure orchestrator is executable
-    chmod +x skills/orchestrator.py 2>/dev/null || true
-    
-    log_info "Scripts are now executable"
-}
+    Args:
+        params: Skill-specific parameters
+        
+    Returns:
+        Execution result dict
+    """
+    return {
+        "status": "not_implemented",
+        "message": f"Skill not yet implemented. Received params: {params}"
+    }
 
-# Install cron jobs
-install_cron() {
-    log_info "Installing cron jobs..."
+if __name__ == "__main__":
+    import json
+    import sys
     
-    # Backup existing crontab
-    crontab -l > /tmp/crontab.backup 2>/dev/null || true
+    if len(sys.argv) > 1:
+        params = json.loads(sys.argv[1])
+    else:
+        params = {}
     
-    # Install new crontab
-    crontab crontab.conf
-    
-    log_info "Cron jobs installed"
-    log_info "Current crontab:"
-    crontab -l
-}
-
-# Verify installation
-verify() {
-    log_info "Verifying installation..."
-    
-    echo ""
-    echo "=== Directory Structure ==="
-    ls -la
-    
-    echo ""
-    echo "=== Logs Directory ==="
-    ls -la logs/ 2>/dev/null || echo "logs/ not found"
-    
-    echo ""
-    echo "=== Skills ==="
-    for skill in skills/*/; do
-        if [ -d "$skill" ]; then
-            skill_name=$(basename "$skill")
-            has_scripts=$(ls -d "$skill/scripts" 2>/dev/null && echo "✓ scripts/" || echo "✗ no scripts/")
-            has_skill_md=$(ls -f "$skill/SKILL.md" 2>/dev/null && echo "✓ SKILL.md" || echo "✗ no SKILL.md")
-            echo "  $skill_name: $has_scripts $has_skill_md"
+    result = execute(params)
+    print(json.dumps(result, indent=2))
+STUB
+            chmod +x "$MAIN_PY"
+            log "$skill main.py stub created"
         fi
     done
-    
-    echo ""
-    echo "=== Cron Jobs ==="
-    crontab -l 2>/dev/null || echo "No cron jobs installed"
-    
-    echo ""
-    log_info "Verification complete"
 }
 
-# Test routing
-test_routing() {
-    log_info "Testing query routing..."
+# ============================================
+# 3. Install orchestrator
+# ============================================
+install_orchestrator() {
+    log "Installing orchestrator..."
     
-    python3 skills/orchestrator.py --test-route "сколько стоит $BTC"
-    echo ""
-    python3 skills/orchestrator.py --test-route "напиши пост про DeFi"
-    echo ""
-    python3 skills/orchestrator.py --test-route "привет как дела"
-    
-    log_info "Routing tests complete"
-}
-
-# Check service status
-status() {
-    log_info "Checking service status..."
-    
-    echo ""
-    echo "=== Systemctl Services ==="
-    for service in claude-proxy clawdbot; do
-        if systemctl is-active --quiet "$service" 2>/dev/null; then
-            echo -e "${GREEN}●${NC} $service: active"
-        else
-            echo -e "${YELLOW}○${NC} $service: not running"
-        fi
-    done
-    
-    echo ""
-    echo "=== Cron Daemon ==="
-    if pgrep -x "cron" > /dev/null; then
-        echo -e "${GREEN}●${NC} cron: running"
+    if [[ -f "./orchestrator.py" ]]; then
+        cp "./orchestrator.py" "$BOT_HOME/orchestrator.py"
+        chmod +x "$BOT_HOME/orchestrator.py"
+        log "Orchestrator installed"
     else
-        echo -e "${YELLOW}○${NC} cron: not running"
+        error "orchestrator.py not found in current directory"
+    fi
+}
+
+# ============================================
+# 4. Setup cron jobs
+# ============================================
+setup_cron() {
+    log "Setting up cron jobs..."
+    
+    if [[ -f "./crontab.conf" ]]; then
+        # Backup existing crontab
+        crontab -l > "$BOT_HOME/backups/crontab.backup.$(date +%Y%m%d)" 2>/dev/null || true
+        
+        # Install new crontab
+        crontab "./crontab.conf"
+        log "Cron jobs installed"
+        
+        # Verify
+        log "Current cron jobs:"
+        crontab -l | grep -v "^#" | grep -v "^$" | head -10
+    else
+        warn "crontab.conf not found, skipping cron setup"
+    fi
+}
+
+# ============================================
+# 5. Create systemd service (optional)
+# ============================================
+create_systemd_service() {
+    log "Creating systemd service..."
+    
+    SERVICE_FILE="/etc/systemd/system/claude-proxy.service"
+    
+    sudo tee "$SERVICE_FILE" > /dev/null << EOF
+[Unit]
+Description=Claude-Proxy Bot
+After=network.target
+
+[Service]
+Type=simple
+User=$USER
+WorkingDirectory=$BOT_HOME
+ExecStart=/usr/bin/python3 $BOT_HOME/gateway.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+    sudo systemctl daemon-reload
+    log "Systemd service created"
+    warn "To enable: sudo systemctl enable claude-proxy"
+    warn "To start: sudo systemctl start claude-proxy"
+}
+
+# ============================================
+# 6. Verify installation
+# ============================================
+verify_installation() {
+    log "Verifying installation..."
+    
+    ISSUES=0
+    
+    # Check critical files
+    for file in orchestrator.py; do
+        if [[ ! -f "$BOT_HOME/$file" ]]; then
+            error "Missing: $file"
+            ((ISSUES++))
+        fi
+    done
+    
+    # Check skill directories
+    for skill in adaptive-routing prices queue-manager research post-generator style-learner; do
+        if [[ ! -f "$BOT_HOME/skills/$skill/SKILL.md" ]]; then
+            warn "Missing SKILL.md: $skill"
+        fi
+    done
+    
+    # Test orchestrator
+    if [[ -f "$BOT_HOME/orchestrator.py" ]]; then
+        cd "$BOT_HOME"
+        TEST=$(python3 orchestrator.py --test-route "price of btc" 2>/dev/null)
+        if echo "$TEST" | grep -q "prices"; then
+            log "Orchestrator routing: OK"
+        else
+            warn "Orchestrator routing: needs verification"
+        fi
     fi
     
+    if [[ $ISSUES -eq 0 ]]; then
+        log "Installation verified successfully"
+    else
+        error "$ISSUES issues found"
+    fi
+}
+
+# ============================================
+# Main
+# ============================================
+main() {
+    echo "============================================"
+    echo "Claude-Proxy Bot Deployment"
+    echo "============================================"
     echo ""
-    echo "=== Recent Logs ==="
-    tail -5 logs/orchestrator.log 2>/dev/null || echo "No orchestrator logs"
-}
-
-# Run manual job
-run_job() {
-    local job=$1
-    log_info "Running job: $job"
-    python3 skills/orchestrator.py --job "$job"
-}
-
-# Main entry point
-case "${1:-all}" in
-    all)
-        setup_directories
-        install_deps
-        make_executable
-        install_cron
-        verify
-        ;;
-    dirs)
-        setup_directories
-        ;;
-    deps)
-        install_deps
-        ;;
-    cron)
-        install_cron
-        ;;
-    verify)
-        verify
-        ;;
-    test)
-        test_routing
-        ;;
-    status)
-        status
-        ;;
-    job)
-        if [ -z "$2" ]; then
-            log_error "Job name required"
-            echo "Usage: $0 job <job_name>"
-            echo "Available jobs: price-check, research-digest, auto-post, health-check, queue-cleanup, backup"
+    
+    case "${1:-all}" in
+        dirs)
+            create_directories
+            ;;
+        skills)
+            fix_broken_skills
+            ;;
+        orchestrator)
+            install_orchestrator
+            ;;
+        cron)
+            setup_cron
+            ;;
+        systemd)
+            create_systemd_service
+            ;;
+        verify)
+            verify_installation
+            ;;
+        all)
+            create_directories
+            fix_broken_skills
+            install_orchestrator
+            setup_cron
+            verify_installation
+            ;;
+        *)
+            echo "Usage: $0 {dirs|skills|orchestrator|cron|systemd|verify|all}"
             exit 1
-        fi
-        run_job "$2"
-        ;;
-    *)
-        echo "Usage: $0 {all|dirs|deps|cron|verify|test|status|job}"
-        exit 1
-        ;;
-esac
+            ;;
+    esac
+    
+    echo ""
+    log "Done!"
+}
 
-log_info "Done!"
+main "$@"
