@@ -157,3 +157,289 @@ Unknown job: health-check
   "job": "health-check",
   "schedule": "*/5 * * * *"
 }
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "action": "system_health",
+    "success": true,
+    "output": "✅ System healthy",
+    "error": null
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}

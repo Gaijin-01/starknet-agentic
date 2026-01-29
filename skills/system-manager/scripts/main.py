@@ -27,7 +27,7 @@ class SystemManager:
     ALL_SKILLS = [
         "prices", "research", "post-generator", "queue-manager",
         "style-learner", "camsnap", "mcporter", "songsee",
-        "adaptive-routing", "claude-proxy"
+        "adaptive-routing", "claude-proxy", "x-algorithm-optimizer"
     ]
     
     def __init__(self):

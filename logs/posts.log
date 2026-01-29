@@ -1,0 +1,26 @@
+{
+  "message": "generate auto post as sefirotwatch",
+  "skill": "post-generator",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 22,
+  "params": {
+    "raw_message": "generate auto post as sefirotwatch",
+    "topic": "generate auto post as sefirotwatch",
+    "format": "post"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "generate auto post as sefirotwatch",
+      "topic": "generate auto post as sefirotwatch",
+      "format": "post"
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "auto-post",
+  "schedule": "0 9,13,18,22 * * *"
+}
