@@ -1,0 +1,14 @@
+Executing job: research-digest
+Config: {
+  "schedule": "0 8,20 * * *",
+  "skill": "SkillType.RESEARCH",
+  "params": {
+    "mode": "daily",
+    "topics": [
+      "crypto",
+      "starknet",
+      "defi"
+    ]
+  },
+  "description": "Morning/evening research digest"
+}

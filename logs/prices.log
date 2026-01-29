@@ -1,0 +1,10 @@
+Executing job: price-check
+Config: {
+  "schedule": "*/15 * * * *",
+  "skill": "SkillType.PRICES",
+  "params": {
+    "mode": "alert",
+    "threshold": 5.0
+  },
+  "description": "Check prices every 15 min, alert on 5% change"
+}
