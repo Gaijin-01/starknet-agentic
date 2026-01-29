@@ -8,3 +8,35 @@ Config: {
   },
   "description": "Check prices every 15 min, alert on 5% change"
 }
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "BTC",
+        "ETH",
+        "STRK"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}

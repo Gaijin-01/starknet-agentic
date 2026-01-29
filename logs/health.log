@@ -1,3 +1,21 @@
 Unknown job: health-check
 Unknown job: health-check
 Unknown job: health-check
+{
+  "message": "run health-check",
+  "skill": "claude-proxy",
+  "confidence": 0.5,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check"
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--task TASK] [--context CONTEXT] [--interactive]\n               [--generate-code GENERATE_CODE] [--language LANGUAGE]\n               [--output OUTPUT] [--improve-skill IMPROVE_SKILL]\n               [--analyze-skill ANALYZE_SKILL] [--analyze-all] [--apply]\n               [--autonomous] [--hours HOURS] [--interval INTERVAL]\n               [--focus FOCUS] [--reason REASON] [--decide DECIDE]\n               [--options OPTIONS [OPTIONS ...]] [--check-providers]\n               [--status] [--verbose]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"run health-check\"}\n"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
