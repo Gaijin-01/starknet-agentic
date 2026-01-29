@@ -1,316 +1,316 @@
 #!/usr/bin/env python3
 """
-Claude-Proxy Orchestrator
-
-Central skill router + executor for Clawdbot.
-Routes user queries to appropriate skills and manages cron jobs.
+Skill Orchestrator for Claude-Proxy Bot
+Routes incoming messages to appropriate skills based on intent detection.
 """
 
-import argparse
+import re
 import json
-import logging
-import os
-import subprocess
-import sys
-import time
-from datetime import datetime
-from pathlib import Path
-from typing import Optional
-
-# Setup logging
-LOG_DIR = Path("/home/wner/clawd/logs")
-LOG_DIR.mkdir(parents=True, exist_ok=True)
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_DIR / "orchestrator.log"),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger("orchestrator")
+from dataclasses import dataclass
+from typing import Optional, Dict, Any, List
+from enum import Enum
 
 
-# Routing patterns
-ROUTING_TABLE = [
-    (["$", "price", "курс", "стоимость"], "prices", "Token price lookup"),
-    (["search", "news", "что такое", "исследуй"], "research", "Web search & research"),
-    (["post", "tweet", "напиши", "tweet"], "post-generator", "Post generation"),
-    (["style", "стиль", "persona", "голос"], "style-learner", "Style learning"),
-    (["snap", "camera", "камера", "снимок"], "camsnap", "Camera snapshots"),
-    (["mcp", "server"], "mcporter", "MCP server management"),
-    (["song", "audio", "spectrogram"], "songsee", "Audio visualization"),
-    (["route", "adaptive", "tier"], "adaptive-routing", "Query routing"),
-]
+class SkillType(Enum):
+    PRICES = "prices"
+    RESEARCH = "research"
+    POST_GENERATOR = "post-generator"
+    STYLE_LEARNER = "style-learner"
+    CAMSNAP = "camsnap"
+    SONGSEE = "songsee"
+    MCPORTER = "mcporter"
+    QUEUE_MANAGER = "queue-manager"
+    CLAUDE_PROXY = "claude-proxy"
+    ADAPTIVE_ROUTING = "adaptive-routing"
 
 
-def classify_query(query: str) -> dict:
+@dataclass
+class RoutingResult:
+    skill: SkillType
+    confidence: float
+    params: Dict[str, Any]
+    fallback: Optional[SkillType] = None
+
+
+class AdaptiveRouter:
     """
-    Classify a query and determine which skill to use.
-    
-    Returns:
-        dict with skill, confidence, and reasoning
+    Intent-based skill router.
+    Uses keyword patterns + context for skill selection.
     """
-    query_lower = query.lower()
     
-    for patterns, skill, reason in ROUTING_TABLE:
-        for pattern in patterns:
-            if pattern in query_lower:
-                return {
-                    "skill": skill,
-                    "confidence": 0.9,
-                    "reason": reason,
-                    "matched": pattern
-                }
-    
-    # Default to claude-proxy
-    return {
-        "skill": "claude-proxy",
-        "confidence": 1.0,
-        "reason": "No pattern match - using default LLM",
-        "matched": None
+    PATTERNS = {
+        SkillType.PRICES: [
+            r'\b(price|цена|курс|btc|eth|sol|token|coin)\b',
+            r'\b(market|рынок|pump|dump|moon)\b',
+            r'\$([\w]+)',  # $BTC, $ETH format
+        ],
+        SkillType.RESEARCH: [
+            r'\b(research|исследуй|find|search|новости|news)\b',
+            r'\b(what is|что такое|explain|объясни)\b',
+            r'\b(анализ|analysis|report|отчет)\b',
+        ],
+        SkillType.POST_GENERATOR: [
+            r'\b(post|пост|tweet|твит|write|напиши)\b',
+            r'\b(thread|тред|content|контент)\b',
+            r'\b(generate|сгенерируй|create-создай)\b',
+        ],
+        SkillType.STYLE_LEARNER: [
+            r'\b(style|стиль|tone|тон|voice)\b',
+            r'\b(learn|учись|mimic|копируй)\b',
+            r'\b(persona|персона|character)\b',
+        ],
+        SkillType.CAMSNAP: [
+            r'\b(camera|камера|photo|фото|snap|screenshot)\b',
+            r'\b(capture захват|image|изображение)\b',
+        ],
+        SkillType.SONGSEE: [
+            r'\b(song|песня|music|музыка|track|трек)\b',
+            r'\b(playing|играет|shazam|identify)\b',
+            r'\b(lyrics|текст|artist|исполнитель)\b',
+        ],
+        SkillType.MCPORTER: [
+            r'\b(mcp|server|сервер|connect|подключи)\b',
+            r'\b(tool|инструмент|integration|интеграция)\b',
+        ],
+        SkillType.QUEUE_MANAGER: [
+            r'\b(queue|очередь|task|задача|job|работа)\b',
+            r'\b(schedule|расписание|pending|ожидает)\b',
+        ],
+        SkillType.ADAPTIVE_ROUTING: [
+            r'\b(route|роут|routing)\b',
+            r'\b(tier|уровень|fast|standard|deep)\b',
+        ],
     }
-
-
-def route_query(query: str) -> dict:
-    """Full routing analysis for a query."""
-    classification = classify_query(query)
     
-    return {
-        "query": query,
-        "timestamp": datetime.now().isoformat(),
-        "routing": classification,
-        "model_tier": get_model_tier(query)
+    def __init__(self):
+        self.compiled_patterns = {
+            skill: [re.compile(p, re.IGNORECASE) for p in patterns]
+            for skill, patterns in self.PATTERNS.items()
+        }
+    
+    def route(self, message: str, context: Optional[Dict] = None) -> RoutingResult:
+        """
+        Route message to appropriate skill.
+        
+        Args:
+            message: User input text
+            context: Optional context (chat history, user prefs, etc.)
+            
+        Returns:
+            RoutingResult with skill, confidence, and extracted params
+        """
+        scores: Dict[SkillType, float] = {}
+        
+        for skill, patterns in self.compiled_patterns.items():
+            score = 0.0
+            for pattern in patterns:
+                matches = pattern.findall(message)
+                score += len(matches) * 0.3
+            scores[skill] = min(score, 1.0)
+        
+        # Sort by score
+        ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+        
+        if ranked[0][1] < 0.1:
+            # No clear match → default to claude-proxy (general chat)
+            return RoutingResult(
+                skill=SkillType.CLAUDE_PROXY,
+                confidence=0.5,
+                params={"message": message},
+                fallback=None
+            )
+        
+        best_skill, best_score = ranked[0]
+        fallback = ranked[1][0] if len(ranked) > 1 and ranked[1][1] > 0.1 else None
+        
+        # Extract params based on skill type
+        params = self._extract_params(best_skill, message)
+        
+        return RoutingResult(
+            skill=best_skill,
+            confidence=best_score,
+            params=params,
+            fallback=fallback
+        )
+    
+    def _extract_params(self, skill: SkillType, message: str) -> Dict[str, Any]:
+        """Extract skill-specific parameters from message."""
+        params = {"raw_message": message}
+        
+        if skill == SkillType.PRICES:
+            # Extract token symbols
+            tokens = re.findall(r'\$([A-Za-z]+)', message)
+            tokens += re.findall(r'\b(btc|eth|sol|strk|avax|matic)\b', message.lower())
+            params["tokens"] = list(set(tokens))
+            
+        elif skill == SkillType.RESEARCH:
+            # Extract search query
+            params["query"] = message
+            
+        elif skill == SkillType.POST_GENERATOR:
+            # Extract topic
+            params["topic"] = message
+            params["format"] = "tweet" if "tweet" in message.lower() else "post"
+            
+        return params
+
+
+class SkillExecutor:
+    """
+    Executes skills and manages result flow.
+    """
+    
+    def __init__(self, skills_path: str = "/home/wner/clawd/skills"):
+        self.skills_path = skills_path
+        self.router = AdaptiveRouter()
+    
+    def execute(self, message: str, context: Optional[Dict] = None) -> Dict[str, Any]:
+        """
+        Route and execute appropriate skill.
+        
+        Args:
+            message: User input
+            context: Optional context
+            
+        Returns:
+            Execution result dict
+        """
+        route = self.router.route(message, context)
+        
+        result = {
+            "skill": route.skill.value,
+            "confidence": route.confidence,
+            "params": route.params,
+            "status": "pending",
+            "output": None,
+            "error": None
+        }
+        
+        try:
+            # Import and execute skill
+            skill_module = self._load_skill(route.skill)
+            if skill_module:
+                output = skill_module.execute(route.params)
+                result["status"] = "success"
+                result["output"] = output
+            else:
+                result["status"] = "error"
+                result["error"] = f"Skill {route.skill.value} not implemented"
+                
+        except Exception as e:
+            result["status"] = "error"
+            result["error"] = str(e)
+            
+            # Try fallback
+            if route.fallback:
+                result["fallback_attempted"] = route.fallback.value
+        
+        return result
+    
+    def _load_skill(self, skill: SkillType):
+        """Dynamically load skill module."""
+        import importlib.util
+        import os
+        
+        skill_path = os.path.join(
+            self.skills_path, 
+            skill.value, 
+            "scripts", 
+            "main.py"
+        )
+        
+        if not os.path.exists(skill_path):
+            return None
+            
+        spec = importlib.util.spec_from_file_location(skill.value, skill_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+
+# Cron job configurations
+CRON_JOBS = {
+    "price-check": {
+        "schedule": "*/15 * * * *",
+        "skill": SkillType.PRICES,
+        "params": {"mode": "alert", "threshold": 5.0},
+        "description": "Check prices every 15 min, alert on 5% change"
+    },
+    "research-digest": {
+        "schedule": "0 8,20 * * *",
+        "skill": SkillType.RESEARCH,
+        "params": {"mode": "daily", "topics": ["crypto", "starknet", "defi"]},
+        "description": "Morning/evening research digest"
+    },
+    "style-update": {
+        "schedule": "0 3 * * 0",
+        "skill": SkillType.STYLE_LEARNER,
+        "params": {"mode": "retrain"},
+        "description": "Weekly style model retrain"
+    },
+    "queue-cleanup": {
+        "schedule": "0 */6 * * *",
+        "skill": SkillType.QUEUE_MANAGER,
+        "params": {"mode": "gc", "max_age_hours": 24},
+        "description": "Clean stale queue items every 6h"
+    },
+    "auto-post": {
+        "schedule": "0 9,13,18,22 * * *",
+        "skill": SkillType.POST_GENERATOR,
+        "params": {"mode": "auto", "persona": "sefirotwatch"},
+        "description": "Automated posts 4x daily"
     }
-
-
-def get_model_tier(query: str) -> str:
-    """Determine model tier based on query complexity."""
-    score = score_complexity(query)
-    
-    if score < 30:
-        return "fast"
-    elif score < 70:
-        return "standard"
-    else:
-        return "deep"
-
-
-def score_complexity(query: str) -> int:
-    """Score query complexity (1-100)."""
-    score = 50  # Base score
-    
-    # High complexity indicators
-    high_complexity = ["design", "architecture", "scalable", "optimize", "research"]
-    for word in high_complexity:
-        if word in query.lower():
-            score += 20
-    
-    # Medium complexity
-    medium_complexity = ["write", "code", "fix", "debug", "analyze", "create"]
-    for word in medium_complexity:
-        if word in query.lower():
-            score += 10
-    
-    # Low complexity (reductions)
-    low_complexity = ["hi", "hello", "how are", "thanks", "?"]
-    for phrase in low_complexity:
-        if phrase in query.lower():
-            score -= 15
-    
-    # Length adjustments
-    if len(query.split()) > 10:
-        score += 10
-    elif len(query.split()) < 3:
-        score -= 10
-    
-    return max(1, min(100, score))
-
-
-def execute_skill(skill: str, query: str) -> str:
-    """Execute a skill and return the result."""
-    skill_path = Path(f"/home/wner/clawd/skills/{skill}/scripts/main.py")
-    
-    if not skill_path.exists():
-        return f"Skill '{skill}' not found"
-    
-    try:
-        result = subprocess.run(
-            [sys.executable, str(skill_path), query],
-            capture_output=True,
-            text=True,
-            timeout=60
-        )
-        return result.stdout.strip() if result.stdout else result.stderr.strip()
-    except subprocess.TimeoutExpired:
-        return f"Skill '{skill}' timed out"
-    except Exception as e:
-        return f"Skill '{skill}' error: {str(e)}"
-
-
-# Cron job handlers
-def job_price_check():
-    """Run price check for tracked tokens."""
-    logger.info("Running price check...")
-    subprocess.run(
-        [sys.executable, "/home/wner/clawd/skills/prices/scripts/prices.py"],
-        capture_output=True
-    )
-    logger.info("Price check completed")
-
-
-def job_research_digest():
-    """Generate research digest."""
-    logger.info("Running research digest...")
-    subprocess.run(
-        [sys.executable, "/home/wner/clawd/skills/research/scripts/research.py", "--digest"],
-        capture_output=True
-    )
-    logger.info("Research digest completed")
-
-
-def job_auto_post():
-    """Generate and queue auto post."""
-    logger.info("Running auto post...")
-    subprocess.run(
-        [sys.executable, "/home/wner/clawd/skills/post-generator/scripts/post_generator.py", "--auto"],
-        capture_output=True
-    )
-    logger.info("Auto post completed")
-
-
-def job_health_check():
-    """Check service health."""
-    logger.info("Running health check...")
-    # Check if core services are running
-    services = ["claud-proxy", "gateway"]
-    for service in services:
-        subprocess.run(
-            ["systemctl", "is-active", service],
-            capture_output=True
-        )
-    logger.info("Health check completed")
-
-
-def job_queue_cleanup():
-    """Clean up old queue entries."""
-    logger.info("Running queue cleanup...")
-    queue_dir = Path("/home/wner/clawd/post_queue")
-    if queue_dir.exists():
-        for f in queue_dir.glob("*.txt"):
-            # Remove files older than 7 days
-            if (datetime.now() - datetime.fromtimestamp(f.stat().st_mtime)).days > 7:
-                f.unlink()
-    logger.info("Queue cleanup completed")
-
-
-def job_backup():
-    """Create daily backup."""
-    logger.info("Running backup...")
-    backup_file = f"/home/wner/clawd/memory-backup-{datetime.now().strftime('%Y%m%d-%H%M')}.tar.gz"
-    subprocess.run(
-        ["tar", "-czf", backup_file, "memory/"],
-        cwd="/home/wner/clawd",
-        capture_output=True
-    )
-    logger.info(f"Backup created: {backup_file}")
-
-
-# Job registry
-JOBS = {
-    "price-check": job_price_check,
-    "research-digest": job_research_digest,
-    "auto-post": job_auto_post,
-    "health-check": job_health_check,
-    "queue-cleanup": job_queue_cleanup,
-    "backup": job_backup,
 }
 
 
 def generate_crontab() -> str:
-    """Generate crontab configuration."""
-    return """# Claude-Proxy Cron Jobs
-# Generated by orchestrator.py
-
-# Environment
-SHELL=/bin/bash
-PATH=/usr/local/bin:/usr/bin:/bin:/home/wner/.local/bin
-
-# Price check every 15 minutes
-*/15 * * * * /usr/bin/python3 /home/wner/clawd/skills/prices/scripts/prices.py >> /home/wner/clawd/logs/prices.log 2>&1
-
-# Health check every 5 minutes
-*/5 * * * * /usr/bin/python3 /home/wner/clawd/skills/orchestrator.py --job health-check >> /home/wner/clawd/logs/health.log 2>&1
-
-# Auto posts - 4 times daily
-0 9 * * * /usr/bin/python3 /home/wner/clawd/skills/post-generator/scripts/post_generator.py --auto >> /home/wner/clawd/logs/posts.log 2>&1
-0 13 * * * /usr/bin/python3 /home/wner/clawd/skills/post-generator/scripts/post_generator.py --auto >> /home/wner/clawd/logs/posts.log 2>&1
-0 18 * * * /usr/bin/python3 /home/wner/clawd/skills/post-generator/scripts/post_generator.py --auto >> /home/wner/clawd/logs/posts.log 2>&1
-0 22 * * * /usr/bin/python3 /home/wner/clawd/skills/post-generator/scripts/post_generator.py --auto >> /home/wner/clawd/logs/posts.log 2>&1
-
-# Research digests - twice daily
-0 8 * * * /usr/bin/python3 /home/wner/clawd/skills/research/scripts/research.py --digest >> /home/wner/clawd/logs/research.log 2>&1
-0 20 * * * /usr/bin/python3 /home/wner/clawd/skills/research/scripts/research.py --digest >> /home/wner/clawd/logs/research.log 2>&1
-
-# Queue cleanup every 6 hours
-0 */6 * * * /usr/bin/python3 /home/wner/clawd/skills/orchestrator.py --job queue-cleanup >> /home/wner/clawd/logs/maintenance.log 2>&1
-
-# Daily backup at 4 AM
-0 4 * * * /usr/bin/python3 /home/wner/clawd/skills/orchestrator.py --job backup >> /home/wner/clawd/logs/backup.log 2>&1
-
-# Style model retrain - Sunday at 3 AM
-0 3 * * 0 /usr/bin/python3 /home/wner/clawd/skills/style-learner/scripts/main.py --retrain >> /home/wner/clawd/logs/style.log 2>&1
-"""
-
-
-def main():
-    """Main entry point."""
-    parser = argparse.ArgumentParser(
-        description="Claude-Proxy Orchestrator - Skill router and job scheduler"
-    )
-    parser.add_argument(
-        "--test-route",
-        help="Test routing for a query"
-    )
-    parser.add_argument(
-        "--job",
-        choices=list(JOBS.keys()),
-        help="Run a specific cron job"
-    )
-    parser.add_argument(
-        "--generate-cron",
-        action="store_true",
-        help="Generate crontab configuration"
-    )
-    parser.add_argument(
-        "--verbose",
-        action="store_true",
-        help="Enable verbose logging"
-    )
-
-    args = parser.parse_args()
-
-    if args.verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
-
-    if args.test_route:
-        routing = route_query(args.test_route)
-        print(json.dumps(routing, indent=2, ensure_ascii=False))
+    """Generate crontab entries for all jobs."""
+    lines = ["# Claude-Proxy Bot Cron Jobs", "# Generated automatically", ""]
     
-    elif args.job:
-        if args.job in JOBS:
-            JOBS[args.job]()
-            print(f"Job '{args.job}' completed")
-        else:
-            print(f"Unknown job: {args.job}")
-            sys.exit(1)
+    for job_name, config in CRON_JOBS.items():
+        cmd = f"cd /home/wner/clawd && python orchestrator.py --job {job_name}"
+        lines.append(f"# {config['description']}")
+        lines.append(f"{config['schedule']} {cmd}")
+        lines.append("")
     
-    elif args.generate_cron:
-        print(generate_crontab())
-    
-    else:
-        parser.print_help()
+    return "\n".join(lines)
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Skill Orchestrator")
+    parser.add_argument("--job", help="Run specific cron job")
+    parser.add_argument("--message", help="Process message")
+    parser.add_argument("--generate-cron", action="store_true", help="Generate crontab")
+    parser.add_argument("--test-route", help="Test routing for message")
+    
+    args = parser.parse_args()
+    
+    if args.generate_cron:
+        print(generate_crontab())
+        
+    elif args.test_route:
+        router = AdaptiveRouter()
+        result = router.route(args.test_route)
+        print(json.dumps({
+            "skill": result.skill.value,
+            "confidence": result.confidence,
+            "params": result.params,
+            "fallback": result.fallback.value if result.fallback else None
+        }, indent=2, ensure_ascii=False))
+        
+    elif args.job:
+        if args.job in CRON_JOBS:
+            config = CRON_JOBS[args.job]
+            executor = SkillExecutor()
+            # Execute with job params
+            print(f"Executing job: {args.job}")
+            print(f"Config: {json.dumps(config, indent=2, default=str)}")
+        else:
+            print(f"Unknown job: {args.job}")
+            
+    elif args.message:
+        executor = SkillExecutor()
+        result = executor.execute(args.message)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
