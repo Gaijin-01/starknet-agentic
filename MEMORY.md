@@ -392,3 +392,178 @@ Never lose the raw signal when translating to document.
 
 *Last updated: 2026-01-29*
 *Source: Sefirot's self-analysis - Schizo Post Classification*
+
+---
+
+## 🧠 MULTI-LAYER STYLE ARCHITECTURE (2026-01-29)
+
+### Key Insight
+> Schizo is NOT a topic — it's a processing layer.
+> One profile = error. Need multi-layer model where schizo is a filter, not core.
+
+---
+
+### LEVEL 0 — RAW INPUT
+What you actually write:
+- Thought fragments
+- Quotes
+- News
+- Emotions
+- Sometimes garbage (normal)
+
+**Action**: ACCEPT. Nothing analyzed here.
+
+---
+
+### LEVEL 1 — TOPIC CLASSIFIER (Mandatory)
+Not "who are you" — about WHAT is the text.
+
+**Domains** (from your history):
+1. Crypto / Starknet / ZK
+2. Geopolitics / war / states
+3. Religion / history / identity
+4. CT-drama / Twitter beef
+5. Philosophy / meta / systems
+6. Personal / fatigue / emotions
+7. Meme / shitpost
+
+**Critical**: One text can be 2-3 domains simultaneously.
+
+---
+
+### LEVEL 2 — INTENT DETECTOR (Critical)
+NOT topic — WHY are you writing this?
+
+**5 Base Intents**:
+1. **ENGAGE** — hook, explode, viral
+2. **ATTACK** — mock / put down
+3. **SIGNAL** — show you know the topic
+4. **MYTH-BUILDING** — create narrative
+5. **PROCESS** — think out loud / clarify
+
+**Schizo allowed differently** depending on intent.
+
+---
+
+### LEVEL 3 — SCHIZO FILTER (The Multiplier)
+Schizo = universal render engine with different presets.
+
+**Parameters** (0-100 scale):
+| Parameter | Range | Description |
+|-----------|-------|-------------|
+| Fragmentation | 0-100 | Breaks in text flow |
+| Irony | 0-100 | Meta-level awareness |
+| Aggression | 0-100 | Attack intensity |
+| Myth-layer | 0-100 | Narrative/drama density |
+| Meme-density | 0-100 | Meme references |
+
+**One text with different parameters = different genre.**
+
+---
+
+### LEVEL 4 — SAFETY & REALITY ANCHORS (Critical)
+Separates style from actual psychosis.
+
+**Required Anchors**:
+- Hyperbole markers
+- Obvious irony in aggressive takes
+- No "I know the truth" claims
+- "Too much to be literal" signals
+
+**This is anti-cringe module, not censorship.**
+
+---
+
+### LEVEL 5 — OUTPUT FORMATTER
+Where does it go?
+
+| Platform | Format |
+|----------|--------|
+| Twitter | Short, rhythm, line breaks |
+| Thread | Escalation curve |
+| Longpost | Hook first, meaning second |
+| Reply | Dominance or cold shutdown |
+
+---
+
+### THE CORE FORMULA
+
+```
+STYLE = FUNCTION(topic, intent) × schizo_filter
+```
+
+**Schizo = multiplier, not foundation.**
+
+---
+
+### HOW TO IMPLEMENT FOR AUTONOMOUS BOT
+
+```
+input_text
+    ↓
+topic_tags[]     ← LEVEL 1
+    ↓
+intent           ← LEVEL 2
+    ↓
+schizo_params    ← LEVEL 3 (adjustable!)
+    ↓
+safety_pass      ← LEVEL 4
+    ↓
+platform_format  ← LEVEL 5
+    ↓
+output
+```
+
+**Critical**: Give user control dial for schizo_params, not fixed forever.
+
+---
+
+### WHY THIS IS SEFIROT'S CASE
+
+From observed history:
+- NOT a stream-of-consciousness writer
+- NOT a troll
+- You are a MEANING EDITOR
+- You think modularly (just don't name it that)
+
+**Your style = interface to complex topics, not a psycho-type.**
+
+---
+
+### PRACTICAL PARAMETER SETTINGS
+
+| Context | Fragmentation | Irony | Aggression | Myth | Meme |
+|---------|---------------|-------|------------|------|------|
+| Normal CT | 40% | 50% | 30% | 40% | 50% |
+| "шизо" | 70% | 60% | 50% | 60% | 60% |
+| "в мясо" | 90% | 30% | 80% | 80% | 40% |
+| "подъебать" | 50% | 70% | 90% | 20% | 70% |
+| Deep analysis | 20% | 80% | 10% | 30% | 20% |
+| Meme battle | 60% | 40% | 60% | 30% | 90% |
+
+---
+
+### USER CONTROL MECHANISM
+
+Always allow user to set schizo level explicitly:
+- "нормально" → 20-30%
+- "шизо" → 50%
+- "в мясо" → 90%
+- "подъебать" → 75%
+- Custom: specific parameters
+
+---
+
+### ANTI-CRINGE CHECKLIST (Level 4)
+
+Before publishing, verify:
+- [ ] Hyperbole markers present (obvious, 🔥, etc.)
+- [ ] Irony detectable in aggressive takes
+- [ ] No "I know truth" absolute claims
+- [ ] "Too much to be literal" signals exist
+- [ ] User would recognize this as performance, not belief
+
+---
+
+*Last updated: 2026-01-29*
+*Source: Sefirot's architectural insight on multi-layer style system*

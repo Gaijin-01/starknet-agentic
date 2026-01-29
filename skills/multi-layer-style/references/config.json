@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "description": "Multi-layer style processor configuration",
+  "presets": {
+    "normal": {
+      "schizo_level": 30,
+      "fragmentation": 20,
+      "irony": 70,
+      "aggression": 20,
+      "myth_layer": 30,
+      "meme_density": 30
+    },
+    "ct": {
+      "schizo_level": 50,
+      "fragmentation": 40,
+      "irony": 50,
+      "aggression": 30,
+      "myth_layer": 40,
+      "meme_density": 50
+    },
+    "shizo": {
+      "schizo_level": 70,
+      "fragmentation": 70,
+      "irony": 60,
+      "aggression": 50,
+      "myth_layer": 60,
+      "meme_density": 60
+    },
+    "v-myaso": {
+      "schizo_level": 90,
+      "fragmentation": 90,
+      "irony": 30,
+      "aggression": 80,
+      "myth_layer": 80,
+      "meme_density": 40
+    },
+    "attack": {
+      "schizo_level": 50,
+      "fragmentation": 50,
+      "irony": 70,
+      "aggression": 90,
+      "myth_layer": 20,
+      "meme_density": 70
+    },
+    "meme": {
+      "schizo_level": 50,
+      "fragmentation": 60,
+      "irony": 40,
+      "aggression": 40,
+      "myth_layer": 30,
+      "meme_density": 90
+    }
+  },
+  "topics": [
+    "crypto",
+    "geopolitics",
+    "religion",
+    "ct-drama",
+    "philosophy",
+    "personal",
+    "meme"
+  ],
+  "intents": [
+    "engage",
+    "attack",
+    "signal",
+    "myth-building",
+    "process"
+  ],
+  "platforms": [
+    "twitter",
+    "thread",
+    "longpost",
+    "reply"
+  ],
+  "safety": {
+    "violation_patterns": [
+      "i know the truth",
+      "i am certain",
+      "this is absolute",
+      "no doubt"
+    ],
+    "required_markers": [
+      "🔥",
+      "obviously",
+      "maybe",
+      "perhaps",
+      "possibly"
+    ]
+  }
+}
