@@ -40,3 +40,35 @@ Config: {
   "job": "price-check",
   "schedule": "*/15 * * * *"
 }
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "ETH",
+        "STRK",
+        "BTC"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}

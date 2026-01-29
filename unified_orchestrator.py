@@ -319,17 +319,17 @@ class SkillExecutor:
         action = params.get("action", "help")
         
         if action == "respond_to_tweet":
-            # Generate comment + quote for tweet
+            # Generate comment + quote for tweet (copy for review)
             tweet_id = params.get("tweet_id")
             link = params.get("link")
             return {
-                "action": "twitter_response",
+                "action": "twitter_response_copy",
                 "tweet_id": tweet_id,
                 "link": link,
-                "comment": f"Interesting perspective! Here's my take on this topic.",
-                "quote": f"Great point worth highlighting.",
-                "status": "generated_ready_to_review",
-                "queue_file": self._add_to_post_queue(params, "twitter_response")
+                "comment": "Interesting perspective! Here's my take on this topic.",
+                "quote": "Great point worth highlighting. This aligns with what I've been thinking about [relevant angle].",
+                "status": "copy_ready",
+                "copy_text": self._format_twitter_copy(tweet_id, link)
             }
         elif action == "post":
             return {
@@ -373,6 +373,26 @@ class SkillExecutor:
             json.dump(params, f, indent=2)
         
         return str(filepath)
+    
+    def _format_twitter_copy(self, tweet_id: str, link: str) -> str:
+        """Format Twitter response as copyable text."""
+        from datetime import datetime
+        return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🐦 TWITTER RESPONSE (ID: {tweet_id})
+📎 {link}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 COMMENT:
+«Interesting perspective! Here's my take on this topic.»
+
+🔁 QUOTE:
+«Great point worth highlighting. This aligns with what I've been thinking about [relevant angle].»
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 Copy the text above and post manually.
+⏰ Generated: {datetime.now().strftime('%H:%M')}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"""
     
     def _run_cli_skill(self, skill_name: str, params: Dict) -> Dict:
         """Run CLI-based skill."""
