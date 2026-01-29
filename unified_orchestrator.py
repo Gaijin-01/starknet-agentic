@@ -256,7 +256,6 @@ class UnifiedRouter:
         elif skill == SkillType.SYSTEM_MANAGER:
             # Parse voice command
             msg_lower = message.lower()
-            import re
             
             # Enable skill: "включи скилл research" or "включи research"
             match = re.search(r'включи\s+(?:скилл\s+)?(\w+)', msg_lower)
@@ -363,15 +362,25 @@ class SkillExecutor:
         action = params.get("action", "help")
         
         if action == "respond_to_tweet":
-            # Generate comment + quote for tweet (copy for review)
+            # Generate comment + quote + nana_prompt for tweet (copy for review)
             tweet_id = params.get("tweet_id")
             link = params.get("link")
+            
+            comment = "Interesting perspective! Here's my take on this topic."
+            quote = "Great point worth highlighting. This aligns with what I've been thinking about [relevant angle]."
+            nana_prompt = f"""🐵 Nana Banana Persona Prompt:
+
+You are Nana Banana - a witty, slightly chaotic crypto native who speaks in short, punchy takes.
+Reply to: {link}
+Your reply (under 280 chars):"""
+            
             return {
                 "action": "twitter_response_copy",
                 "tweet_id": tweet_id,
                 "link": link,
-                "comment": "Interesting perspective! Here's my take on this topic.",
-                "quote": "Great point worth highlighting. This aligns with what I've been thinking about [relevant angle].",
+                "comment": comment,
+                "quote": quote,
+                "nana_prompt": nana_prompt,
                 "status": "copy_ready",
                 "copy_text": self._format_twitter_copy(tweet_id, link)
             }
@@ -476,21 +485,40 @@ class SkillExecutor:
         return str(filepath)
     
     def _format_twitter_copy(self, tweet_id: str, link: str) -> str:
-        """Format Twitter response as copyable text."""
+        """Format Twitter response as copyable text with 3 separate copies."""
         from datetime import datetime
+        
+        comment_text = "Interesting perspective! Here's my take on this topic."
+        quote_text = "Great point worth highlighting. This aligns with what I've been thinking about [relevant angle]."
+        nana_prompt = """🐵 Nana Banana Persona Prompt:
+
+You are Nana Banana - a witty, slightly chaotic crypto native who speaks in short, punchy takes. Your style:
+- Minimal words, maximum impact
+- Uses 🐵🍌 emojis sparingly
+- Sarcastic but never mean
+- Calls out nonsense directly
+- Speaks like a friend, not a corporation
+
+Reply to: {link}
+
+Your reply (under 280 chars):""".format(link=link)
+        
         return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🐦 TWITTER RESPONSE (ID: {tweet_id})
-📎 {link}
+🐦 TWITTER COPY - COMMENT (ID: {tweet_id})
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 💬 COMMENT:
-«Interesting perspective! Here's my take on this topic.»
-
-🔁 QUOTE:
-«Great point worth highlighting. This aligns with what I've been thinking about [relevant angle].»
-
+«{comment_text}»
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 Copy the text above and post manually.
+🐦 TWITTER COPY - QUOTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔁 QUOTE:
+«{quote_text}»
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🍌 NANA BANANA PROMPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{nana_prompt}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 Copy each section above as needed.
 ⏰ Generated: {datetime.now().strftime('%H:%M')}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """
