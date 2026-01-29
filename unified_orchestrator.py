@@ -37,6 +37,7 @@ class SkillType(Enum):
     ADAPTIVE_ROUTING = "adaptive-routing"
     BIRD = "bird"  # X/Twitter CLI
     X_ALGORITHM_OPTIMIZER = "x-algorithm-optimizer"
+    SYSTEM_MANAGER = "system-manager"
 
 
 # ============================================================
@@ -151,6 +152,13 @@ SKILL_PATTERNS = {
         r'\b(algorithm|алгоритм|optimize|оптимизировать)\b',
         r'\b(engagement|reach|охват)\b',
     ],
+    SkillType.SYSTEM_MANAGER: [
+        r'\b(включи|выключи|enable|disable)\b',
+        r'\b(скилл|skill)\b',
+        r'\b(забэкапь|backup|память|memory)\b',
+        r'\b(статус|status|систем|system)\b',
+        r'\b(перезагрузи|restart|reload)\b',
+    ],
 }
 
 
@@ -244,6 +252,37 @@ class UnifiedRouter:
         elif skill == SkillType.X_ALGORITHM_OPTIMIZER:
             params["task"] = "optimize_engagement"
             
+        elif skill == SkillType.SYSTEM_MANAGER:
+            # Parse voice command
+            msg_lower = message.lower()
+            import re
+            
+            # Enable skill: "включи скилл research" or "включи research"
+            match = re.search(r'включи\s+(?:скилл\s+)?(\w+)', msg_lower)
+            if match:
+                params["action"] = "skills_enable"
+                params["skill"] = match.group(1)
+            elif re.search(r'выключи\s+(?:скилл\s+)?(\w+)', msg_lower):
+                match = re.search(r'выключи\s+(?:скилл\s+)?(\w+)', msg_lower)
+                params["action"] = "skills_disable"
+                params["skill"] = match.group(1)
+            elif "статус" in msg_lower and "скилл" in msg_lower:
+                params["action"] = "skills_list"
+            elif "забэкапь" in msg_lower and "память" in msg_lower:
+                params["action"] = "memory_backup"
+            elif "перезагрузи" in msg_lower and "память" in msg_lower:
+                params["action"] = "memory_reload"
+            elif "очисти" in msg_lower and "память" in msg_lower:
+                params["action"] = "memory_clean"
+            elif "статус" in msg_lower or "состояние" in msg_lower:
+                params["action"] = "system_status"
+            elif "health" in msg_lower or "здоровье" in msg_lower:
+                params["action"] = "system_health"
+            elif "перезапусти" in msg_lower and "гейтвей" in msg_lower:
+                params["action"] = "service_restart"
+            else:
+                params["action"] = "help"
+            
         return params
 
 
@@ -306,6 +345,10 @@ class SkillExecutor:
         elif skill == SkillType.X_ALGORITHM_OPTIMIZER:
             return self._execute_x_optimizer(params)
         
+        # System management skills
+        if skill == SkillType.SYSTEM_MANAGER:
+            return self._execute_system_manager(params)
+        
         # Python module skills
         skill_main = self.skills_path / skill.value / "scripts" / "main.py"
         if skill_main.exists():
@@ -358,6 +401,63 @@ class SkillExecutor:
                 "like": "1.0x baseline"
             }
         }
+    
+    def _execute_system_manager(self, params: Dict) -> Dict:
+        """Execute system management commands."""
+        action = params.get("action", "help")
+        
+        # Build command for system-manager script
+        script = self.skills_path / "system-manager" / "scripts" / "main.py"
+        
+        if not script.exists():
+            return {"error": "system-manager not installed", "action": action}
+        
+        # Map actions to CLI args
+        if action == "skills_enable":
+            cmd = ["python3", str(script), "skills", "enable", params.get("skill", "")]
+        elif action == "skills_disable":
+            cmd = ["python3", str(script), "skills", "disable", params.get("skill", "")]
+        elif action == "skills_list":
+            cmd = ["python3", str(script), "skills", "list"]
+        elif action == "memory_backup":
+            cmd = ["python3", str(script), "memory", "backup"]
+        elif action == "memory_reload":
+            cmd = ["python3", str(script), "memory", "reload"]
+        elif action == "memory_clean":
+            cmd = ["python3", str(script), "memory", "clean"]
+        elif action == "system_status":
+            cmd = ["python3", str(script), "system", "status"]
+        elif action == "system_health":
+            cmd = ["python3", str(script), "system", "health"]
+        elif action == "service_restart":
+            cmd = ["python3", str(script), "service", "restart"]
+        else:
+            return {
+                "action": "help",
+                "available_commands": [
+                    "включи скилл research",
+                    "выключи скилл prices",
+                    "статус скиллов",
+                    "забэкапь память",
+                    "перезагрузи память",
+                    "очисти память",
+                    "статус системы",
+                    "health системы",
+                    "перезапусти гейтвей"
+                ]
+            }
+        
+        # Run command
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            return {
+                "action": action,
+                "success": result.returncode == 0,
+                "output": result.stdout.strip(),
+                "error": result.stderr.strip() if result.stderr else None
+            }
+        except Exception as e:
+            return {"action": action, "error": str(e)}
     
     def _add_to_post_queue(self, params: Dict, prefix: str = "post") -> str:
         """Add content to post queue for later review/posting."""
