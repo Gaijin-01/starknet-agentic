@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "description": "EDITOR - Autonomous Text Style Engine configuration",
+  "pipeline": {
+    "stages": [
+      "input_intake",
+      "topic_classifier",
+      "intent_detector",
+      "meta_controller",
+      "styler_engine",
+      "safety_anchors",
+      "output_formatter"
+    ]
+  },
+  "topics": [
+    "crypto",
+    "geopolitics",
+    "religion",
+    "ct-drama",
+    "philosophy",
+    "personal",
+    "meme"
+  ],
+  "intents": [
+    "engage",
+    "attack",
+    "signal",
+    "myth-building",
+    "process"
+  ],
+  "presets": {
+    "normal": {
+      "fragmentation": 30,
+      "irony": 30,
+      "aggression": 20,
+      "meme_density": 10,
+      "myth_layer": 5
+    },
+    "ct": {
+      "fragmentation": 55,
+      "irony": 40,
+      "aggression": 45,
+      "meme_density": 30,
+      "myth_layer": 25
+    },
+    "shizo": {
+      "fragmentation": 70,
+      "irony": 60,
+      "aggression": 50,
+      "meme_density": 45,
+      "myth_layer": 40
+    },
+    "v-myaso": {
+      "fragmentation": 85,
+      "irony": 70,
+      "aggression": 70,
+      "meme_density": 70,
+      "myth_layer": 60
+    },
+    "attack": {
+      "fragmentation": 50,
+      "irony": 50,
+      "aggression": 80,
+      "meme_density": 40,
+      "myth_layer": 30
+    },
+    "meme": {
+      "fragmentation": 60,
+      "irony": 40,
+      "aggression": 30,
+      "meme_density": 90,
+      "myth_layer": 20
+    }
+  },
+  "safety": {
+    "violation_patterns": [
+      "i know the truth",
+      "i am certain",
+      "this is absolute",
+      "no doubt",
+      "definitely"
+    ],
+    "required_markers": [
+      "🔥",
+      "obviously",
+      "maybe",
+      "perhaps",
+      "possibly"
+    ]
+  },
+  "platforms": [
+    "twitter",
+    "thread",
+    "longpost",
+    "reply"
+  ]
+}
