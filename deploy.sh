@@ -164,7 +164,7 @@ verify_installation() {
     ISSUES=0
     
     # Check critical files
-    for file in orchestrator.py; do
+    for file in skills/orchestrator.py; do
         if [[ ! -f "$BOT_HOME/$file" ]]; then
             error "Missing: $file"
             ((ISSUES++))
@@ -179,9 +179,9 @@ verify_installation() {
     done
     
     # Test orchestrator
-    if [[ -f "$BOT_HOME/orchestrator.py" ]]; then
+    if [[ -f "$BOT_HOME/skills/orchestrator.py" ]]; then
         cd "$BOT_HOME"
-        TEST=$(python3 orchestrator.py --test-route "price of btc" 2>/dev/null)
+        TEST=$(python3 skills/orchestrator.py --test-route "price of btc" 2>/dev/null)
         if echo "$TEST" | grep -q "prices"; then
             log "Orchestrator routing: OK"
         else
