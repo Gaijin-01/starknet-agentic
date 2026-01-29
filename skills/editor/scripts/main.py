@@ -20,7 +20,6 @@ from datetime import datetime
 class Topic(Enum):
     CRYPTO = "crypto"
     GEOPOLITICS = "geopolitics"
-    RELIGION = "religion"
     CT_DRAMA = "ct-drama"
     PHILOSOPHY = "philosophy"
     PERSONAL = "personal"
@@ -84,7 +83,6 @@ class Editor:
     TOPIC_KEYWORDS = {
         Topic.CRYPTO: ["starknet", "zk", "crypto", "defi", "l2", "token", "rollup", "eth", "btc", "strk"],
         Topic.GEOPOLITICS: ["war", "government", "state", "iran", "israel", "usa", "china", "trump"],
-        Topic.RELIGION: ["god", "jewish", "israel", "zion", "torah", "bible", "faith"],
         Topic.CT_DRAMA: ["twitter", "x", "ct", "crypto twitter", "drama", "beef", "reply"],
         Topic.PHILOSOPHY: ["meaning", "purpose", "reality", "truth", "system", "meta", "think"],
         Topic.PERSONAL: ["tired", "gm", "shalom", "feeling", "day", "sleep", "family"],
