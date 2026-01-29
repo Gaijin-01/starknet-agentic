@@ -35,6 +35,8 @@ class SkillType(Enum):
     QUEUE_MANAGER = "queue-manager"
     CLAUDE_PROXY = "claude-proxy"
     ADAPTIVE_ROUTING = "adaptive-routing"
+    BIRD = "bird"  # X/Twitter CLI
+    X_ALGORITHM_OPTIMIZER = "x-algorithm-optimizer"
 
 
 # ============================================================
@@ -139,6 +141,15 @@ SKILL_PATTERNS = {
     SkillType.QUEUE_MANAGER: [
         r'\b(queue|очередь|task|задача|job|работа)\b',
         r'\b(schedule|расписание|pending|ожидает)\b',
+    ],
+    SkillType.BIRD: [
+        r'\b(twitter|x\.com|tweet|твит)\b',
+        r'\b(post|tweet|reply|quote|like)\b',
+        r'\b(bird|bird CLI)\b',
+    ],
+    SkillType.X_ALGORITHM_OPTIMIZER: [
+        r'\b(algorithm|алгоритм|optimize|оптимизировать)\b',
+        r'\b(engagement|reach|охват)\b',
     ],
 }
 
