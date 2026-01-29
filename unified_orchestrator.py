@@ -158,6 +158,7 @@ SKILL_PATTERNS = {
         r'\b(забэкапь|backup|память|memory)\b',
         r'\b(статус|status|систем|system)\b',
         r'\b(перезагрузи|restart|reload)\b',
+        r'\b(health|здоровье)\b',
     ],
 }
 
