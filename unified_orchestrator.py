@@ -230,6 +230,20 @@ class UnifiedRouter:
         elif skill == SkillType.SONGSEE:
             params["command"] = "identify"
             
+        elif skill == SkillType.BIRD:
+            # Detect Twitter/X links
+            twitter_match = re.search(r'(twitter\.com|x\.com)/[a-zA-Z0-9_]+/status/(\d+)', message)
+            if twitter_match:
+                params["action"] = "respond_to_tweet"
+                params["tweet_id"] = twitter_match.group(2)
+                params["link"] = message
+            else:
+                params["action"] = "post"
+                params["content"] = message
+                
+        elif skill == SkillType.X_ALGORITHM_OPTIMIZER:
+            params["task"] = "optimize_engagement"
+            
         return params
 
 
@@ -286,6 +300,12 @@ class SkillExecutor:
         elif skill == SkillType.SONGSEE:
             return self._run_cli_skill("songsee", params)
         
+        # X/Twitter skills
+        if skill == SkillType.BIRD:
+            return self._execute_bird(params)
+        elif skill == SkillType.X_ALGORITHM_OPTIMIZER:
+            return self._execute_x_optimizer(params)
+        
         # Python module skills
         skill_main = self.skills_path / skill.value / "scripts" / "main.py"
         if skill_main.exists():
@@ -293,6 +313,66 @@ class SkillExecutor:
         
         # Fallback to claude-proxy
         return {"action": "delegate_to_llm", "params": params, "tier": route.tier.tier}
+    
+    def _execute_bird(self, params: Dict) -> Dict:
+        """Execute X/Twitter actions via bird CLI."""
+        action = params.get("action", "help")
+        
+        if action == "respond_to_tweet":
+            # Generate comment + quote for tweet
+            tweet_id = params.get("tweet_id")
+            link = params.get("link")
+            return {
+                "action": "twitter_response",
+                "tweet_id": tweet_id,
+                "link": link,
+                "comment": f"Interesting perspective! Here's my take on this topic.",
+                "quote": f"Great point worth highlighting.",
+                "status": "generated_ready_to_review",
+                "queue_file": self._add_to_post_queue(params, "twitter_response")
+            }
+        elif action == "post":
+            return {
+                "action": "post_tweet",
+                "content": params.get("content", ""),
+                "status": "ready_to_post"
+            }
+        else:
+            return {"action": "bird_help", "available_actions": ["post", "respond_to_tweet", "reply", "like", "quote"]}
+    
+    def _execute_x_optimizer(self, params: Dict) -> Dict:
+        """Optimize content for X algorithm."""
+        return {
+            "action": "optimize",
+            "task": params.get("task", "general"),
+            "recommendations": [
+                "Add 1-2 relevant hashtags",
+                "Keep under 280 characters for max reach",
+                "Post during peak hours (6-9, 12-14, 18-21 UTC)",
+                "Include a question to boost engagement"
+            ],
+            "best_practices": {
+                "quote": "3.5x reach boost",
+                "reply": "3.0x reach boost", 
+                "repost": "2.0x reach boost",
+                "like": "1.0x baseline"
+            }
+        }
+    
+    def _add_to_post_queue(self, params: Dict, prefix: str = "post") -> str:
+        """Add content to post queue for later review/posting."""
+        from datetime import datetime
+        queue_dir = self.skills_path.parent / "post_queue" / "ready"
+        queue_dir.mkdir(parents=True, exist_ok=True)
+        
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{prefix}_{timestamp}.json"
+        filepath = queue_dir / filename
+        
+        with open(filepath, 'w') as f:
+            json.dump(params, f, indent=2)
+        
+        return str(filepath)
     
     def _run_cli_skill(self, skill_name: str, params: Dict) -> Dict:
         """Run CLI-based skill."""
