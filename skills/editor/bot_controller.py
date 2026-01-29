@@ -4,14 +4,31 @@ BotController — High-level operational controller for Clawdbot + EDITOR
 Defines WHAT the bot does, WHEN, and HOW agents interact.
 
 Based on bot.controller.js specification.
+Includes comprehensive error handling with retry logic.
 """
 
 import json
 import logging
+import time
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
 from enum import Enum
 from datetime import datetime
+from pathlib import Path
+
+# Configure logging
+LOG_DIR = Path("/home/wner/clawd/logs")
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_DIR / "bot_controller.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger("BotController")
 
 
 class Mode(Enum):
@@ -20,12 +37,38 @@ class Mode(Enum):
     DRY_RUN = "dry_run"
 
 
+class BotError(Exception):
+    """Base exception for BotController errors."""
+    def __init__(self, message: str, stage: str = None, recoverable: bool = True):
+        super().__init__(message)
+        self.message = message
+        self.stage = stage
+        self.recoverable = recoverable
+
+
+class LLMError(BotError):
+    """LLM API error."""
+    def __init__(self, message: str, retry_after: int = None):
+        super().__init__(message, stage="StylerAgent", recoverable=True)
+        self.retry_after = retry_after
+
+
+class ValidationError(BotError):
+    """Input validation error."""
+    def __init__(self, message: str, field: str = None):
+        super().__init__(message, stage="IntakeAgent", recoverable=False)
+        self.field = field
+
+
 @dataclass
 class AgentResult:
+    """Result from an agent execution."""
     agent: str
     success: bool
     output: Dict
     timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
+    error: Optional[str] = None
+    retry_count: int = 0
 
 
 class BotController:
@@ -35,12 +78,17 @@ class BotController:
     Orchestrates agents through the editorial pipeline:
     IntakeAgent → ClassifierAgent → MetaControllerAgent → 
     StylerAgent → SafetyAgent → FormatterAgent
+    
+    Features:
+    - Comprehensive error handling with retry logic
+    - Graceful degradation on failures
+    - Structured logging
+    - Execution tracing
     """
     
-    def __init__(self, mode: Mode = Mode.AUTO):
-        self.mode = mode
-        self.log = []
-        self.execution_trace = []
+    MAX_RETRIES = 3
+    RETRY_DELAY = 1.0  # seconds
+    RETRY_BACKOFF = 2.0  # exponential backoff multiplier
     
     # =============================
     # AGENT DEFINITIONS
@@ -120,13 +168,105 @@ class BotController:
     ]
     
     # =============================
+    # INITIALIZATION
+    # =============================
+    
+    def __init__(self, mode: Mode = Mode.AUTO, max_retries: int = None):
+        """
+        Initialize BotController.
+        
+        Args:
+            mode: Execution mode (AUTO, MANUAL, DRY_RUN)
+            max_retries: Maximum retry attempts for failed operations
+        """
+        self.mode = mode
+        self.max_retries = max_retries or self.MAX_RETRIES
+        self.log = []
+        self.execution_trace = []
+        self.stats = {
+            "total_runs": 0,
+            "successful": 0,
+            "failed": 0,
+            "retries": 0
+        }
+        logger.info(f"BotController initialized in {mode.value} mode")
+    
+    # =============================
+    # ERROR HANDLING
+    # =============================
+    
+    def _execute_with_retry(self, func, *args, **kwargs) -> AgentResult:
+        """
+        Execute function with retry logic.
+        
+        Args:
+            func: Function to execute
+            *args: Function arguments
+            **kwargs: Function keyword arguments
+            
+        Returns:
+            AgentResult with success status and output/error
+        """
+        agent_name = getattr(func, '__name__', 'unknown')
+        last_error = None
+        
+        for attempt in range(self.max_retries):
+            try:
+                output = func(*args, **kwargs)
+                return AgentResult(
+                    agent=agent_name,
+                    success=True,
+                    output=output
+                )
+            except LLMError as e:
+                last_error = e
+                wait_time = self.RETRY_DELAY * (self.RETRY_BACKOFF ** attempt)
+                logger.warning(f"LLM error in {agent_name}: {e.message}, retrying in {wait_time}s")
+                time.sleep(wait_time)
+            except (ValidationError, KeyError) as e:
+                # Non-retryable errors
+                logger.error(f"Non-recoverable error in {agent_name}: {e}")
+                return AgentResult(
+                    agent=agent_name,
+                    success=False,
+                    output={},
+                    error=str(e)
+                )
+            except Exception as e:
+                last_error = e
+                logger.error(f"Unexpected error in {agent_name}: {e}", exc_info=True)
+                if attempt < self.max_retries - 1:
+                    wait_time = self.RETRY_DELAY * (self.RETRY_BACKOFF ** attempt)
+                    logger.info(f"Retrying {agent_name} in {wait_time}s (attempt {attempt + 2})")
+                    time.sleep(wait_time)
+                else:
+                    logger.error(f"Max retries exceeded for {agent_name}")
+        
+        # All retries failed
+        self.stats["retries"] += 1
+        return AgentResult(
+            agent=agent_name,
+            success=False,
+            output={},
+            error=str(last_error),
+            retry_count=self.max_retries
+        )
+    
+    def _safe_get(self, data: Dict, key: str, default: Any = None) -> Any:
+        """Safely get a value from a dictionary."""
+        try:
+            return data.get(key, default)
+        except (AttributeError, TypeError):
+            return default
+    
+    # =============================
     # EXECUTION
     # =============================
     
     def execute(self, text: str, user_overrides: Dict = None, 
                platform: str = "twitter", dry_run: bool = False) -> Dict:
         """
-        Execute full editorial pipeline.
+        Execute full editorial pipeline with error handling.
         
         Args:
             text: Input text
@@ -137,97 +277,240 @@ class BotController:
         Returns:
             Full execution trace + output
         """
+        self.stats["total_runs"] += 1
         self.execution_trace = []
-        self.log.append({"event": "pipeline_start", "text": text[:50], "mode": self.mode.value})
+        self.log = []
+        
+        # Input validation
+        if not text:
+            error_msg = "Empty text provided"
+            logger.error(error_msg)
+            return {
+                "status": "error",
+                "error": error_msg,
+                "stage": "validation",
+                "trace": self.execution_trace,
+                "log": self.log
+            }
+        
+        self.log.append({
+            "event": "pipeline_start", 
+            "text": text[:50] + "..." if len(text) > 50 else text, 
+            "mode": self.mode.value,
+            "timestamp": datetime.now().isoformat()
+        })
+        
+        logger.info(f"Starting pipeline with text: {text[:50]}...")
         
         # Track results
         results = {}
         
-        # === Stage 1: IntakeAgent ===
-        result1 = self._run_intake_agent(text)
-        results["IntakeAgent"] = result1
-        self.execution_trace.append({"agent": result1.agent, "success": result1.success, "output": result1.output, "timestamp": result1.timestamp})
-        
-        # === Stage 2: ClassifierAgent ===
-        result2 = self._run_classifier_agent(result1.output["normalized_text"])
-        results["ClassifierAgent"] = result2
-        self.execution_trace.append({"agent": result2.agent, "success": result2.success, "output": result2.output, "timestamp": result2.timestamp})
-        
-        # Check confidence
-        if result2.output.get("confidence", 1.0) < self.FAILURE_HANDLING["lowConfidence"]["threshold"]:
-            self.log.append({"event": "low_confidence", "action": "fallback_to_ct"})
-            user_overrides = user_overrides or {"preset": "ct"}
-        
-        # === Stage 3: MetaControllerAgent ===
-        result3 = self._run_meta_controller_agent(
-            result2.output["topics"],
-            result2.output["intent"],
-            user_overrides
-        )
-        results["MetaControllerAgent"] = result3
-        self.execution_trace.append({"agent": result3.agent, "success": result3.success, "output": result3.output, "timestamp": result3.timestamp})
-        
-        # === Conditional: dry_run ===
-        if dry_run or self.mode == Mode.DRY_RUN:
+        try:
+            # === Stage 1: IntakeAgent ===
+            result1 = self._execute_with_retry(
+                self._run_intake_agent, 
+                text
+            )
+            results["IntakeAgent"] = result1
+            self.execution_trace.append({
+                "agent": result1.agent, 
+                "success": result1.success, 
+                "output": result1.output,
+                "error": result1.error,
+                "timestamp": result1.timestamp
+            })
+            
+            if not result1.success:
+                raise BotError(f"IntakeAgent failed: {result1.error}", stage="IntakeAgent")
+            
+            normalized_text = self._safe_get(result1.output, "normalized_text", "")
+            
+            # === Stage 2: ClassifierAgent ===
+            result2 = self._execute_with_retry(
+                self._run_classifier_agent, 
+                normalized_text
+            )
+            results["ClassifierAgent"] = result2
+            self.execution_trace.append({
+                "agent": result2.agent, 
+                "success": result2.success, 
+                "output": result2.output,
+                "error": result2.error,
+                "timestamp": result2.timestamp
+            })
+            
+            if not result2.success:
+                raise BotError(f"ClassifierAgent failed: {result2.error}", stage="ClassifierAgent")
+            
+            # Check confidence
+            confidence = self._safe_get(result2.output, "confidence", 1.0)
+            if confidence < self.FAILURE_HANDLING["lowConfidence"]["threshold"]:
+                self.log.append({
+                    "event": "low_confidence", 
+                    "confidence": confidence,
+                    "action": "fallback_to_ct"
+                })
+                user_overrides = user_overrides or {"preset": "ct"}
+                logger.info(f"Low confidence ({confidence}), falling back to CT preset")
+            
+            topics = self._safe_get(result2.output, "topics", ["crypto"])
+            intent = self._safe_get(result2.output, "intent", "engage")
+            
+            # === Stage 3: MetaControllerAgent ===
+            result3 = self._execute_with_retry(
+                self._run_meta_controller_agent,
+                topics,
+                intent,
+                user_overrides
+            )
+            results["MetaControllerAgent"] = result3
+            self.execution_trace.append({
+                "agent": result3.agent, 
+                "success": result3.success, 
+                "output": result3.output,
+                "error": result3.error,
+                "timestamp": result3.timestamp
+            })
+            
+            if not result3.success:
+                raise BotError(f"MetaControllerAgent failed: {result3.error}", stage="MetaControllerAgent")
+            
+            style_params = self._safe_get(result3.output, "style_params", {})
+            
+            # === Conditional: dry_run ===
+            if dry_run or self.mode == Mode.DRY_RUN:
+                self.log.append({"event": "dry_run_complete"})
+                return {
+                    "status": "dry_run",
+                    "analysis": result3.output,
+                    "trace": self.execution_trace,
+                    "log": self.log
+                }
+            
+            # === Stage 4: StylerAgent ===
+            result4 = self._execute_with_retry(
+                self._run_styler_agent,
+                normalized_text,
+                style_params
+            )
+            results["StylerAgent"] = result4
+            self.execution_trace.append({
+                "agent": result4.agent, 
+                "success": result4.success, 
+                "output": result4.output,
+                "error": result4.error,
+                "timestamp": result4.timestamp
+            })
+            
+            if not result4.success:
+                raise LLMError(f"StylerAgent failed: {result4.error}")
+            
+            styled_text = self._safe_get(result4.output, "styled_text", normalized_text)
+            
+            # === Stage 5: SafetyAgent ===
+            result5 = self._run_safety_agent(styled_text)
+            results["SafetyAgent"] = result5
+            self.execution_trace.append({
+                "agent": result5.agent, 
+                "success": result5.success, 
+                "output": result5.output,
+                "error": result5.error,
+                "timestamp": result5.timestamp
+            })
+            
+            # Conditional: safety check
+            passed = self._safe_get(result5.output, "passed", True)
+            violations = self._safe_get(result5.output, "violations", [])
+            
+            if not passed:
+                self.log.append({
+                    "event": "safety_failed", 
+                    "violations": violations
+                })
+                logger.warning(f"Safety check failed: {violations}")
+                return {
+                    "status": "blocked",
+                    "reason": "safety_violation",
+                    "violations": violations,
+                    "trace": self.execution_trace,
+                    "log": self.log
+                }
+            
+            safe_text = self._safe_get(result5.output, "safe_text", styled_text)
+            
+            # === Stage 6: FormatterAgent ===
+            result6 = self._run_formatter_agent(safe_text, platform)
+            results["FormatterAgent"] = result6
+            self.execution_trace.append({
+                "agent": result6.agent, 
+                "success": result6.success, 
+                "output": result6.output,
+                "error": result6.error,
+                "timestamp": result6.timestamp
+            })
+            
+            final_output = self._safe_get(result6.output, "final_output", safe_text)
+            
+            self.log.append({
+                "event": "pipeline_complete", 
+                "output_length": len(final_output),
+                "timestamp": datetime.now().isoformat()
+            })
+            
+            self.stats["successful"] += 1
+            logger.info(f"Pipeline completed successfully, output length: {len(final_output)}")
+            
             return {
-                "status": "dry_run",
-                "analysis": result3.output,
+                "status": "success",
+                "output": final_output,
+                "analysis": {
+                    "topics": topics,
+                    "intent": intent,
+                    "style_params": style_params,
+                    "violations": violations
+                },
                 "trace": self.execution_trace,
                 "log": self.log
             }
-        
-        # === Stage 4: StylerAgent ===
-        result4 = self._run_styler_agent(
-            result1.output["normalized_text"],
-            result3.output["style_params"]
-        )
-        results["StylerAgent"] = result4
-        self.execution_trace.append({"agent": result4.agent, "success": result4.success, "output": result4.output, "timestamp": result4.timestamp})
-        
-        # === Stage 5: SafetyAgent ===
-        result5 = self._run_safety_agent(result4.output["styled_text"])
-        results["SafetyAgent"] = result5
-        self.execution_trace.append({"agent": result5.agent, "success": result5.success, "output": result5.output, "timestamp": result5.timestamp})
-        
-        # Conditional: safety check
-        if not result5.output["passed"]:
-            self.log.append({"event": "safety_failed", "violations": result5.output["violations"]})
+            
+        except LLMError as e:
+            self.stats["failed"] += 1
+            logger.error(f"LLM error: {e.message}")
             return {
-                "status": "blocked",
-                "reason": "safety_violation",
-                "violations": result5.output["violations"],
+                "status": "error",
+                "error": e.message,
+                "stage": e.stage,
+                "recoverable": e.recoverable,
                 "trace": self.execution_trace,
                 "log": self.log
             }
-        
-        # === Stage 6: FormatterAgent ===
-        result6 = self._run_formatter_agent(
-            result5.output["safe_text"],
-            platform
-        )
-        results["FormatterAgent"] = result6
-        self.execution_trace.append({"agent": result6.agent, "success": result6.success, "output": result6.output, "timestamp": result6.timestamp})
-        
-        self.log.append({"event": "pipeline_complete", "output_length": len(result6.output["final_output"])})
-        
-        return {
-            "status": "success",
-            "output": result6.output["final_output"],
-            "analysis": {
-                "topics": result2.output["topics"],
-                "intent": result2.output["intent"],
-                "style_params": result3.output["style_params"],
-                "violations": result5.output["violations"]
-            },
-            "trace": self.execution_trace,
-            "log": self.log
-        }
+        except BotError as e:
+            self.stats["failed"] += 1
+            logger.error(f"Bot error at {e.stage}: {e.message}")
+            return {
+                "status": "error",
+                "error": e.message,
+                "stage": e.stage,
+                "recoverable": e.recoverable,
+                "trace": self.execution_trace,
+                "log": self.log
+            }
+        except Exception as e:
+            self.stats["failed"] += 1
+            logger.error(f"Unexpected error: {e}", exc_info=True)
+            return {
+                "status": "error",
+                "error": str(e),
+                "stage": "unknown",
+                "trace": self.execution_trace,
+                "log": self.log
+            }
     
     # =============================
     # AGENT IMPLEMENTATIONS
     # =============================
     
-    def _run_intake_agent(self, text: str) -> AgentResult:
+    def _run_intake_agent(self, text: str) -> Dict:
         """Normalize input text and metadata."""
         # Basic cleaning
         normalized = text.strip().replace('\n\n\n', '\n\n')
@@ -236,18 +519,17 @@ class BotController:
         hebrew_chars = sum(1 for c in text if '\u0590' <= c <= '\u05ff')
         language = "he" if hebrew_chars > 3 else "en"
         
-        return AgentResult(
-            agent="IntakeAgent",
-            success=True,
-            output={
-                "normalized_text": normalized,
-                "language": language,
-                "metadata": {"timestamp": datetime.now().isoformat()}
-            }
-        )
+        return {
+            "normalized_text": normalized,
+            "language": language,
+            "metadata": {"timestamp": datetime.now().isoformat()}
+        }
     
-    def _run_classifier_agent(self, text: str) -> AgentResult:
+    def _run_classifier_agent(self, text: str) -> Dict:
         """Detect topic(s) and user intent."""
+        if not text:
+            return {"topics": ["crypto"], "intent": "engage", "confidence": 0.5}
+        
         text_lower = text.lower()
         
         # Topic detection
@@ -285,18 +567,14 @@ class BotController:
         intent = best_intent[0] if best_intent[1] > 0 else "engage"
         confidence = min(best_intent[1] / 3, 1.0)
         
-        return AgentResult(
-            agent="ClassifierAgent",
-            success=True,
-            output={
-                "topics": topics,
-                "intent": intent,
-                "confidence": confidence
-            }
-        )
+        return {
+            "topics": topics,
+            "intent": intent,
+            "confidence": confidence
+        }
     
     def _run_meta_controller_agent(self, topics: List[str], intent: str,
-                                   user_overrides: Dict = None) -> AgentResult:
+                                   user_overrides: Dict = None) -> Dict:
         """Select editorial intent and style parameters."""
         
         # Check user overrides first (HARD RULE: User override always wins)
@@ -310,21 +588,17 @@ class BotController:
                 }
                 if user_overrides["preset"] in presets:
                     frag, iron, agg, meme, myth = presets[user_overrides["preset"]]
-                    return AgentResult(
-                        agent="MetaControllerAgent",
-                        success=True,
-                        output={
-                            "editorial_intent": f"preset:{user_overrides['preset']}",
-                            "style_params": {
-                                "fragmentation": frag,
-                                "irony": iron,
-                                "aggression": agg,
-                                "meme_density": meme,
-                                "myth_layer": myth
-                            },
-                            "decision_trace": ["user_override", user_overrides["preset"]]
-                        }
-                    )
+                    return {
+                        "editorial_intent": f"preset:{user_overrides['preset']}",
+                        "style_params": {
+                            "fragmentation": frag,
+                            "irony": iron,
+                            "aggression": agg,
+                            "meme_density": meme,
+                            "myth_layer": myth
+                        },
+                        "decision_trace": ["user_override", user_overrides["preset"]]
+                    }
         
         # Default: CT behavior
         params = {
@@ -342,23 +616,20 @@ class BotController:
             params["myth_layer"] = 70
             params["fragmentation"] = 60
         
-        return AgentResult(
-            agent="MetaControllerAgent",
-            success=True,
-            output={
-                "editorial_intent": intent,
-                "style_params": params,
-                "decision_trace": ["default_ct", f"intent:{intent}"]
-            }
-        )
+        return {
+            "editorial_intent": intent,
+            "style_params": params,
+            "decision_trace": ["default_ct", f"intent:{intent}"]
+        }
     
-    def _run_styler_agent(self, text: str, params: Dict) -> AgentResult:
+    def _run_styler_agent(self, text: str, params: Dict) -> Dict:
         """Execute text transformation via LLM (MiniMax-2.1)."""
         # In real implementation, this would call the LLM with explicit params
-        # For now, return placeholder
+        # For now, return placeholder with basic transformations
+        
+        styled = text
         
         # Apply fragmentation
-        styled = text
         if params.get("fragmentation", 0) > 60:
             styled = styled.replace(" ", "\n")
         
@@ -369,13 +640,9 @@ class BotController:
             if params.get("meme_density", 0) > 60:
                 styled = f"{styled} 🔥"
         
-        return AgentResult(
-            agent="StylerAgent",
-            success=True,
-            output={"styled_text": styled}
-        )
+        return {"styled_text": styled}
     
-    def _run_safety_agent(self, text: str) -> AgentResult:
+    def _run_safety_agent(self, text: str) -> Dict:
         """Enforce safety anchors and anti-cringe rules."""
         violations = []
         
@@ -383,7 +650,7 @@ class BotController:
         absolutes = ["i know the truth", "i am certain", "this is absolute", "no doubt"]
         for abs in absolutes:
             if abs in text.lower():
-                violations.append(abs)
+                violations.append(f"absolute_claim:{abs}")
         
         # Add hyperbole marker if needed
         result = text
@@ -392,30 +659,32 @@ class BotController:
                 result = f"{result} 🔥"
                 violations.append("Added hyperbole marker")
         
-        passed = len([v for v in violations if v not in ["Added hyperbole marker"]]) == 0
+        # Count actual violations (not markers)
+        actual_violations = [v for v in violations if not v.startswith("Added")]
+        passed = len(actual_violations) == 0
         
-        return AgentResult(
-            agent="SafetyAgent",
-            success=True,
-            output={
-                "safe_text": result,
-                "violations": violations,
-                "passed": passed
-            }
-        )
+        return {
+            "safe_text": result,
+            "violations": violations,
+            "passed": passed
+        }
     
-    def _run_formatter_agent(self, text: str, platform: str) -> AgentResult:
+    def _run_formatter_agent(self, text: str, platform: str) -> Dict:
         """Adapt output to target platform."""
+        result = text
+        
         if platform == "twitter":
             # Short, ensure not too long
-            if len(text) > 280:
-                text = text[:277] + "..."
+            if len(result) > 280:
+                result = result[:277] + "..."
+        elif platform == "thread":
+            # Thread formatting (split if needed)
+            pass  # Thread logic would go here
+        elif platform == "markdown":
+            # Markdown formatting
+            pass  # Markdown logic would go here
         
-        return AgentResult(
-            agent="FormatterAgent",
-            success=True,
-            output={"final_output": text}
-        )
+        return {"final_output": result}
     
     # =============================
     # ACCESSOR METHODS
@@ -436,9 +705,14 @@ class BotController:
     def get_log(self) -> List[Dict]:
         """Return execution log."""
         return self.log
+    
+    def get_stats(self) -> Dict:
+        """Return execution statistics."""
+        return self.stats
 
 
 def main():
+    """CLI entry point."""
     import argparse
     
     parser = argparse.ArgumentParser(description="BotController - Editorial Pipeline Orchestrator")
@@ -448,6 +722,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Analyze only")
     parser.add_argument("--agents", action="store_true", help="List agents")
     parser.add_argument("--rules", action="store_true", help="Show hard rules")
+    parser.add_argument("--stats", action="store_true", help="Show statistics")
     
     args = parser.parse_args()
     
@@ -459,6 +734,10 @@ def main():
     
     if args.rules:
         print("\n".join(controller.get_hard_rules()))
+        return
+    
+    if args.stats:
+        print(json.dumps(controller.get_stats(), indent=2))
         return
     
     user_overrides = {"preset": args.preset} if args.preset else None
