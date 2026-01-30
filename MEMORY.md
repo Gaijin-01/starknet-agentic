@@ -1,13 +1,38 @@
-# Memory Summary (2026-01-29 UPDATE)
+# Memory Summary (2026-01-30 UPDATE)
 
 ## 🔧 Core Stack
 
 | Component | Status | Details |
 |-----------|--------|---------|
-| Clawdbot | ✅ Running | Gateway 18789, uptime ~3 days |
-| MiniMax-M2.1 | ✅ Default | 200k context |
+| Clawdbot | ✅ Running | Gateway 18789, uptime ~4 days |
+| MiniMax-M2.1 | ✅ Default | 200k context, dual keys |
 | Telegram | ✅ Connected | @Groove_Armada |
-| **Unified Orchestrator** | ✅ NEW | Combined routing + tier + execution |
+| EDITOR skill | ✅ NEW | Dual-key failover, LLM integration |
+
+## 🚀 Skill Consolidation Plan (2026-01-30)
+
+**Current: 20 skills → Target: 5 unified**
+
+| Unified Skill | Merges | Status | Priority |
+|---------------|--------|--------|----------|
+| **PUBLISHER** | post-generator, queue-manager, twitter-api, x-algorithm-optimizer | ⏳ Ready | Week 1 |
+| **INTELLIGENCE** | research, prices, crypto-trading, ct-intelligence | ⏳ Ready | Week 2 |
+| **EDITOR** | editor, multi-layer-style | ✅ DONE | - |
+| **SYSTEM** | system-manager, skill-evolver, adaptive-routing | ⏳ Ready | Week 3 |
+| **CORE** | claude-proxy, orchestrator, config, mcporter | ⏳ Ready | Week 4 |
+
+### Standalone (keep separate)
+- `camsnap` — hardware integration
+- `songsee` — media recognition
+
+### Backup Status
+- ✅ Git commit: `c9eb3a2` - "WIP: Before PUBLISHER consolidation"
+- ✅ Archive: `backups/clawd-20260130-095439.tar.gz`
+
+### Risks & Mitigations
+- Breaking changes → Keep old skills as aliases
+- Testing → Add integration tests first
+- Data loss → Backup before each merge
 
 ## 📊 System Status (2026-01-29)
 
