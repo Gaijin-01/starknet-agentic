@@ -90,7 +90,7 @@ Usage: `sessions_spawn task="..." label="..."`
 | Backup | 0 4 * | ✅ |
 | Log rotation | 0 0 * | ✅ |
 
-## 🐦 Bird/X Stack (Unchanged)
+## 🐦 Bird/X Stack (Updated 2026-01-30)
 
 **Persona**: SefirotWatch
 - Tone: minimal, cryptic, confident
@@ -105,6 +105,19 @@ Usage: `sessions_spawn task="..." label="..."`
 **Optimal Daily Mix**: 10 replies + 3 quotes + 1 thread + 2 posts
 
 **Peak Hours**: 6-9, 12-14, 18-21 UTC
+
+### 🎯 Ecosystem Accounts & Rules
+
+**@SlayOnStarknet ($SLAY)**
+- Ticker: $SLAY
+- Contract: 0x02ab526354a39e7f5d272f327fa94e757df3688188d4a92c6dc3623ab79894e2
+- Main pair: SLAY/STRK
+- Origin: Memecoin based on Eli Ben-Sasson (StarkWare CEO) awkwardly saying "slay" in viral Gen Z clip
+- Status: Among top/early Starknet memecoins with $BROTHER, $SCHIZODIO, $SISTER
+- Community: Still alive after 1+ year, small but persistent holders
+- Team: Added artist/devs, occasional NFT teases
+- **Action**: ALWAYS like content from Sefirot about ecosystem/Starknet
+- **Sefirot's catchphrase**: "its Slay Time!" + something smart but funny
 
 ## 🌐 Remote Interface
 
