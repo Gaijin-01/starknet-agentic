@@ -1,0 +1,77 @@
+# System Unified Configuration
+
+system:
+  skills:
+    default_enabled:
+      - prices
+      - research
+      - post-generator
+      - queue-manager
+      - style-learner
+      - adaptive-routing
+      - claude-proxy
+    optional:
+      - camsnap
+      - songsee
+      - mcporter
+  
+  memory:
+    backup_days: 7
+    max_backup_size_mb: 100
+    backup_dir: /home/wner/clawd/backups
+  
+  health:
+    check_skills: true
+    check_orchestrator: true
+    check_cron: true
+    check_disk: true
+    check_memory: true
+
+evolve:
+  severity_threshold: low  # low, medium, high
+  auto_apply: false
+  report_path: /home/wner/clawd/memory/
+  skills_dir: /home/wner/clawd/skills
+
+routing:
+  confidence_threshold: 0.6
+  fallback_skill: default
+  cache_ttl_seconds: 300
+  skills:
+    prices:
+      keywords:
+        - price
+        - курс
+        - стоимость
+        - coin
+        - token
+      priority: 10
+    
+    research:
+      keywords:
+        - research
+        - research
+        - найди
+        - search
+        - информация
+      priority: 8
+    
+    post-generator:
+      keywords:
+        - post
+        - tweet
+        - написать
+        - create
+        - gm
+      priority: 7
+    
+    ct-intelligence:
+      keywords:
+        - twitter
+        - ct
+        - crypto twitter
+        - sentiment
+      priority: 6
+    
+    default:
+      priority: 1
