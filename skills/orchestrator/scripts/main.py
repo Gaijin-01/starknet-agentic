@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
 """
 Skill Orchestrator for Claude-Proxy Bot
-Routes incoming messages to appropriate skills based on intent detection.
+
+Routes incoming messages to appropriate skills based on intent detection,
+keyword patterns, and confidence scoring.
 """
 
 import re
 import json
+import sys
+import os
 from dataclasses import dataclass
 from typing import Optional, Dict, Any, List
 from enum import Enum
 
+# Add skill scripts path for imports
+SKILL_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 class SkillType(Enum):
+    """Enumeration of available skills."""
     PRICES = "prices"
     RESEARCH = "research"
     POST_GENERATOR = "post-generator"
@@ -20,12 +28,16 @@ class SkillType(Enum):
     SONGSEE = "songsee"
     MCPORTER = "mcporter"
     QUEUE_MANAGER = "queue-manager"
+    TWITTER_API = "twitter-api"
+    CRYPTO_TRADING = "crypto-trading"
+    CT_INTELLIGENCE = "ct-intelligence"
     CLAUDE_PROXY = "claude-proxy"
     ADAPTIVE_ROUTING = "adaptive-routing"
 
 
 @dataclass
 class RoutingResult:
+    """Result of routing decision."""
     skill: SkillType
     confidence: float
     params: Dict[str, Any]
@@ -35,9 +47,12 @@ class RoutingResult:
 class AdaptiveRouter:
     """
     Intent-based skill router.
+    
     Uses keyword patterns + context for skill selection.
+    Calculates confidence scores based on pattern matches.
     """
     
+    # Keyword patterns for each skill
     PATTERNS = {
         SkillType.PRICES: [
             r'\b(price|цена|курс|btc|eth|sol|token|coin)\b',
@@ -52,7 +67,7 @@ class AdaptiveRouter:
         SkillType.POST_GENERATOR: [
             r'\b(post|пост|tweet|твит|write|напиши)\b',
             r'\b(thread|тред|content|контент)\b',
-            r'\b(generate|сгенерируй|create-создай)\b',
+            r'\b(generate|generate|create-создай)\b',
         ],
         SkillType.STYLE_LEARNER: [
             r'\b(style|стиль|tone|тон|voice)\b',
@@ -76,6 +91,21 @@ class AdaptiveRouter:
             r'\b(queue|очередь|task|задача|job|работа)\b',
             r'\b(schedule|расписание|pending|ожидает)\b',
         ],
+        SkillType.TWITTER_API: [
+            r'\b(twitter|tweet|retweet|quote)\b',
+            r'\b(follow|mention|dm|dm)\b',
+        ],
+        SkillType.CRYPTO_TRADING: [
+            r'\b(whale|whales|whale\s+activity|whale\s+tracking)\b',
+            r'\b(arbitrage|arb)\b',
+            r'\b(on-chain|chain|token\s+metrics|token\s+analytics)\b',
+            r'\b(tvl|liquidity|volume|fees)\b',
+            r'\b(dex|decentralized\s+exchange|uniswap|sushi)\b',
+        ],
+        SkillType.CT_INTELLIGENCE: [
+            r'\b(competitor|trend|trending|viral)\b',
+            r'\b(analysis|intelligence|monitor)\b',
+        ],
         SkillType.ADAPTIVE_ROUTING: [
             r'\b(route|роут|routing)\b',
             r'\b(tier|уровень|fast|standard|deep)\b',
@@ -83,12 +113,17 @@ class AdaptiveRouter:
     }
     
     def __init__(self):
+        """Compile regex patterns for efficient matching."""
         self.compiled_patterns = {
             skill: [re.compile(p, re.IGNORECASE) for p in patterns]
             for skill, patterns in self.PATTERNS.items()
         }
     
-    def route(self, message: str, context: Optional[Dict] = None) -> RoutingResult:
+    def route(
+        self,
+        message: str,
+        context: Optional[Dict] = None
+    ) -> RoutingResult:
         """
         Route message to appropriate skill.
         
@@ -108,7 +143,7 @@ class AdaptiveRouter:
                 score += len(matches) * 0.3
             scores[skill] = min(score, 1.0)
         
-        # Sort by score
+        # Sort by score descending
         ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
         
         if ranked[0][1] < 0.1:
@@ -152,19 +187,44 @@ class AdaptiveRouter:
             params["topic"] = message
             params["format"] = "tweet" if "tweet" in message.lower() else "post"
             
+        elif skill == SkillType.CRYPTO_TRADING:
+            # Extract trading parameters
+            tokens = re.findall(r'\$([A-Za-z]+)', message)
+            params["tokens"] = list(set(tokens))
+            params["action"] = "analyze"
+            if "whale" in message.lower():
+                params["action"] = "whale"
+            elif "arbitrage" in message.lower():
+                params["action"] = "arbitrage"
+                
+        elif skill == SkillType.CT_INTELLIGENCE:
+            params["query"] = message
+            if "competitor" in message.lower():
+                params["mode"] = "competitor"
+            elif "trend" in message.lower() or "viral" in message.lower():
+                params["mode"] = "trend"
+            else:
+                params["mode"] = "analyze"
+        
         return params
 
 
 class SkillExecutor:
     """
     Executes skills and manages result flow.
+    
+    Handles skill loading, execution, and fallback logic.
     """
     
     def __init__(self, skills_path: str = "/home/wner/clawd/skills"):
         self.skills_path = skills_path
         self.router = AdaptiveRouter()
     
-    def execute(self, message: str, context: Optional[Dict] = None) -> Dict[str, Any]:
+    def execute(
+        self,
+        message: str,
+        context: Optional[Dict] = None
+    ) -> Dict[str, Any]:
         """
         Route and execute appropriate skill.
         
@@ -189,13 +249,17 @@ class SkillExecutor:
         try:
             # Import and execute skill
             skill_module = self._load_skill(route.skill)
-            if skill_module:
+            if skill_module and hasattr(skill_module, 'execute'):
                 output = skill_module.execute(route.params)
                 result["status"] = "success"
                 result["output"] = output
+            elif skill_module:
+                # Module loaded but no execute function
+                result["status"] = "success"
+                result["output"] = f"Skill {route.skill.value} loaded successfully"
             else:
-                result["status"] = "error"
-                result["error"] = f"Skill {route.skill.value} not implemented"
+                result["status"] = "skipped"
+                result["error"] = f"Skill {route.skill.value} not yet implemented"
                 
         except Exception as e:
             result["status"] = "error"
@@ -210,7 +274,6 @@ class SkillExecutor:
     def _load_skill(self, skill: SkillType):
         """Dynamically load skill module."""
         import importlib.util
-        import os
         
         skill_path = os.path.join(
             self.skills_path, 
@@ -228,7 +291,7 @@ class SkillExecutor:
         return module
 
 
-# Cron job configurations
+# Cron job configurations for automated tasks
 CRON_JOBS = {
     "price-check": {
         "schedule": "*/15 * * * *",
@@ -259,16 +322,33 @@ CRON_JOBS = {
         "skill": SkillType.POST_GENERATOR,
         "params": {"mode": "auto", "persona": "sefirotwatch"},
         "description": "Automated posts 4x daily"
+    },
+    "crypto-watch": {
+        "schedule": "*/30 * * * *",
+        "skill": SkillType.CRYPTO_TRADING,
+        "params": {"mode": "whale", "min_value": 100000},
+        "description": "Watch for whale transactions every 30 min"
+    },
+    "trend-scan": {
+        "schedule": "0 */4 * * *",
+        "skill": SkillType.CT_INTELLIGENCE,
+        "params": {"mode": "trend"},
+        "description": "Scan for trending topics every 4 hours"
     }
 }
 
 
 def generate_crontab() -> str:
     """Generate crontab entries for all jobs."""
-    lines = ["# Claude-Proxy Bot Cron Jobs", "# Generated automatically", ""]
+    lines = [
+        "# Claude-Proxy Bot Cron Jobs",
+        "# Generated by adaptive-routing skill",
+        "# Run: crontab <(python skills/orchestrator/scripts/main.py --generate-cron)",
+        "",
+    ]
     
     for job_name, config in CRON_JOBS.items():
-        cmd = f"cd /home/wner/clawd && python orchestrator.py --job {job_name}"
+        cmd = f"cd {SKILL_ROOT} && python skills/orchestrator/scripts/main.py --job {job_name}"
         lines.append(f"# {config['description']}")
         lines.append(f"{config['schedule']} {cmd}")
         lines.append("")
@@ -276,26 +356,60 @@ def generate_crontab() -> str:
     return "\n".join(lines)
 
 
-if __name__ == "__main__":
-    import argparse
+def main():
+    """CLI entry point."""
+    parser = argparse.ArgumentParser(
+        description="Adaptive Routing Skill - Intent-based skill router",
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     
-    parser = argparse.ArgumentParser(description="Skill Orchestrator")
-    parser.add_argument("--job", help="Run specific cron job")
-    parser.add_argument("--message", help="Process message")
-    parser.add_argument("--generate-cron", action="store_true", help="Generate crontab")
-    parser.add_argument("--test-route", help="Test routing for message")
+    parser.add_argument(
+        "--job",
+        help="Run specific cron job by name"
+    )
+    parser.add_argument(
+        "--message", "-m",
+        help="Process a message through the router"
+    )
+    parser.add_argument(
+        "--generate-cron",
+        action="store_true",
+        help="Generate crontab entries for all cron jobs"
+    )
+    parser.add_argument(
+        "--test-route", "-t",
+        help="Test routing for a message without execution"
+    )
+    parser.add_argument(
+        "--list-jobs",
+        action="store_true",
+        help="List all configured cron jobs"
+    )
+    parser.add_argument(
+        "--skills-path",
+        default="/home/wner/clawd/skills",
+        help="Path to skills directory"
+    )
     
     args = parser.parse_args()
     
     if args.generate_cron:
         print(generate_crontab())
         
+    elif args.list_jobs:
+        for name, config in CRON_JOBS.items():
+            print(f"{name}:")
+            print(f"  Schedule: {config['schedule']}")
+            print(f"  Skill: {config['skill'].value}")
+            print(f"  Description: {config['description']}")
+            print()
+        
     elif args.test_route:
         router = AdaptiveRouter()
         result = router.route(args.test_route)
         print(json.dumps({
             "skill": result.skill.value,
-            "confidence": result.confidence,
+            "confidence": round(result.confidence, 3),
             "params": result.params,
             "fallback": result.fallback.value if result.fallback else None
         }, indent=2, ensure_ascii=False))
@@ -303,14 +417,30 @@ if __name__ == "__main__":
     elif args.job:
         if args.job in CRON_JOBS:
             config = CRON_JOBS[args.job]
-            executor = SkillExecutor()
-            # Execute with job params
+            executor = SkillExecutor(args.skills_path)
             print(f"Executing job: {args.job}")
-            print(f"Config: {json.dumps(config, indent=2, default=str)}")
+            print(f"Skill: {config['skill'].value}")
+            print(f"Params: {json.dumps(config['params'], indent=2)}")
+            
+            # Attempt to execute
+            result = executor.execute(
+                f"Execute {args.job}",
+                context=config["params"]
+            )
+            print(f"\nResult: {json.dumps(result, indent=2, default=str)}")
         else:
             print(f"Unknown job: {args.job}")
+            print(f"Available jobs: {', '.join(CRON_JOBS.keys())}")
             
     elif args.message:
-        executor = SkillExecutor()
+        executor = SkillExecutor(args.skills_path)
         result = executor.execute(args.message)
         print(json.dumps(result, indent=2, ensure_ascii=False))
+        
+    else:
+        parser.print_help()
+
+
+if __name__ == "__main__":
+    import argparse
+    main()

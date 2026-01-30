@@ -250,61 +250,108 @@ class MultiLayerStyleProcessor:
         }
 
 
+class StyleProcessorError(Exception):
+    """Base exception for style processor errors."""
+    pass
+
+
+class TopicClassificationError(StyleProcessorError):
+    """Raised when topic classification fails."""
+    pass
+
+
+class IntentDetectionError(StyleProcessorError):
+    """Raised when intent detection fails."""
+    pass
+
+
+class SafetyCheckError(StyleProcessorError):
+    """Raised when safety check fails."""
+    pass
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Multi-Layer Style Processor")
-    parser.add_argument("--text", help="Input text")
-    parser.add_argument("--topic", choices=[t.value for t in Topic], default="crypto")
-    parser.add_argument("--intent", choices=[i.value for i in Intent], default="engage")
-    parser.add_argument("--schizo", type=int, default=50, help="Schizo level 0-100")
-    parser.add_argument("--preset", choices=list(PRESETS.keys()), help="Use preset")
-    parser.add_argument("--fragmentation", type=int, help="Fragmentation 0-100")
-    parser.add_argument("--irony", type=int, help="Irony 0-100")
-    parser.add_argument("--aggression", type=int, help="Aggression 0-100")
-    parser.add_argument("--myth", type=int, help="Myth layer 0-100")
-    parser.add_argument("--meme", type=int, help="Meme density 0-100")
-    parser.add_argument("--platform", default="twitter", choices=["twitter", "thread", "longpost", "reply"])
-    parser.add_argument("--safety-check", help="Text to check safety")
-    parser.add_argument("--auto-topic", action="store_true", help="Auto detect topic")
-    
-    args = parser.parse_args()
-    
-    processor = MultiLayerStyleProcessor()
-    
-    if args.safety_check:
-        result = processor.safety_check(args.safety_check)
-        print(json.dumps(result, indent=2))
-        return
-    
-    if not args.text:
-        print("Error: --text required")
-        return
-    
-    # Get schizo params
-    if args.preset and args.preset in PRESETS:
-        schizo = PRESETS[args.preset]
-    else:
-        schizo = SchizoParams(
-            fragmentation=args.fragmentation or args.schizo,
-            irony=args.irony or args.schizo,
-            aggression=args.aggression or args.schizo,
-            myth_layer=args.myth or args.schizo,
-            meme_density=args.meme or args.schizo
-        )
-    
-    # Auto-detect topic
-    if args.auto_topic:
-        topics = processor.classify_topic(args.text)
-        topic = topics[0] if topics else Topic.CRYPTO
-    else:
-        topic = Topic(args.topic)
-    
-    # Auto-detect intent
-    intent = processor.detect_intent(args.text)
-    
-    # Process
-    result = processor.process(args.text, topic, intent, schizo, args.platform)
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+    try:
+        parser = argparse.ArgumentParser(description="Multi-Layer Style Processor")
+        parser.add_argument("--text", help="Input text")
+        parser.add_argument("--topic", choices=[t.value for t in Topic], default="crypto")
+        parser.add_argument("--intent", choices=[i.value for i in Intent], default="engage")
+        parser.add_argument("--schizo", type=int, default=50, help="Schizo level 0-100")
+        parser.add_argument("--preset", choices=list(PRESETS.keys()), help="Use preset")
+        parser.add_argument("--fragmentation", type=int, help="Fragmentation 0-100")
+        parser.add_argument("--irony", type=int, help="Irony 0-100")
+        parser.add_argument("--aggression", type=int, help="Aggression 0-100")
+        parser.add_argument("--myth", type=int, help="Myth layer 0-100")
+        parser.add_argument("--meme", type=int, help="Meme density 0-100")
+        parser.add_argument("--platform", default="twitter", choices=["twitter", "thread", "longpost", "reply"])
+        parser.add_argument("--safety-check", help="Text to check safety")
+        parser.add_argument("--auto-topic", action="store_true", help="Auto detect topic")
+        
+        args = parser.parse_args()
+        
+        processor = MultiLayerStyleProcessor()
+        
+        if args.safety_check:
+            try:
+                result = processor.safety_check(args.safety_check)
+                print(json.dumps(result, indent=2))
+            except Exception as e:
+                raise SafetyCheckError(f"Safety check failed: {e}")
+            return
+        
+        if not args.text:
+            print("Error: --text required")
+            return
+        
+        # Get schizo params
+        try:
+            if args.preset and args.preset in PRESETS:
+                schizo = PRESETS[args.preset]
+            else:
+                schizo = SchizoParams(
+                    fragmentation=args.fragmentation or args.schizo,
+                    irony=args.irony or args.schizo,
+                    aggression=args.aggression or args.schizo,
+                    myth_layer=args.myth or args.schizo,
+                    meme_density=args.meme or args.schizo
+                )
+        except Exception as e:
+            raise StyleProcessorError(f"Failed to create schizo params: {e}")
+        
+        # Auto-detect topic
+        try:
+            if args.auto_topic:
+                topics = processor.classify_topic(args.text)
+                topic = topics[0] if topics else Topic.CRYPTO
+            else:
+                topic = Topic(args.topic)
+        except Exception as e:
+            raise TopicClassificationError(f"Topic classification failed: {e}")
+        
+        # Auto-detect intent
+        try:
+            intent = processor.detect_intent(args.text)
+        except Exception as e:
+            raise IntentDetectionError(f"Intent detection failed: {e}")
+        
+        # Process
+        try:
+            result = processor.process(args.text, topic, intent, schizo, args.platform)
+            print(json.dumps(result, indent=2, ensure_ascii=False))
+        except Exception as e:
+            raise StyleProcessorError(f"Processing failed: {e}")
+            
+    except StyleProcessorError as e:
+        print(f"Style Processor Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except KeyboardInterrupt:
+        print("\nOperation cancelled by user")
+        sys.exit(0)
+    except Exception as e:
+        print(f"Unexpected error: {e}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
+    import sys
     main()

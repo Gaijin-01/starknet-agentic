@@ -11,8 +11,9 @@ import argparse
 import json
 from datetime import datetime
 
-# Add skill scripts to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add skill directory to path (parent of scripts/)
+SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, SKILL_DIR)
 
 from scripts.api import TwitterClient, get_client
 from scripts.post import TweetPoster

@@ -11,8 +11,9 @@ import argparse
 import json
 from datetime import datetime
 
-# Add skill scripts to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add skill directory to path (parent of scripts/)
+SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, SKILL_DIR)
 
 from scripts.metrics import OnChainMetrics, SyncOnChainMetrics
 from scripts.whale import WhaleTracker, SyncWhaleTracker
@@ -142,7 +143,7 @@ def main():
     arb_group.add_argument("--find", "-f", action="store_true", help="Find opportunities")
     
     arb_parser.add_argument("--quote", "-q", default="USDT", help="Quote token for analysis")
-    arb_parser.add_argument("--threshold", "-t", type=float, default=1.0, help="Min spread %")
+    arb_parser.add_argument("--threshold", "-t", type=float, default=1.0, help="Min spread %%")
     arb_parser.add_argument("--gas", "-g", type=float, default=20.0, help="Gas price in Gwei")
     arb_parser.add_argument("--limit", "-l", type=int, default=20, help="Max results")
     arb_parser.set_defaults(func=cmd_arbitrage)
