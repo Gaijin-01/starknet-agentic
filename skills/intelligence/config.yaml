@@ -1,0 +1,47 @@
+# Intelligence Unified Configuration
+
+search:
+  provider: "brave"  # brave, serper, duckduckgo
+  api_key_env: "BRAVE_API_KEY"
+  rate_limit: 100
+  cache_minutes: 60
+
+prices:
+  provider: "coingecko"
+  base_url: "https://api.coingecko.com/api/v3"
+  cache_minutes: 5
+  default_currency: "usd"
+  watchlist:
+    - "bitcoin"
+    - "ethereum"
+    - "starknet"
+    - "solana"
+    - "arbitrum"
+
+onchain:
+  providers:
+    - "dexscreener"
+    - "birdeye"
+  whale_threshold: 100000  # $100K+ transactions
+  cache_minutes: 15
+
+ct:
+  tracked_accounts:
+    - "@VitalikButerin"
+    - "@CryptoHayes"
+    - "@StarkWareLtd"
+    - "@Starknet"
+  sentiment_keywords:
+    bullish:
+      - "moon"
+      - "lfg"
+      - "bullish"
+      - "up only"
+      - "gm"
+    bearish:
+      - "dump"
+      - "rugged"
+      - "scam"
+      - "bearish"
+      - "rekt"
+  alert_threshold: 0.7  # Sentiment threshold for alerts
