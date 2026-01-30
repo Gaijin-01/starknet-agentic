@@ -1,0 +1,46 @@
+# Publisher Unified Configuration
+
+persona:
+  name: "SefirotWatch"
+  voice: "minimal"
+  emoji:
+    - "🐺"
+    - "🔥"
+  avg_words: 10
+  templates_path: "templates"
+
+scheduler:
+  base_dir: "post_queue"
+  subdirs:
+    - "ready"
+    - "posted"
+    - "failed"
+    - "drafts"
+  max_queue: 50
+  auto_post: false
+
+optimizer:
+  peak_hours: [8, 9, 13, 21]
+  avoid_hours: [2, 3, 4, 5]
+  engagement_window: 300
+  early_reply_window: 30
+
+twitter:
+  api_key_env: "TWITTER_API_KEY"
+  api_secret_env: "TWITTER_API_SECRET"
+  access_token_env: "TWITTER_ACCESS_TOKEN"
+  access_secret_env: "TWITTER_ACCESS_TOKEN_SECRET"
+
+templates:
+  gm:
+    - "gm {emoji} {topic}"
+    - "{emoji} gm {topic}"
+  news:
+    - "{headline}. bullish if true. {emoji}"
+    - "{headline}. {emoji}"
+  price:
+    - "${token} {direction} {percent}% {emoji}"
+    - "{token} at {price}. {emoji}"
+  insight:
+    - "{point}"
+    - "{point} {emoji}"
