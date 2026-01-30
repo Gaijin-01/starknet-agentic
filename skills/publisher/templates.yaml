@@ -1,0 +1,35 @@
+# Content templates for publisher skill
+
+templates:
+  gm:
+    - "gm {emoji} {topic}"
+    - "{emoji} gm {topic}"
+    - "gm. {emoji}"
+    - "{emoji} gm"
+
+  news:
+    - "{headline}. bullish if true. {emoji}"
+    - "{headline}. {emoji}"
+    - "{headline} 🔥"
+
+  price:
+    - "${token} {direction} {percent}% {emoji}"
+    - "{token} at {price}. {emoji}"
+    - "{token}: {price} ({direction}{percent}%) {emoji}"
+
+  insight:
+    - "{point}"
+    - "{point} {emoji}"
+    - "{emoji} {point}"
+
+  thread:
+    - "{hook}"
+    - "1/ {point1}"
+    - "2/ {point2}"
+    - "3/ {point3}"
+    - "🧵 {emoji}"
+
+  reply:
+    - "{response}"
+    - "{response} {emoji}"
+    - "{emoji} {response}"
