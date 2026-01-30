@@ -1,0 +1,51 @@
+# Core Unified Configuration
+
+claude_proxy:
+  llm:
+    primary: "minimax"
+    fallback:
+      - openai
+      - ollama
+  autonomous:
+    max_tasks_per_hour: 20
+    focus_areas:
+      - error-fixing
+      - skill-improvement
+      - documentation
+      - monitoring
+  reasoning:
+    self_reflect: true
+    verbose: true
+  code_gen:
+    validate_syntax: true
+  self_improve:
+    dry_run: true
+    backup: true
+
+orchestrator:
+  confidence_threshold: 0.6
+  fallback_skill: claude-proxy
+  skills_path: /home/wner/clawd/skills
+  cache_ttl: 300
+
+mcp:
+  config_path: ~/.config/clawdbot/mcporter.yaml
+  daemon:
+    auto_start: false
+    timeout: 30
+  servers:
+    enabled: []
+    disabled: []
+
+config:
+  config_dir: ~/.config/clawdbot
+  loaders:
+    - json
+    - yaml
+    - env
+  default_config: config.json
+
+system:
+  skills_path: /home/wner/clawd/skills
+  memory_path: /home/wner/clawd/memory
+  cron_path: /home/wner/clawd/crontab.conf
