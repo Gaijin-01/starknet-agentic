@@ -5,16 +5,31 @@ Defines WHAT the bot does, WHEN, and HOW agents interact.
 
 Based on bot.controller.js specification.
 Includes comprehensive error handling with retry logic.
+LLM integration via MiniMax API.
 """
 
 import json
 import logging
 import time
+import httpx
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
 from enum import Enum
 from datetime import datetime
 from pathlib import Path
+
+# LLM Configuration with Dual Key Failover
+LLM_BASE_URL = "https://api.minimax.io/anthropic/v1/messages"
+LLM_MODEL = "MiniMax-M2.1"
+
+# Dual keys from Gateway config (2026-01-30)
+LLM_KEYS = {
+    "primary": "sk-cp-Y6dI0qnh9jWg_dY6wdNMoLyQyEeT8forPrE701R9dd35YG2liv2bvbEq1H4tEmD6JJk0tZh3b0pEW2UN1ECjlwXPowePAKuVoHReh6v_S4zQqrQvtvik8Zs",
+    "secondary": "sk-api-3ktqRHdx04SqZxt1ViooHTwmqscojyphek6W9JyelPlJox3wghXs4EZMGmpcH2ZTl44MHPsqWA9n1nupo1h2NURq6mFygLeaILRrvSobqRb7np8YqGnVzNc"
+}
+
+# Current active key (for failover tracking)
+_current_key = {"name": "primary", "consecutive_failures": 0}
 
 # Configure logging
 LOG_DIR = Path("/home/wner/clawd/logs")
@@ -622,22 +637,93 @@ class BotController:
             "decision_trace": ["default_ct", f"intent:{intent}"]
         }
     
+    def _call_llm(self, prompt: str, temperature: float = 0.7) -> str:
+        """Call MiniMax LLM API."""
+        try:
+            headers = {
+                "Authorization": f"Bearer {LLM_API_KEY}",
+                "Content-Type": "application/json",
+                "X-API-Version": "2023-01-01"
+            }
+            payload = {
+                "model": LLM_MODEL,
+                "messages": [
+                    {"role": "user", "content": prompt}
+                ],
+                "max_tokens": 500,
+                "temperature": temperature
+            }
+            
+            with httpx.post(LLM_BASE_URL, headers=headers, json=payload, timeout=30.0) as resp:
+                if resp.status_code == 200:
+                    data = resp.json()
+                    return data.get("content", data.get("completion", ""))
+                else:
+                    raise LLMError(f"API error: {resp.status_code} - {resp.text[:100]}")
+                    
+        except httpx.HTTPError as e:
+            raise LLMError(f"HTTP error: {str(e)}")
+    
     def _run_styler_agent(self, text: str, params: Dict) -> Dict:
         """Execute text transformation via LLM (MiniMax-2.1)."""
-        # In real implementation, this would call the LLM with explicit params
-        # For now, return placeholder with basic transformations
         
-        styled = text
+        frag = params.get("fragmentation", 50)
+        irony = params.get("irony", 50)
+        agg = params.get("aggression", 50)
+        meme = params.get("meme_density", 50)
+        myth = params.get("myth_layer", 50)
         
-        # Apply fragmentation
-        if params.get("fragmentation", 0) > 60:
-            styled = styled.replace(" ", "\n")
+        # Build style description
+        style_desc = []
+        if frag > 70:
+            style_desc.append("fragmented, with line breaks")
+        elif frag > 50:
+            style_desc.append("slightly fragmented")
         
-        # Apply meme markers
-        if params.get("meme_density", 0) > 40:
-            if "gm" in styled.lower() and "🐺" not in styled:
-                styled = f"{styled} 🐺"
-            if params.get("meme_density", 0) > 60:
+        if irony > 60:
+            style_desc.append("ironic and self-aware")
+        elif irony > 40:
+            style_desc.append("lightly ironic")
+        
+        if agg > 70:
+            style_desc.append("aggressive and confrontational")
+        elif agg > 50:
+            style_desc.append("assertive")
+        else:
+            style_desc.append("calm and measured")
+        
+        if meme > 60:
+            style_desc.append("meme-heavy with crypto slang")
+        elif meme > 40:
+            style_desc.append("occasionally meme-flavored")
+        
+        if myth > 60:
+            style_desc.append("prophetic and mythic")
+        elif myth > 40:
+            style_desc.append("narrative-driven")
+        
+        style_str = ", ".join(style_desc) if style_desc else "neutral"
+        
+        prompt = f"""Transform this text in CT (Crypto Twitter) style:
+
+Original: "{text}"
+
+Style requirements: {style_str}
+Keep the same meaning but adapt tone and formatting.
+
+Return ONLY the transformed text, no explanations."""
+
+        try:
+            styled = self._call_llm(prompt)
+            # Fallback to original if LLM returns empty
+            if not styled or len(styled) < 5:
+                styled = text
+            logger.info(f"LLM styled text: {styled[:50]}...")
+        except LLMError as e:
+            logger.warning(f"LLM failed, using fallback: {e}")
+            # Fallback to original with minimal transformations
+            styled = text
+            if meme > 40:
                 styled = f"{styled} 🔥"
         
         return {"styled_text": styled}

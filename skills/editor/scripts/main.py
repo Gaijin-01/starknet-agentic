@@ -4,17 +4,34 @@ EDITOR — Autonomous Text Style Engine
 Meta-controller for autonomous text processing.
 
 Pipeline:
-1. Input Intake → 2. Topic+Intent Classifier → 3. MetaController → 
+1. Input Intake → 2. Topic+Intent Classifier → 3. MetaController →
 4. Styler Engine → 5. Safety & Anchors → 6. Output Formatter
+
+Style presets: normal, ct, shizo, v-myaso, attack, meme, sefirot
+Dual-key failover for LLM calls (2026-01-30)
 """
 
 import json
 import re
 import argparse
+import httpx
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
 from enum import Enum
 from datetime import datetime
+
+# LLM Configuration with Dual Key Failover
+LLM_BASE_URL = "https://api.minimax.io/anthropic/v1/messages"
+LLM_MODEL = "MiniMax-M2.1"
+
+# Dual keys from Gateway config
+LLM_KEYS = {
+    "primary": "sk-cp-Y6dI0qnh9jWg_dY6wdNMoLyQyEeT8forPrE701R9dd35YG2liv2bvbEq1H4tEmD6JJk0tZh3b0pEW2UN1ECjlwXPowePAKuVoHReh6v_S4zQqrQvtvik8Zs",
+    "secondary": "sk-api-3ktqRHdx04SqZxt1ViooHTwmqscojyphek6W9JyelPlJox3wghXs4EZMGmpcH2ZTl44MHPsqWA9n1nupo1h2NURq6mFygLeaILRrvSobqRb7np8YqGnVzNc"
+}
+
+# Track active key for failover
+_active_key = {"name": "primary", "failures": 0}
 
 
 class Topic(Enum):
@@ -206,34 +223,132 @@ class Editor:
         
         return explanations
     
+    # ============ LLM CLIENT WITH DUAL KEY FAILOVER ============
+    def _call_llm(self, prompt: str, max_tokens: int = 300) -> Optional[str]:
+        """
+        Call LLM with dual key failover.
+        Tries primary key first, falls back to secondary on failure.
+        """
+        global _active_key
+        
+        for attempt in range(2):
+            key_name = _active_key["name"]
+            api_key = LLM_KEYS[key_name]
+            
+            try:
+                headers = {
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                }
+                payload = {
+                    "model": LLM_MODEL,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": max_tokens,
+                    "temperature": 0.7
+                }
+                
+                with httpx.post(LLM_BASE_URL, headers=headers, json=payload, timeout=30.0) as resp:
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        content = data.get("content") or data.get("completion", "")
+                        if content:
+                            # Success - reset failure count
+                            _active_key["failures"] = 0
+                            return content
+            
+            except Exception as e:
+                pass
+            
+            # Key failed - switch to other key
+            _active_key["name"] = "secondary" if key_name == "primary" else "primary"
+            _active_key["failures"] += 1
+        
+        return None
+    
     # ============ STAGE 4: STYLER ENGINE ============
     def stage4_styler(self, text: str, params: StyleParams) -> str:
-        """Apply transformations with selected params."""
+        """
+        Transform text using rule-based + LLM-assisted style params.
+        Uses LLM for significant transformations (schizo level > 50).
+        """
         result = text
         
-        # Fragmentation
-        if params.fragmentation > 50:
-            words = result.split()
-            new_words = []
-            for i, w in enumerate(words):
-                new_words.append(w)
-                if params.fragmentation > 70 and i > 0 and i % 4 == 0:
-                    new_words.append("\n")
-                elif params.fragmentation > 50 and i > 0 and i % 6 == 0:
-                    new_words.append(" ")
-            result = " ".join(new_words)
+        # For low transformation levels, use simple rules
+        transformation_level = (
+            (params.fragmentation - 50) + 
+            (params.irony - 50) + 
+            (params.aggression - 50) + 
+            (params.meme_density - 50) + 
+            (params.myth_layer - 50)
+        ) / 5
         
-        # Meme density
-        if params.meme_density > 40:
-            memes = []
-            if "gm" in result.lower() and "gm" not in result:
-                memes.append("🐺")
+        # Use LLM for significant transformations
+        if transformation_level > 20:
+            style_desc = []
+            if params.fragmentation > 60:
+                style_desc.append("fragmented with short phrases and line breaks")
+            if params.irony > 60:
+                style_desc.append("ironic and self-aware")
+            elif params.irony > 40:
+                style_desc.append("lightly ironic")
+            if params.aggression > 70:
+                style_desc.append("aggressive and confrontational")
+            elif params.aggression > 50:
+                style_desc.append("assertive and direct")
             if params.meme_density > 60:
-                memes.extend(["🔥", "lfg"])
-            for meme in memes:
-                if meme not in result:
-                    result = f"{result} {meme}"
+                style_desc.append("meme-heavy with crypto slang (lfg, gm, 🔥, 🐺)")
+            if params.myth_layer > 60:
+                style_desc.append("prophetic and mythic tone")
+            
+            style_str = ", ".join(style_desc) if style_desc else "neutral CT style"
+            
+            prompt = f"""Transform this text in CT (Crypto Twitter) style:
+
+Original: "{text}"
+
+Style requirements: {style_str}
+Keep the same meaning but adapt tone.
+Keep it short (under 280 chars).
+Return ONLY the transformed text, no quotes or explanations."""
+
+            llm_result = self._call_llm(prompt, max_tokens=200)
+            if llm_result and len(llm_result) > 5:
+                result = llm_result
         
+        # Rule-based transformations (fallback + enhancements)
+        # Fragmentation
+        if params.fragmentation > 70:
+            words = result.split()
+            lines = [" ".join(words[i:i+4]) for i in range(0, len(words), 4)]
+            result = "\n".join(lines)
+        elif params.fragmentation > 50:
+            result = result.replace(", ", ",\n")
+
+        # Meme density
+        if params.meme_density > 60:
+            if not any(m in result for m in ["🔥", "🐺", "lfg", "gm"]):
+                result = f"{result} 🔥 lfg 🐺"
+        elif params.meme_density > 40:
+            if not any(m in result for m in ["🔥", "lfg"]):
+                result = f"{result} 🔥"
+
+        # Aggression emphasis
+        if params.aggression > 70 and len(result) < 100:
+            result = result.upper()
+        elif params.aggression > 50:
+            result = "obviously... " + result if "obviously" not in result.lower() else result
+
+        # Irony markers
+        if params.irony > 60:
+            if "obviously" not in result.lower():
+                result = f"obviously... {result}"
+
+        # Myth layer
+        if params.myth_layer > 70:
+            result = f"the future already happened.\n{result}"
+        elif params.myth_layer > 50:
+            result = f"they don't understand yet.\n{result}"
+
         return result
     
     # ============ STAGE 5: SAFETY & ANCHORS ============
