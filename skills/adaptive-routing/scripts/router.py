@@ -23,6 +23,11 @@ class SkillType(Enum):
     QUEUE_MANAGER = "queue-manager"
     CLAUDE_PROXY = "claude-proxy"
     EDITOR = "editor"
+    # System & Orchestration (added 2026-01-30)
+    SKILL_EVOLVER = "skill-evolver"
+    SYSTEM_MANAGER = "system-manager"
+    WORKFLOW = "workflow"
+    ORCHESTRATOR = "orchestrator"
 
 
 @dataclass
@@ -110,6 +115,31 @@ SKILL_CONFIGS: Dict[SkillType, SkillConfig] = {
         keywords=["edit", "редактируй", "rewrite", "перепиши", "style", "стиль", "transform", "transform"],
         patterns=[r'(edit|rewrite|transform)'],
         priority=7
+    ),
+    # System & Orchestration (added 2026-01-30)
+    SkillType.SKILL_EVOLVER: SkillConfig(
+        name="skill-evolver",
+        keywords=["evolve", "improve", "optimize", "analyze", "audit", "fix", "refactor", "рефактор", "улучши"],
+        patterns=[r'(evolve|improve|optimize|analyze|audit|fix|refactor)'],
+        priority=8
+    ),
+    SkillType.SYSTEM_MANAGER: SkillConfig(
+        name="system-manager",
+        keywords=["system", "status", "health", "process", "cron", "gateway", "service", "restart"],
+        patterns=[r'(system|status|health|process|cron|gateway|service|restart)'],
+        priority=7
+    ),
+    SkillType.WORKFLOW: SkillConfig(
+        name="workflow",
+        keywords=["workflow", "pipeline", "step", "stage", "automation", "automate", "flow"],
+        patterns=[r'(workflow|pipeline|step|stage|automation|automate)'],
+        priority=6
+    ),
+    SkillType.ORCHESTRATOR: SkillConfig(
+        name="orchestrator",
+        keywords=["orchestrate", "coordinate", "route", "route", "dispatch", "delegate", "route"],
+        patterns=[r'(orchestrate|coordinate|route|dispatch|delegate)'],
+        priority=6
     ),
 }
 
