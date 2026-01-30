@@ -127,7 +127,59 @@ config = ConfigLoader()
 value = config.get("llm.primary")
 ```
 
-## Configuration
+## Moltbot Configuration
+
+### Sub-Agent Allowlist (CRITICAL)
+
+**Correct Structure:**
+```json
+{
+  "agents": {
+    "defaults": {
+      "model": { "primary": "minimax/MiniMax-M2.1" },
+      "maxConcurrent": 4,
+      "subagents": { "maxConcurrent": 8 }
+    },
+    "list": [
+      {
+        "id": "main",
+        "subagents": {
+          "allowAgents": ["*"]  // ✅ CORRECT: list[].subagents.allowAgents
+        }
+      }
+    ]
+  }
+}
+```
+
+**Common Mistakes:**
+- ❌ `agents.defaults.subagents.allowlist` — WRONG path
+- ❌ `agents.list[].subagents.allowAgents` with wrong key name
+- Missing `agents.list` array entirely
+
+**To allow specific agents only:**
+```json
+"allowAgents": ["evolver", "researcher", "poster"]
+```
+
+### ⚠️ Doctor --fix Warning
+
+Running `moltbot doctor --fix` can **reset custom configs** to defaults.
+
+**Before running `--fix`:**
+1. Backup config: `cp ~/.moltbot/moltbot.json ~/.moltbot/moltbot.json.backup`
+2. Review changes diff before applying
+
+**Recovery if config is reset:**
+```bash
+# Restore from backup
+cp ~/.moltbot/moltbot.json.backup ~/.moltbot/moltbot.json
+
+# Or use the backup script (see below)
+./scripts/backup_moltbot_config.sh
+```
+
+## Skill Configuration
 
 `config.yaml`:
 ```yaml
