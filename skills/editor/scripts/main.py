@@ -11,6 +11,9 @@ Style presets: normal, ct, shizo, v-myaso, attack, meme, sefirot
 Dual-key failover for LLM calls (2026-01-30)
 """
 
+#!/usr/bin/env python3
+"""EDITOR - Autonomous Text Style Engine for content processing."""
+
 import json
 import re
 import argparse

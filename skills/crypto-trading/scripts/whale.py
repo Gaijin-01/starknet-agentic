@@ -5,6 +5,9 @@ Monitors large transactions, wallet movements,
 and institutional activity on-chain.
 """
 
+#!/usr/bin/env python3
+"""Whale tracking module for on-chain transaction monitoring."""
+
 import os
 import json
 import logging

@@ -5,6 +5,9 @@ Fetches and analyzes on-chain data from various DEX APIs
 including TVL, volume, fees, and liquidity metrics.
 """
 
+#!/usr/bin/env python3
+"""On-chain metrics fetching module for DEX data."""
+
 import os
 import json
 import logging

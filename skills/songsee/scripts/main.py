@@ -5,6 +5,9 @@ songsee skill - Audio visualization tool.
 Generates spectrograms and feature panels from audio files.
 """
 
+#!/usr/bin/env python3
+"""Audio visualization skill using songsee tool."""
+
 import argparse
 import json
 import subprocess

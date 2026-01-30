@@ -3,6 +3,9 @@
 CT Intelligence - Competitor tracking and sentiment analysis for Crypto Twitter.
 """
 
+#!/usr/bin/env python3
+"""CT Intelligence skill for competitor tracking and sentiment analysis."""
+
 import argparse
 import sys
 from pathlib import Path

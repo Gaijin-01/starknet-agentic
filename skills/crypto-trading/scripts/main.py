@@ -5,6 +5,9 @@ Crypto Trading Skill - Main Entry Point.
 CLI interface for on-chain metrics, whale tracking, and arbitrage detection.
 """
 
+#!/usr/bin/env python3
+"""Crypto Trading Skill - Main entry point for CLI operations."""
+
 import sys
 import os
 import argparse

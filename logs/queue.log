@@ -82,3 +82,21 @@
   "job": "queue-cleanup",
   "schedule": "0 */6 * * *"
 }
+{
+  "message": "queue cleanup max_age=24h",
+  "skill": "queue-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 5,
+  "params": {
+    "raw_message": "queue cleanup max_age=24h"
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] {list,add,status,gc} ...\nmain.py: error: argument command: invalid choice: '{\"raw_message\": \"queue cleanup max_age=24h\"}' (choose from 'list', 'add', 'status', 'gc')\n"
+  },
+  "error": null,
+  "job": "queue-cleanup",
+  "schedule": "0 */6 * * *"
+}

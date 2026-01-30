@@ -5,6 +5,9 @@ intelligence - Unified intelligence gathering skill
 Merges: research, prices, crypto-trading, ct-intelligence
 """
 
+#!/usr/bin/env python3
+"""Unified intelligence gathering skill combining multiple data sources."""
+
 import argparse
 import json
 import subprocess

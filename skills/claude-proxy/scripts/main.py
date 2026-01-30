@@ -4,6 +4,9 @@ claude-proxy main.py - Autonomous AI agent
 Works as Claude's backup when he's unavailable
 """
 
+#!/usr/bin/env python3
+"""Claude-Proxy autonomous AI agent main module."""
+
 import argparse
 import json
 import logging

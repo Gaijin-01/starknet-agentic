@@ -4,6 +4,9 @@ X Algorithm Optimizer v2.0
 Based on xAI's open-source x-algorithm repository
 """
 
+#!/usr/bin/env python3
+"""X Algorithm Optimizer - Analyze and optimize content for X/Twitter."""
+
 import json
 from datetime import datetime
 

@@ -5,6 +5,9 @@ Provides high-level functions for posting tweets
 with support for media, polls, and scheduling.
 """
 
+#!/usr/bin/env python3
+"""Tweet posting module with high-level posting functions."""
+
 import os
 import time
 import json

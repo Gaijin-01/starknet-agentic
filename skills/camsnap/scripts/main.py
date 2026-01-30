@@ -5,6 +5,9 @@ camsnap skill - Camera frame/clip capture tool.
 Wraps the camsnap CLI for Clawdbot integration.
 """
 
+#!/usr/bin/env python3
+"""Camera capture skill wrapper for Clawdbot integration."""
+
 import argparse
 import json
 import subprocess

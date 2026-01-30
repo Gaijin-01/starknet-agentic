@@ -5,6 +5,9 @@ Detects price discrepancies across DEXs
 for potential arbitrage opportunities.
 """
 
+#!/usr/bin/env python3
+"""Arbitrage detection module for cross-DEX opportunities."""
+
 import os
 import json
 import logging

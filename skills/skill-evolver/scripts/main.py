@@ -5,6 +5,9 @@ Skill Evolver - CLI Interface.
 Analyzes and improves skills.
 """
 
+#!/usr/bin/env python3
+"""Skill Evolver CLI - Analyze and improve skills."""
+
 import sys
 import os
 import argparse

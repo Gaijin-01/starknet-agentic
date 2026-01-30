@@ -5,6 +5,9 @@ mcporter skill - MCP server management tool.
 Wraps the mcporter CLI for Clawdbot integration.
 """
 
+#!/usr/bin/env python3
+"""MCP server management skill for Clawdbot integration."""
+
 import argparse
 import json
 import subprocess

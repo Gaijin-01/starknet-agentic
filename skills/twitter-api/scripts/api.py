@@ -5,6 +5,9 @@ Handles authentication, API requests, and rate limiting
 for Twitter/X operations.
 """
 
+#!/usr/bin/env python3
+"""Twitter API v2 client for X/Twitter operations."""
+
 import os
 import time
 import json

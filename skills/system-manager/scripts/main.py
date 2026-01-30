@@ -4,6 +4,9 @@ System Manager for Clawdbot
 Manages skills, memory, and services via voice/text commands.
 """
 
+#!/usr/bin/env python3
+"""System Manager for Clawdbot - Skills, memory, and service management."""
+
 import argparse
 import json
 import subprocess

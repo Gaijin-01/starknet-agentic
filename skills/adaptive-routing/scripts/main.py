@@ -4,6 +4,9 @@ CLI Interface for Adaptive Routing Skill.
 Provides command-line tools for routing testing and management.
 """
 
+#!/usr/bin/env python3
+"""Adaptive routing skill CLI interface."""
+
 import sys
 import json
 import argparse

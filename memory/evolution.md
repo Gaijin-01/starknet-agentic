@@ -1,10 +1,10 @@
 # Skill Evolution Report — 2026-01-30
 
 ## Summary
-- **Skills Analyzed**: 18
-- **Average Score**: 88.2/100
-- **Issues Found**: 24
-- **Critical**: 1 | **High**: 2 | **Medium**: 8 | **Low**: 13
+- **Skills Analyzed**: 19
+- **Average Score**: 91.2/100
+- **Issues Found**: 18
+- **Critical**: 0 | **High**: 2 | **Medium**: 5 | **Low**: 11
 
 ## Skill Scores
 
@@ -25,24 +25,19 @@
 | editor | 86 | ✅ Healthy |
 | system-manager | 86 | ✅ Healthy |
 | mcporter | 85 | ✅ Healthy |
+| multi-layer-style | 85 | ✅ Healthy |
 | songsee | 85 | ✅ Healthy |
-| multi-layer-style | 70 | ⚠️ Needs Work |
-| __pycache__ | 0 | ❌ Critical |
-
-## Critical Issues
-- **__pycache__**: Missing SKILL.md
+| intelligence | 65 | ⚠️ Needs Work |
+| publisher | 65 | ⚠️ Needs Work |
 
 ## High Priority Issues
-- **__pycache__**: No scripts directory
-- **multi-layer-style**: No error handling in scripts
+- **intelligence**: No scripts directory
+- **publisher**: No scripts directory
 
 ## Medium Priority Issues
-- **__pycache__**: No code examples in documentation
 - **crypto-trading**: main.py: No error handling in file with multiple functions
 - **ct-intelligence**: tracker.py: No error handling in file with multiple functions
 - **ct-intelligence**: sentiment.py: No error handling in file with multiple functions
-- **editor**: main.py: No error handling in file with multiple functions
-- **multi-layer-style**: main.py: No error handling in file with multiple functions
 - **system-manager**: Missing workflow section
 - **twitter-api**: main.py: No error handling in file with multiple functions
 
@@ -59,6 +54,5 @@
 - **prices**: Add error handling to main.py
 
 ## Next Actions
-- [ ] Fix: __pycache__ - Missing SKILL.md
-- [ ] Fix: __pycache__ - No scripts directory
-- [ ] Fix: multi-layer-style - No error handling in scripts
+- [ ] Fix: intelligence - No scripts directory
+- [ ] Fix: publisher - No scripts directory

@@ -5,6 +5,9 @@ Post Generator Skill - CLI Interface.
 Generates social media posts using style profiles.
 """
 
+#!/usr/bin/env python3
+"""Post Generator Skill - CLI entry point for post generation."""
+
 import sys
 import os
 import argparse
