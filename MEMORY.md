@@ -1,13 +1,14 @@
-# Memory Summary (2026-01-30 UPDATE)
+# Memory Summary (2026-01-31 UPDATE)
 
 ## 🔧 Core Stack
 
 | Component | Status | Details |
 |-----------|--------|---------|
-| Clawdbot | ✅ Running | Gateway 18789, uptime ~4 days |
+| Clawdbot | ✅ Running | Gateway 18789, uptime ~5 days |
 | MiniMax-M2.1 | ✅ Default | 200k context, dual keys |
 | Telegram | ✅ Connected | @Groove_Armada |
 | EDITOR skill | ✅ NEW | Dual-key failover, LLM integration |
+| **starknet-privacy** | ✅ NEW | ZK shielded pool, compiled Sierra v1 |
 
 ## 🚀 Skill Consolidation Plan (2026-01-30)
 
@@ -24,6 +25,7 @@
 ### Standalone (keep separate)
 - `camsnap` — hardware integration
 - `songsee` — media recognition
+- `starknet-privacy` — ZK shielded pool for Starknet
 
 ### Backup Status
 - ✅ Git commit: `c9eb3a2` - "WIP: Before PUBLISHER consolidation"
@@ -51,6 +53,8 @@
 | songsee | ✅ | ✅ main.py (NEW) | Ready |
 | **editor** | ✅ NEW | ✅ main.py, bot_controller.py, config.json | NEW |
 | **system-manager** | ✅ | ✅ SKILL.md, scripts/main.py | Ready |
+| **starknet-privacy** | ✅ | ✅ SKILL.md, contracts, scripts | Ready |
+| **prices** | ✅ | ✅ prices.py | 100/100 |
 
 **Average Score**: 65.1 → 85+ (after medium priority fixes)
 
