@@ -6,18 +6,16 @@ Scans for price differences and sends Telegram alerts
 import asyncio
 import os
 import sys
-from datetime import datetime
 from dataclasses import dataclass
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
     import aiohttp
-    from telegram import Bot
 except ImportError:
-    print("Install requirements: pip install aiohttp python-telegram-bot")
+    print("Install requirements: pip install aiohttp")
     sys.exit(1)
 
 
@@ -212,51 +210,43 @@ class ArbitrageScanner:
         return sorted(opportunities, key=lambda x: x.profit_usd, reverse=True)
 
 
-class TelegramAlert:
-    """Send arbitrage alerts to Telegram"""
+class ConsoleAlert:
+    """Output arbitrage alerts to console (Moltbot delivers to Telegram)"""
     
-    def __init__(self, bot_token: str, chat_id: str):
-        self.bot = Bot(token=bot_token)
-        self.chat_id = chat_id
+    def __init__(self):
+        pass
     
-    async def send_opportunities(self, opportunities: List[ArbitrageOpportunity]):
-        """Send arbitrage opportunities to Telegram"""
+    def send_opportunities(self, opportunities: List[ArbitrageOpportunity]):
+        """Output arbitrage opportunities to stdout"""
         if not opportunities:
-            await self.bot.send_message(
-                chat_id=self.chat_id,
-                text="🔍 Scan complete: No arbitrage opportunities found."
-            )
+            print("🔍 Scan complete: No arbitrage opportunities found.")
             return
         
-        # Send each opportunity
+        # Output each opportunity
         for opp in opportunities[:5]:  # Max 5 per scan
             message = self.format_opportunity(opp)
-            await self.bot.send_message(
-                chat_id=self.chat_id,
-                text=message,
-                parse_mode="Markdown"
-            )
+            print(message)
     
     def format_opportunity(self, opp: ArbitrageOpportunity) -> str:
-        """Format opportunity as Telegram message"""
+        """Format opportunity as message"""
         emoji_profit = "💰" if opp.profit_usd > 5 else "🪙"
         emoji_conf = "🎯" if opp.confidence > 0.7 else "🤔"
         
         message = f"""
-{emoji_profit} *ARBITRAGE SIGNAL*
+{emoji_profit} ARBITRAGE SIGNAL
 ━━━━━━━━━━━━━━━━━━━━━━
-📈 *PROFIT:* ${opp.profit_usd:.2f} ({opp.spread_percent:.2f}%)
-{emoji_conf} *CONFIDENCE:* {opp.confidence*100:.0f}%
-📊 *PAIR:* {opp.pair}
+📈 PROFIT: ${opp.profit_usd:.2f} ({opp.spread_percent:.2f}%)
+{emoji_conf} CONFIDENCE: {opp.confidence*100:.0f}%
+📊 PAIR: {opp.pair}
 
-🔄 *PATH*
+🔄 PATH
 {opp.dex_a}: ${opp.price_a:.4f}
 {opp.dex_b}: ${opp.price_b:.4f}
 
-🎯 *ACTION*
+🎯 ACTION
 {opp.direction}
 
-📝 *EXECUTE:*
+📝 EXECUTE:
 1. Buy on {'lower' if opp.price_a < opp.price_b else 'higher'} DEX
 2. Sell on {'higher' if opp.price_a < opp.price_b else 'lower'} DEX
 """
@@ -266,8 +256,6 @@ class TelegramAlert:
 async def run_scan():
     """Main scan function"""
     # Load config from environment
-    bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
     min_profit_percent = float(os.getenv("ARBITRAGE_MIN_PROFIT", "0.3"))
     min_profit_usd = float(os.getenv("ARBITRAGE_MIN_USD", "1.0"))
     
@@ -289,14 +277,11 @@ async def run_scan():
     for opp in opportunities[:5]:
         print(f"   {opp.pair}: {opp.dex_a} → {opp.dex_b}: ${opp.profit_usd:.2f} ({opp.spread_percent:.2f}%)")
     
-    # Send to Telegram if configured
-    if bot_token and chat_id:
-        print("📨 Sending to Telegram...")
-        alert = TelegramAlert(bot_token, chat_id)
-        await alert.send_opportunities(opportunities)
-        print("✅ Alert sent")
-    else:
-        print("⚠️ Telegram not configured (set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID)")
+    # Output alerts (Moltbot delivers to Telegram)
+    print("\n--- ALERTS ---")
+    alert = ConsoleAlert()
+    alert.send_opportunities(opportunities)
+    print("--- END ---")
 
 
 def main():
