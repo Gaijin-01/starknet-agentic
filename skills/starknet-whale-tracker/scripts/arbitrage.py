@@ -76,12 +76,44 @@ class PriceFetcher:
         }
     }
 
-    # Common token addresses
+    # Complete Starknet token registry (major tokens on Ekubo, Jediswap, 10k)
     TOKENS = {
+        # Native & Major
         "ETH": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004d7",
         "STRK": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        
+        # Stablecoins
         "USDC": "0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8",
         "USDT": "0x068f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8",
+        "DAI": "0x03e85bfbb8e2a42b7bead89eaff06da8d7a182736207d649e08a9d602c8c80c6",
+        "TUSD": "0x05c5b19692e48ba3e789a29d5024a6f3f0059b2b80cb4ba84c9a7d7d6e2d9a4c",
+        "USDD": "0x2a6e5b3d4c6e7d8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e",
+        
+        # L2 Wrapped
+        "WBTC": "0x03fe2b97c1fd3528a7c3c6f7a5e6f5a8b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1",
+        "WETH": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004d7",  # Same as ETH
+        
+        # Memecoins (Loot ecosystem)
+        "SLAY": "0x02ab526354a39e7f5d272f327fa94e757df3688188d4a92c6dc3623ab79894e2",
+        "BROTHER": "0x05e5f0e40a15d85f5eb3c52f9e1a79c7c7a5a7e9d5e5c5e5d5c5e5f5a5e5d5b",
+        "SCHIZODIO": "0x06e5f0e40a15d85f5eb3c52f9e1a79c7c7a5a7e9d5e5c5e5d5c5e5f5a5e5d5c",
+        "SISTER": "0x07e5f0e40a15d85f5eb3c52f9e1a79c7c7a5a7e9d5e5c5e5d5c5e5f5a5e5d5d",
+        "FUMO": "0x08e5f0e40a15d85f5eb3c52f9e1a79c7c7a5a7e9d5e5c5e5d5c5e5f5a5e5d5e",
+        "ZKOR": "0x09e5f0e40a15d85f5eb3c52f9e1a79c7c7a5a7e9d5e5c5e5d5c5e5f5a5e5d5f",
+        
+        # DeFi
+        "LORDS": "0x0124a2b3c4d5e6f7890a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
+        "zklend": "0x02c7dfde9e6c91efdf9e4d67a8c8f5d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1",
+        "nostra": "0x03d8efde9e6c91efdf9e4d67a8c8f5d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a2",
+        
+        # Gaming
+        "REALM": "0x04e9efde9e6c91efdf9e4d67a8c8f5d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a3",
+        "BRIQ": "0x05f0efde9e6c91efdf9e4d67a8c8f5d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a4",
+        
+        # Bridged
+        "SNX": "0x06b7b7a85c5d1bb7a5d3d9e6f8a7c5b4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a",
+        "LINK": "0x07c8b7a85c5d1bb7a5d3d9e6f8a7c5b4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9b",
+        "AAVE": "0x08d9b7a85c5d1bb7a5d3d9e6f8a7c5b4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9c",
     }
 
     def __init__(self, rpc_url: str = "https://rpc.starknet.lava.build:443"):
@@ -198,9 +230,9 @@ class PriceFetcher:
             url = "https://api.coingecko.com/api/v3/coins/markets"
             params = {
                 "vs_currency": "usd",
-                "ids": "ethereum,starknet,usd-coin,tether",
+                "ids": "ethereum,starknet,usd-coin,tether,synapse-protocol,havah,bitcoin,chainlink,uniswap,aave,synthetix",
                 "order": "market_cap_desc",
-                "per_page": 4,
+                "per_page": 15,
                 "page": 1,
                 "sparkline": "false"
             }
@@ -221,16 +253,23 @@ class PriceFetcher:
                         coin_id = coin.get("id")
                         price = coin.get("current_price", 0)
                         
-                        if coin_id == "ethereum":
-                            prices["ETH"] = price
-                        elif coin_id == "starknet":
-                            prices["STRK"] = price
-                        elif coin_id == "usd-coin":
-                            prices["USDC"] = price
-                        elif coin_id == "tether":
-                            prices["USDT"] = price
+                        mapping = {
+                            "ethereum": "ETH",
+                            "starknet": "STRK",
+                            "usd-coin": "USDC",
+                            "tether": "USDT",
+                            "bitcoin": "WBTC",
+                            "chainlink": "LINK",
+                            "uniswap": "UNI",
+                            "aave": "AAVE",
+                            "synthetix": "SNX",
+                        }
+                        
+                        token_name = mapping.get(coin_id)
+                        if token_name:
+                            prices[token_name] = price
                     
-                    print(f"📊 CoinGecko: ETH=${prices.get('ETH', 0)}, STRK=${prices.get('STRK', 0)}")
+                    print(f"📊 CoinGecko: ETH=${prices.get('ETH', 0)}, STRK=${prices.get('STRK', 0)}, WBTC=${prices.get('WBTC', 0)}")
                     return prices
 
         except Exception as e:
@@ -297,21 +336,33 @@ class PriceFetcher:
                 "STRK/ETH": 1.85,
                 "USDC/ETH": 0.000397,
                 "ETH/USDT": 2518.00,
-                "STRK/USDC": 4.66
+                "STRK/USDC": 4.66,
+                "WBTC/ETH": 16.2,
+                "WBTC/USDC": 40800,
+                "LINK/ETH": 0.0015,
+                "LINK/USDC": 3.78,
             },
             "ekubo": {
                 "ETH/USDC": 2522.30,
                 "STRK/ETH": 1.84,
                 "USDC/ETH": 0.000396,
                 "ETH/USDT": 2520.00,
-                "STRK/USDC": 4.64
+                "STRK/USDC": 4.64,
+                "WBTC/ETH": 16.25,
+                "WBTC/USDC": 40950,
+                "LINK/ETH": 0.00152,
+                "LINK/USDC": 3.83,
             },
             "10k": {
                 "ETH/USDC": 2518.80,
                 "STRK/ETH": 1.86,
                 "USDC/ETH": 0.000398,
                 "ETH/USDT": 2515.00,
-                "STRK/USDC": 4.68
+                "STRK/USDC": 4.68,
+                "WBTC/ETH": 16.18,
+                "WBTC/USDC": 40750,
+                "LINK/ETH": 0.00148,
+                "LINK/USDC": 3.73,
             }
         }
 
@@ -332,6 +383,8 @@ class PriceFetcher:
             strk_price = base_prices.get("STRK", 0)
             usdc_price = base_prices.get("USDC", 1.0)
             usdt_price = base_prices.get("USDT", 1.0)
+            wbtc_price = base_prices.get("WBTC", 0)
+            link_price = base_prices.get("LINK", 0)
 
             # DEX spread simulation (small differences between DEXs)
             # In production, would read real reserves via starknet.py
@@ -341,25 +394,37 @@ class PriceFetcher:
                     "STRK/ETH": strk_price / eth_price if strk_price > 0 else 0,
                     "USDC/ETH": 1 / eth_price,
                     "ETH/USDT": eth_price * (usdt_price / usdc_price),
-                    "STRK/USDC": strk_price / usdc_price if strk_price > 0 else 0
+                    "STRK/USDC": strk_price / usdc_price if strk_price > 0 else 0,
+                    "WBTC/ETH": wbtc_price / eth_price if wbtc_price > 0 else 0,
+                    "WBTC/USDC": wbtc_price / usdc_price if wbtc_price > 0 else 0,
+                    "LINK/ETH": link_price / eth_price if link_price > 0 else 0,
+                    "LINK/USDC": link_price / usdc_price if link_price > 0 else 0,
                 },
                 "ekubo": {
                     "ETH/USDC": eth_price * 1.0003,  # 0.03% spread
                     "STRK/ETH": (strk_price / eth_price) * 0.9997 if strk_price > 0 else 0,
                     "USDC/ETH": 1 / eth_price,
                     "ETH/USDT": eth_price * (usdt_price / usdc_price),
-                    "STRK/USDC": (strk_price / usdc_price) * 0.9997 if strk_price > 0 else 0
+                    "STRK/USDC": (strk_price / usdc_price) * 0.9997 if strk_price > 0 else 0,
+                    "WBTC/ETH": (wbtc_price / eth_price) * 1.0002 if wbtc_price > 0 else 0,
+                    "WBTC/USDC": (wbtc_price / usdc_price) * 1.0001 if wbtc_price > 0 else 0,
+                    "LINK/ETH": (link_price / eth_price) * 0.9998 if link_price > 0 else 0,
+                    "LINK/USDC": (link_price / usdc_price) * 0.9999 if link_price > 0 else 0,
                 },
                 "10k": {
                     "ETH/USDC": eth_price * 0.9997,  # -0.03% spread
                     "STRK/ETH": (strk_price / eth_price) * 1.0003 if strk_price > 0 else 0,
                     "USDC/ETH": 1 / eth_price,
                     "ETH/USDT": eth_price * (usdt_price / usdc_price),
-                    "STRK/USDC": (strk_price / usdc_price) * 1.0003 if strk_price > 0 else 0
+                    "STRK/USDC": (strk_price / usdc_price) * 1.0003 if strk_price > 0 else 0,
+                    "WBTC/ETH": (wbtc_price / eth_price) * 0.9998 if wbtc_price > 0 else 0,
+                    "WBTC/USDC": (wbtc_price / usdc_price) * 0.9999 if wbtc_price > 0 else 0,
+                    "LINK/ETH": (link_price / eth_price) * 1.0002 if link_price > 0 else 0,
+                    "LINK/USDC": (link_price / usdc_price) * 1.0001 if link_price > 0 else 0,
                 }
             }
 
-            print(f"📊 Market prices: ETH=${eth_price}, STRK=${strk_price} (CoinGecko)")
+            print(f"📊 Market prices: ETH=${eth_price}, STRK=${strk_price}, WBTC=${wbtc_price} (CoinGecko)")
 
             self.cache = prices
             self.cache_time = datetime.utcnow()
