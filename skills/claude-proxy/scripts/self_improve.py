@@ -195,6 +195,15 @@ Generate a comprehensive SKILL.md following this structure:
         if config_path.exists():
             config = config_path.read_text()[:2000]
         
+        # Check if any providers are available
+        providers = self.llm.check_providers()
+        working_providers = [k for k, v in providers.items() if v.get('available', False)]
+
+        if not working_providers:
+            logger.warning(f"No LLM providers available for {skill_name}, using fallback analysis")
+            # Fallback: use basic structural analysis without LLM
+            return self._basic_analysis(skill_name, skill_path, skill_md, main_script)
+
         # Ask LLM for analysis
         prompt = self.ANALYSIS_PROMPT.format(
             skill_name=skill_name,
@@ -203,24 +212,15 @@ Generate a comprehensive SKILL.md following this structure:
             main_script=main_script or "(No scripts found)",
             config=config
         )
-        
+
         response = self.llm.complete(
             messages=[{'role': 'user', 'content': prompt}],
             system="You are a code quality expert. Analyze thoroughly and provide actionable feedback."
         )
-        
+
         if not response.success:
-            logger.error(f"Analysis failed: {response.error}")
-            return SkillAnalysis(
-                name=skill_name,
-                path=str(skill_path),
-                score=0,
-                issues=[{'severity': 'high', 'description': f'Analysis failed: {response.error}'}],
-                improvements=[],
-                documentation_quality=0,
-                code_quality=0,
-                test_coverage=0
-            )
+            logger.warning(f"LLM analysis failed for {skill_name}, using fallback")
+            return self._basic_analysis(skill_name, skill_path, skill_md, main_script)
         
         # Parse LLM response
         analysis = self._parse_analysis(response.content)
@@ -486,9 +486,139 @@ Generate a comprehensive SKILL.md following this structure:
         
         shutil.copytree(backup_dir, skill_path)
         logger.info(f"Restored {skill_name} from {backup_dir}")
-        
+
         return True
-    
+
+    def _basic_analysis(self, skill_name: str, skill_path: Path,
+                        skill_md: str, main_script: str) -> SkillAnalysis:
+        """
+        Basic structural analysis without LLM.
+
+        Falls back to this when LLM providers are unavailable.
+        Uses simple heuristics to assess skill quality.
+        """
+        issues = []
+        improvements = []
+        doc_quality = 50
+        code_quality = 50
+
+        # Check SKILL.md
+        if not skill_md or len(skill_md.strip()) < 10:
+            issues.append({
+                'severity': 'high',
+                'category': 'documentation',
+                'description': 'SKILL.md is missing or empty',
+                'location': 'SKILL.md'
+            })
+            improvements.append({
+                'priority': 'high',
+                'type': 'documentation',
+                'description': 'Create SKILL.md with overview, workflow, and examples'
+            })
+        else:
+            doc_quality = 70
+            if '## Overview' not in skill_md:
+                issues.append({
+                    'severity': 'medium',
+                    'category': 'documentation',
+                    'description': 'SKILL.md missing Overview section',
+                    'location': 'SKILL.md'
+                })
+            if '## Workflow' not in skill_md and '## Usage' not in skill_md:
+                issues.append({
+                    'severity': 'medium',
+                    'category': 'documentation',
+                    'description': 'SKILL.md missing Workflow/Usage section',
+                    'location': 'SKILL.md'
+                })
+
+        # Check scripts
+        if skill_path is None:
+            issues.append({
+                'severity': 'high',
+                'category': 'structure',
+                'description': 'Skill path is missing',
+                'location': skill_name
+            })
+            return SkillAnalysis(
+                name=skill_name,
+                path="unknown",
+                score=0,
+                issues=issues,
+                improvements=improvements,
+                documentation_quality=0,
+                code_quality=0,
+                test_coverage=0
+            )
+
+        scripts_dir = skill_path / "scripts"
+        if not scripts_dir.exists():
+            issues.append({
+                'severity': 'high',
+                'category': 'structure',
+                'description': 'scripts/ directory is missing',
+                'location': 'scripts/'
+            })
+        else:
+            scripts = list(scripts_dir.glob("*.py"))
+            if not scripts:
+                issues.append({
+                    'severity': 'high',
+                    'category': 'structure',
+                    'description': 'No Python scripts found',
+                    'location': 'scripts/'
+                })
+            else:
+                code_quality = 60
+                for script in scripts:
+                    content = script.read_text()
+                    # Basic checks
+                    if '"""' not in content and "'''" not in content:
+                        issues.append({
+                            'severity': 'low',
+                            'category': 'code',
+                            'description': f'{script.name} missing docstring',
+                            'location': script.name
+                        })
+                    if 'except' not in content and 'try:' in content:
+                        issues.append({
+                            'severity': 'medium',
+                            'category': 'code',
+                            'description': f'{script.name} has try without except',
+                            'location': script.name
+                        })
+
+        # Check references
+        refs_dir = skill_path / "references"
+        if not refs_dir.exists():
+            improvements.append({
+                'priority': 'low',
+                'type': 'structure',
+                'description': 'Create references/ directory for configs'
+            })
+
+        # Calculate score
+        score = 100
+        for issue in issues:
+            if issue['severity'] == 'high':
+                score -= 20
+            elif issue['severity'] == 'medium':
+                score -= 10
+            else:
+                score -= 5
+        score = max(0, min(100, score))
+
+        return SkillAnalysis(
+            name=skill_name,
+            path=str(skill_path),
+            score=score,
+            issues=issues,
+            improvements=improvements,
+            documentation_quality=doc_quality,
+            code_quality=code_quality,
+            test_coverage=0
+        )
+
     def _parse_analysis(self, content: str) -> Dict:
         """Parse LLM analysis response."""
         import re

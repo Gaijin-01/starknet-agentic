@@ -442,12 +442,31 @@ class LLMClient:
         """Get usage statistics."""
         return self.stats
     
-    def check_providers(self) -> Dict[str, bool]:
-        """Check availability of all providers."""
-        return {
-            name: provider.is_available()
-            for name, provider in self.providers.items()
-        }
+    def check_providers(self) -> Dict[str, Dict]:
+        """Check availability of all providers with detailed status."""
+        result = {}
+        for name, provider in self.providers.items():
+            available = provider.is_available()
+            # Determine configured status
+            if hasattr(provider, 'api_key'):
+                has_key = bool(provider.api_key)
+                if name == 'minimax':
+                    # MiniMax is always "configured" via clawdbot
+                    status = 'configured' if available else 'unavailable'
+                else:
+                    status = 'configured' if has_key else 'not_configured'
+            else:
+                status = 'available' if available else 'unavailable'
+
+            result[name] = {
+                'available': available,
+                'status': status
+            }
+        return result
+
+    def get_working_providers(self) -> List[str]:
+        """Get list of working provider names."""
+        return [name for name, p in self.providers.items() if p.is_available()]
 
 
 # Convenience function
