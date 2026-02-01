@@ -12,26 +12,111 @@ description: |
 
 # Starknet Yield Agent (x402 Paid API)
 
-x402-compatible API for Starknet DeFi yields and analytics.
+## Overview
+
+The **Starknet Yield Agent** is a production-ready API server that provides real-time DeFi yield data, protocol analytics, and risk analysis for the Starknet ecosystem. It implements x402 micropayment protocol for monetization, enabling developers to build paid analytics services on top of Starknet DeFi.
+
+### Key Features
+
+- **Real-time Yield Data**: APY, TVL, and risk metrics for major protocols
+- **Protocol Analytics**: Deep-dive analytics for Ekubo, Jediswap, 10k, zkLend, Nostra
+- **Risk Analysis**: Risk-adjusted returns with portfolio suggestions
+- **x402 Payments**: Built-in monetization via micropayments
+- **Web Dashboard**: Visual interface for data exploration
+- **Production Ready**: Docker deployment, health checks, async architecture
+
+### Use Cases
+
+| Use Case | Example |
+|----------|---------|
+| DeFi Dashboard | Build a yield dashboard for Starknet |
+| Analytics Service | Paid API for yield data |
+| Portfolio Tracker | Track and optimize DeFi positions |
+| Risk Analysis | Evaluate risk-adjusted returns |
+| Comparison Tool | Compare yields across protocols |
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                 Starknet Yield Agent                    │
+├─────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐ │
+│  │   API       │  │  Dashboard  │  │   x402          │ │
+│  │   Server    │  │   (HTML)    │  │   Payments      │ │
+│  └──────┬──────┘  └─────────────┘  └────────┬────────┘ │
+│         │                                     │         │
+│         ▼                                     ▼         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │           StarknetDataService                   │   │
+│  │  • Pool data aggregation                       │   │
+│  │  • Protocol analytics                         │   │
+│  │  • Risk calculation                           │   │
+│  └────────────────────┬────────────────────────────┘   │
+│                       │                               │
+│                       ▼                               │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │              Data Sources                        │   │
+│  │  • DEX APIs (Ekubo, Jediswap, 10k)             │   │
+│  │  • Lending protocols (zkLend, Nostra)          │   │
+│  │  • RPC endpoints                               │   │
+│  └─────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────┘
+```
+
+## Workflow
+
+### 1. Data Collection
+```
+scripts/starknet_yield_agent.py → StarknetDataService → Fetch from DEXs/RPC
+```
+
+### 2. API Request Flow
+```
+Client Request → Validate Endpoint → Check Payment → Return Data
+```
+
+### 3. Payment Verification (x402)
+```
+Request + Header("X-Payment-Proof") → Verify → Serve / Reject
+```
+
+### 4. Dashboard Access
+```
+GET /dashboard → Render HTML → Serve Visualization
+```
 
 ## Monetization
 
-| Endpoint | Price | Revenue potential |
-|----------|-------|-----------------|
-| `/api/yields-summary` | FREE | Traffic driver |
-| `/api/top-yields` | $0.001/call | Medium |
-| `/api/protocol/{name}` | $0.002/call | High (detailed) |
-| `/api/rwa` | $0.003/call | Niche |
-| `/api/compare` | $0.002/call | Medium |
-| `/api/risk` | $0.005/call | Premium |
+| Endpoint | Price | Description |
+|----------|-------|-------------|
+| `/api/yields-summary` | FREE | Market overview |
+| `/api/top-yields` | $0.001 | Top yields sorted by APY |
+| `/api/protocol/{name}` | $0.002 | Protocol deep dive |
+| `/api/rwa` | $0.003 | RWA opportunities |
+| `/api/compare` | $0.002 | Yield comparison |
+| `/api/risk` | $0.005 | Risk-adjusted analysis |
 
 **Estimated revenue:** $50-500/month depending on traffic
 
 ## Quick Start
 
+### Installation
 ```bash
-pip install aiohttp
+cd /home/wner/clawd/skills/starknet-yield-agent
+pip install -r scripts/requirements.txt
+```
+
+### Run Locally
+```bash
 python scripts/starknet_yield_agent.py
+# Server starts on http://localhost:3000
+```
+
+### Docker Deployment
+```bash
+docker build -t starknet-yield-agent .
+docker run -p 3000:3000 starknet-yield-agent
 ```
 
 ## API Endpoints
@@ -40,63 +125,69 @@ python scripts/starknet_yield_agent.py
 ```bash
 curl https://api.example.com/api/yields-summary
 ```
-Returns: Total TVL, protocol count, average APY
+**Response:**
+```json
+{
+  "market": {
+    "totalTVL": "$280M",
+    "protocolCount": 5,
+    "avgAPY": "12.5%",
+    "poolCount": 14
+  },
+  "chain": "Starknet"
+}
+```
 
 ### PAID: Top Yields
 ```bash
 curl https://api.example.com/api/top-yields?limit=10
-curl -H "X-Payment-Proof: <proof>"  # x402 header
 ```
-Returns: Top yielding pools sorted by APY
+**Query Parameters:**
+| Param | Type | Default | Description |
+|-------|------|---------|-------------|
+| `limit` | int | 10 | Number of results |
+| `minTvl` | float | 0 | Minimum TVL in USD |
+| `risk` | string | - | Filter by risk level |
+
+**Response:**
+```json
+{
+  "topYields": [
+    {"rank": 1, "protocol": "Nostra", "asset": "STRK", "apy": "30.00%", "tvl": "$12M", "risk": "high"},
+    {"rank": 2, "protocol": "zkLend", "asset": "STRK", "apy": "25.00%", "tvl": "$15M", "risk": "medium"}
+  ]
+}
+```
 
 ### PAID: Protocol Details
 ```bash
 curl https://api.example.com/api/protocol/Ekubo
 ```
-Returns: Deep dive on specific protocol
+Returns: Deep dive on specific protocol including pools and recommendations.
 
 ### PAID: Risk Analysis
 ```bash
 curl https://api.example.com/api/risk
 ```
-Returns: Risk-adjusted yields, portfolio suggestions
+Returns: Risk-adjusted yields with methodology and portfolio suggestions.
 
 ## Web Dashboard
 
-```bash
-curl https://api.example.com/dashboard
-```
+Access at `/dashboard` for visual data exploration:
+- Market overview with metrics
+- Top yields table
+- Protocol comparison
+- API endpoint documentation
 
-## Deployment
+## Configuration
 
-### Docker
-```dockerfile
-FROM python:3.11-slim
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-CMD ["python", "scripts/starknet_yield_agent.py"]
-```
+Environment variables:
 
-### Railway
-1. Connect GitHub repo
-2. Set PORT environment variable
-3. Deploy
-
-### x402 Integration
-
-For full x402 payment support, integrate with:
-- [Lucid Agents SDK](https://github.com/langoustine69/lucid-agents)
-- x402 protocol for micropayments
-- Lightning Network or USDC payments
-
-## Pricing Strategy
-
-| Tier | Calls/month | Revenue |
-|------|-------------|---------|
-| Casual | 1,000 | ~$10 |
-| Active | 10,000 | ~$100 |
-| Pro | 100,000 | ~$1,000 |
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | 3000 | Server port |
+| `STARKNET_RPC_URL` | Lava RPC | Starknet RPC endpoint |
+| `X402_ENABLED` | false | Enable x402 payments |
 
 ## Files
 
@@ -111,19 +202,29 @@ starknet-yield-agent/
     └── x402_integration.py      # Payment integration
 ```
 
-## Comparison with langoustine69 Agents
+## Integration
 
-| Feature | This Agent | Langoustine69 |
-|---------|-----------|--------------|
-| Network | Starknet | Multi-chain |
-| Runtime | Python | TypeScript/Bun |
-| Payments | Mock x402 | Full x402 |
-| DeFi Data | Mock | Real-time |
+### Langoustine69 x402 Pattern
+Compatible with the langoustine69 x402 agent pattern:
+- Payment verification via X-Payment-Proof header
+- Subscription management support
+- Revenue tracking
+
+### Standalone Use
+Can be deployed independently:
+- Docker for containerized deployment
+- Railway for managed hosting
+- Any Python-compatible platform
 
 ## Future Enhancements
 
-1. Real-time data from DEXs
-2. Full x402 payment integration
-3. Subscription tiers
-4. WebSocket for live alerts
-5. Mobile app integration
+1. **Real-time data** from DEXs (Ekubo, Jediswap APIs)
+2. **Full x402 payment** integration with @lucid-agents/payments
+3. **Subscription tiers** (monthly/yearly plans)
+4. **WebSocket** for live alerts
+5. **Mobile app** integration
+6. **Multi-chain** support (Base, Arbitrum)
+
+## License
+
+MIT

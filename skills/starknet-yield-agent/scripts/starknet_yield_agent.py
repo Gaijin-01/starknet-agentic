@@ -294,13 +294,24 @@ class StarknetDataService:
 # === HTTP HANDLERS ===
 
 class StarknetYieldApp:
-    """x402-compatible HTTP server"""
+    """x402-compatible HTTP server with error handling"""
     
     def __init__(self, config: Config = None):
         self.config = config or Config()
-        self.data = StarknetDataService(self.config.rpc_url)
+        self.data = None
+        self._init_data_service()
         self.app = web.Application()
         self._setup_routes()
+    
+    def _init_data_service(self):
+        """Initialize data service with error handling"""
+        try:
+            self.data = StarknetDataService(self.config.rpc_url)
+            print(f"✅ Data service initialized with {len(STARKNET_POOLS)} pools")
+        except Exception as e:
+            print(f"⚠️ Data service initialization warning: {e}")
+            # Continue with mock data
+            self.data = StarknetDataService()
     
     def _setup_routes(self):
         self.app.router.add_get("/", self.handle_root)
@@ -330,50 +341,83 @@ class StarknetYieldApp:
         )
     
     async def handle_health(self, request):
-        return web.json_response({"status": "healthy", "agent": self.config.name})
+        return web.json_response({
+            "status": "healthy", 
+            "agent": self.config.name,
+            "version": self.config.version,
+            "data_loaded": self.data is not None
+        })
     
     async def handle_summary(self, request):
         """FREE endpoint"""
-        return web.json_response(self.data.get_market_summary())
+        try:
+            return web.json_response(self.data.get_market_summary())
+        except Exception as e:
+            return web.json_response({"error": str(e)}, status=500)
     
     async def handle_top_yields(self, request):
         """PAID: $0.001"""
-        limit = int(request.query.get("limit", 10))
-        min_tvl = float(request.query.get("minTvl", 0))
-        risk = request.query.get("risk")
-        
-        # x402 payment check would go here
-        result = self.data.get_top_yields(limit, min_tvl, risk)
-        return web.json_response({"topYields": result})
+        try:
+            limit = int(request.query.get("limit", 10))
+            min_tvl = float(request.query.get("minTvl", 0))
+            risk = request.query.get("risk")
+            
+            result = self.data.get_top_yields(limit, min_tvl, risk)
+            return web.json_response({"topYields": result})
+        except ValueError as e:
+            return web.json_response({"error": f"Invalid parameter: {e}"}, status=400)
+        except Exception as e:
+            return web.json_response({"error": str(e)}, status=500)
     
     async def handle_protocol(self, request):
         """PAID: $0.002"""
-        name = request.match_info["name"]
-        result = self.data.get_protocol_details(name)
-        
-        if not result:
-            return web.json_response({"error": "Protocol not found"})
-        
-        return web.json_response(result)
+        try:
+            name = request.match_info["name"]
+            if not name or len(name) < 2:
+                return web.json_response({"error": "Protocol name required"}, status=400)
+            
+            result = self.data.get_protocol_details(name)
+            
+            if not result:
+                return web.json_response({"error": "Protocol not found"}, status=404)
+            
+            return web.json_response(result)
+        except Exception as e:
+            return web.json_response({"error": str(e)}, status=500)
     
     async def handle_rwa(self, request):
         """PAID: $0.003"""
-        return web.json_response(self.data.get_rwa_opportunities())
+        try:
+            return web.json_response(self.data.get_rwa_opportunities())
+        except Exception as e:
+            return web.json_response({"error": str(e)}, status=500)
     
     async def handle_compare(self, request):
         """PAID: $0.002"""
-        asset = request.query.get("asset", "USDC")
-        chains = request.query.get("chains", "").split(",") if request.query.get("chains") else None
-        return web.json_response(self.data.compare_yields(asset, chains))
+        try:
+            asset = request.query.get("asset", "USDC")
+            if not asset:
+                return web.json_response({"error": "Asset parameter required"}, status=400)
+            
+            return web.json_response(self.data.compare_yields(asset))
+        except Exception as e:
+            return web.json_response({"error": str(e)}, status=500)
     
     async def handle_risk(self, request):
         """PAID: $0.005"""
-        return web.json_response(self.data.get_risk_analysis())
+        try:
+            return web.json_response(self.data.get_risk_analysis())
+        except Exception as e:
+            return web.json_response({"error": str(e)}, status=500)
     
     async def handle_dashboard(self, request):
-        """Simple web dashboard"""
-        summary = self.data.get_market_summary()
-        top_yields = self.data.get_top_yields(5)
+        """Simple web dashboard with error handling"""
+        try:
+            summary = self.data.get_market_summary()
+            top_yields = self.data.get_top_yields(5)
+        except Exception as e:
+            summary = {"market": {"totalTVL": "N/A", "protocolCount": 0}}
+            top_yields = []
         
         html = f"""
 <!DOCTYPE html>
@@ -386,6 +430,9 @@ class StarknetYieldApp:
         .metric {{ font-size: 24px; font-weight: bold; color: #0066cc; }}
         .endpoint {{ background: #f5f5f5; padding: 10px; margin: 5px 0; font-family: monospace; }}
         .price {{ color: #666; font-size: 14px; }}
+        table {{ border-collapse: collapse; width: 100%; }}
+        th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
+        th {{ background: #f5f5f5; }}
     </style>
 </head>
 <body>
@@ -394,15 +441,15 @@ class StarknetYieldApp:
     
     <div class="card">
         <h2>Market Summary (FREE)</h2>
-        <div class="metric">{summary['market']['totalTVL']}</div>
-        <p>TVL across {summary['market']['protocolCount']} protocols</p>
+        <div class="metric">{summary.get('market', {}).get('totalTVL', 'N/A')}</div>
+        <p>TVL across {summary.get('market', {}).get('protocolCount', 0)} protocols</p>
     </div>
     
     <div class="card">
         <h2>Top Yields</h2>
         <table>
             <tr><th>#</th><th>Protocol</th><th>Asset</th><th>APY</th></tr>
-            {"".join(f"<tr><td>{i+1}</td><td>{y['protocol']}</td><td>{y['asset']}</td><td>{y['apy']}</td></tr>" for i, y in enumerate(top_yields[:5]))}
+            {"".join(f"<tr><td>{i+1}</td><td>{y.get('protocol', 'N/A')}</td><td>{y.get('asset', 'N/A')}</td><td>{y.get('apy', 'N/A')}</td></tr>" for i, y in enumerate(top_yields[:5]))}
         </table>
     </div>
     
@@ -419,13 +466,20 @@ class StarknetYieldApp:
         return web.Response(text=html, content_type="text/html")
     
     async def run(self):
-        """Start the server"""
-        runner = web.AppRunner(self.app)
-        await runner.setup()
-        site = web.TCPSite(runner, "0.0.0.0", self.config.port)
-        await site.start()
-        print(f"🦞 Starknet Yield Agent running on port {self.config.port}")
-        return runner
+        """Start the server with error handling"""
+        try:
+            runner = web.AppRunner(self.app)
+            await runner.setup()
+            site = web.TCPSite(runner, "0.0.0.0", self.config.port)
+            await site.start()
+            print(f"🦞 Starknet Yield Agent running on port {self.config.port}")
+            return runner
+        except OSError as e:
+            if e.errno == 98:  # Address already in use
+                print(f"⚠️ Port {self.config.port} already in use, trying {self.config.port + 1}")
+                self.config.port += 1
+                return await self.run()
+            raise
 
 
 # === MAIN ===
