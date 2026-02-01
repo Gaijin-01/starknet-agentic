@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  whale-tracker:
+    build: .
+    container_name: starknet-whale-tracker
+    restart: unless-stopped
+    environment:
+      - STARKNET_RPC_URL=${STARKNET_RPC_URL:-https://rpc.starknet.lava.build:443}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+      - AVNU_API_KEY=${AVNU_API_KEY:-}
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "8080:8080"
+    command: python3 scripts/api.py
+
+  # Alternative: Run with enhanced tracker
+  whale-tracker-enhanced:
+    build: .
+    container_name: starknet-whale-tracker-enhanced
+    restart: unless-stopped
+    environment:
+      - STARKNET_RPC_URL=${STARKNET_RPC_URL:-https://rpc.starknet.lava.build:443}
+    volumes:
+      - ./data:/app/data
+    command: python3 scripts/tracker_enhanced.py
+
+  # Cron scheduler
+  whale-cron:
+    build: .
+    container_name: starknet-whale-cron
+    restart: unless-stopped
+    environment:
+      - STARKNET_RPC_URL=${STARKNET_RPC_URL:-https://rpc.starknet.lava.build:443}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+    volumes:
+      - ./data:/app/data
+    entrypoint: ["/bin/sh", "-c"]
+    command: |
+      "while true; do
+        python3 scripts/check.py
+        sleep 900
+      done"
+
+networks:
+  default:
+    name: starknet-network

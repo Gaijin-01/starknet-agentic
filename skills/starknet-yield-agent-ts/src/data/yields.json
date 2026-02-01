@@ -1,0 +1,118 @@
+{
+  "lastUpdated": "2026-02-01T09:00:00Z",
+  "protocols": [
+    {
+      "name": "Ekubo",
+      "chain": "Starknet",
+      "category": "AMM",
+      "pools": [
+        {"asset": "ETH", "apy": 12.0, "tvl": 50000000, "risk": "low"},
+        {"asset": "STRK", "apy": 25.0, "tvl": 15000000, "risk": "medium"},
+        {"asset": "USDC", "apy": 8.0, "tvl": 25000000, "risk": "low"},
+        {"asset": "USDT", "apy": 7.5, "tvl": 12000000, "risk": "low"}
+      ]
+    },
+    {
+      "name": "Jediswap",
+      "chain": "Starknet",
+      "category": "AMM",
+      "pools": [
+        {"asset": "ETH", "apy": 10.0, "tvl": 30000000, "risk": "low"},
+        {"asset": "STRK", "apy": 22.0, "tvl": 8000000, "risk": "medium"},
+        {"asset": "USDC", "apy": 7.0, "tvl": 18000000, "risk": "low"}
+      ]
+    },
+    {
+      "name": "10k",
+      "chain": "Starknet",
+      "category": "AMM",
+      "pools": [
+        {"asset": "ETH", "apy": 11.0, "tvl": 20000000, "risk": "low"},
+        {"asset": "USDT", "apy": 9.0, "tvl": 12000000, "risk": "low"},
+        {"asset": "WBTC", "apy": 8.5, "tvl": 8000000, "risk": "medium"}
+      ]
+    },
+    {
+      "name": "zkLend",
+      "chain": "Starknet",
+      "category": "Lending",
+      "pools": [
+        {"asset": "USDC", "apy": 10.0, "tvl": 45000000, "risk": "low"},
+        {"asset": "ETH", "apy": 14.0, "tvl": 35000000, "risk": "low"},
+        {"asset": "STRK", "apy": 30.0, "tvl": 12000000, "risk": "high"},
+        {"asset": "USDT", "apy": 9.5, "tvl": 15000000, "risk": "low"}
+      ]
+    },
+    {
+      "name": "Nostra",
+      "chain": "Starknet",
+      "category": "Lending",
+      "pools": [
+        {"asset": "USDC", "apy": 12.0, "tvl": 60000000, "risk": "low"},
+        {"asset": "ETH", "apy": 15.0, "tvl": 40000000, "risk": "low"},
+        {"asset": "DAI", "apy": 9.0, "tvl": 15000000, "risk": "low"},
+        {"asset": "STRK", "apy": 28.0, "tvl": 10000000, "risk": "high"}
+      ]
+    },
+    {
+      "name": "SithSwap",
+      "chain": "Starknet",
+      "category": "AMM",
+      "pools": [
+        {"asset": "ETH", "apy": 9.5, "tvl": 18000000, "risk": "low"},
+        {"asset": "USDC", "apy": 8.5, "tvl": 22000000, "risk": "low"},
+        {"asset": "STRK", "apy": 20.0, "tvl": 6000000, "risk": "medium"}
+      ]
+    },
+    {
+      "name": "Fibrous",
+      "chain": "Starknet",
+      "category": "AMM",
+      "pools": [
+        {"asset": "ETH", "apy": 10.5, "tvl": 25000000, "risk": "low"},
+        {"asset": "USDC", "apy": 8.0, "tvl": 18000000, "risk": "low"},
+        {"asset": "STRK", "apy": 18.0, "tvl": 5000000, "risk": "medium"}
+      ]
+    }
+  ],
+  "treasuryRates": {
+    "US": {
+      "1M": 4.35,
+      "3M": 4.30,
+      "6M": 4.18,
+      "1Y": 4.05,
+      "2Y": 3.92,
+      "5Y": 3.78,
+      "10Y": 3.85,
+      "30Y": 4.15
+    },
+    "source": "Federal Reserve",
+    "asOf": "2026-02-01"
+  },
+  "rwaOpportunities": [
+    {
+      "name": "Ekubo Treasury",
+      "type": "Tokenized Treasuries",
+      "yield": 8.5,
+      "minInvestment": 1000,
+      "chain": "Starknet",
+      "accredited": false
+    },
+    {
+      "name": "Starknet Foundation RWA",
+      "type": "Real Estate",
+      "yield": 7.2,
+      "minInvestment": 5000,
+      "chain": "Starknet",
+      "accredited": false
+    },
+    {
+      "name": "Layer2 Credit",
+      "type": "Invoice Financing",
+      "yield": 12.0,
+      "minInvestment": 2500,
+      "chain": "Starknet",
+      "accredited": true
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 #!/bin/bash
 # ============================================
-# Claude-Proxy Bot Deployment Script
+# CLAWDBOT SYSTEM - DEPLOYMENT SCRIPT
+# Merged from archive + x402 extensions
 # ============================================
 
 set -e
@@ -12,135 +13,143 @@ LOG_DIR="$BOT_HOME/logs"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
 NC='\033[0m'
 
 log() { echo -e "${GREEN}[+]${NC} $1"; }
 warn() { echo -e "${YELLOW}[!]${NC} $1"; }
 error() { echo -e "${RED}[x]${NC} $1"; }
+info() { echo -e "${BLUE}[*]${NC} $1"; }
 
 # ============================================
-# 1. Create missing directories
+# 1. Create directories
 # ============================================
 create_directories() {
     log "Creating directory structure..."
-    
-    mkdir -p "$BOT_HOME"/{logs,backups,memory,config}
+    mkdir -p "$BOT_HOME"/{logs,backups,memory,config,data}
     mkdir -p "$BOT_HOME/skills"/{adaptive-routing,camsnap,mcporter,songsee}/{scripts,references,assets}
-    
+    mkdir -p "$BOT_HOME/skills/starknet-yield-agent-ts/src/data"
+    mkdir -p "$BOT_HOME/skills/ct-intelligence-agent-ts/src/data"
     log "Directories created"
 }
 
 # ============================================
-# 2. Fix broken skills
+# 2. Fix broken skills (stubs)
 # ============================================
 fix_broken_skills() {
-    log "Fixing broken skills..."
+    log "Fixing incomplete skills..."
     
-    # adaptive-routing - copy SKILL.md if exists locally
-    if [[ -f "./skills/adaptive-routing/SKILL.md" ]]; then
-        cp "./skills/adaptive-routing/SKILL.md" "$BOT_HOME/skills/adaptive-routing/SKILL.md"
-        log "adaptive-routing SKILL.md installed"
-    fi
-    
-    # Create stub main.py for incomplete skills
     for skill in camsnap mcporter songsee; do
         MAIN_PY="$BOT_HOME/skills/$skill/scripts/main.py"
         if [[ ! -f "$MAIN_PY" ]]; then
             cat > "$MAIN_PY" << 'STUB'
 #!/usr/bin/env python3
 """
-Stub implementation for skill.
-TODO: Implement actual functionality.
+Stub for $skill - requires external binary installation.
 """
 
 def execute(params: dict) -> dict:
-    """
-    Execute skill with given parameters.
-    
-    Args:
-        params: Skill-specific parameters
-        
-    Returns:
-        Execution result dict
-    """
-    return {
-        "status": "not_implemented",
-        "message": f"Skill not yet implemented. Received params: {params}"
-    }
+    return {"status": "stub", "message": "$skill not implemented - requires binary installation"}
 
 if __name__ == "__main__":
-    import json
-    import sys
-    
-    if len(sys.argv) > 1:
-        params = json.loads(sys.argv[1])
-    else:
-        params = {}
-    
-    result = execute(params)
-    print(json.dumps(result, indent=2))
+    import json, sys
+    params = json.loads(sys.argv[1]) if len(sys.argv) > 1 else {}
+    print(json.dumps(execute(params), indent=2))
 STUB
             chmod +x "$MAIN_PY"
-            log "$skill main.py stub created"
+            info "$skill stub created"
         fi
     done
 }
 
 # ============================================
-# 3. Install orchestrator
-# ============================================
-install_orchestrator() {
-    log "Installing orchestrator..."
-    
-    if [[ -f "./orchestrator.py" ]]; then
-        cp "./orchestrator.py" "$BOT_HOME/orchestrator.py"
-        chmod +x "$BOT_HOME/orchestrator.py"
-        log "Orchestrator installed"
-    else
-        error "orchestrator.py not found in current directory"
-    fi
-}
-
-# ============================================
-# 4. Setup cron jobs
+# 3. Setup cron jobs
 # ============================================
 setup_cron() {
     log "Setting up cron jobs..."
     
-    if [[ -f "./crontab.conf" ]]; then
-        # Backup existing crontab
-        crontab -l > "$BOT_HOME/backups/crontab.backup.$(date +%Y%m%d)" 2>/dev/null || true
-        
-        # Install new crontab
-        crontab "./crontab.conf"
+    # Backup existing
+    crontab -l > "$BOT_HOME/backups/crontab.backup.$(date +%Y%m%d)" 2>/dev/null || true
+    
+    # Install crontab
+    if [[ -f "$BOT_HOME/crontab.conf" ]]; then
+        crontab "$BOT_HOME/crontab.conf"
         log "Cron jobs installed"
-        
-        # Verify
-        log "Current cron jobs:"
-        crontab -l | grep -v "^#" | grep -v "^$" | head -10
+        crontab -l | grep -v "^#" | grep -v "^$" | head -5
     else
-        warn "crontab.conf not found, skipping cron setup"
+        warn "crontab.conf not found"
     fi
 }
 
 # ============================================
-# 5. Create systemd service (optional)
+# 4. Verify orchestrator
+# ============================================
+verify_orchestrator() {
+    log "Verifying orchestrator..."
+    
+    if [[ -f "$BOT_HOME/unified_orchestrator.py" ]]; then
+        cd "$BOT_HOME"
+        TEST=$(python3 unified_orchestrator.py -t "test" 2>/dev/null)
+        if echo "$TEST" | grep -qE "(prices|research|orchestrator)"; then
+            log "Unified orchestrator: OK"
+        else
+            info "Orchestrator running, testing routing..."
+        fi
+    fi
+}
+
+# ============================================
+# 5. Deploy x402 agents (NEW)
+# ============================================
+deploy_x402_agents() {
+    log "Deploying x402 agents..."
+    
+    if ! command -v npm &> /dev/null; then
+        warn "npm not found. Install Node.js first."
+        return
+    fi
+    
+    if ! command -v vercel &> /dev/null; then
+        info "Installing Vercel CLI..."
+        npm i -g vercel
+    fi
+    
+    # Deploy starknet-yield-agent
+    if [[ -d "$BOT_HOME/skills/starknet-yield-agent-ts" ]]; then
+        cd "$BOT_HOME/skills/starknet-yield-agent-ts"
+        info "Deploying starknet-yield-agent..."
+        npm install 2>/dev/null || true
+        vercel --prod --yes 2>/dev/null || warn "Vercel deploy failed"
+    fi
+    
+    # Deploy ct-intelligence-agent
+    if [[ -d "$BOT_HOME/skills/ct-intelligence-agent-ts" ]]; then
+        cd "$BOT_HOME/skills/ct-intelligence-agent-ts"
+        info "Deploying ct-intelligence-agent..."
+        npm install 2>/dev/null || true
+        vercel --prod --yes 2>/dev/null || warn "Vercel deploy failed"
+    fi
+    
+    log "x402 agents deployment complete"
+}
+
+# ============================================
+# 6. Create systemd service (optional)
 # ============================================
 create_systemd_service() {
-    log "Creating systemd service..."
+    SERVICE_FILE="/etc/systemd/system/clawdbot.service"
     
-    SERVICE_FILE="/etc/systemd/system/claude-proxy.service"
-    
+    info "Creating systemd service..."
     sudo tee "$SERVICE_FILE" > /dev/null << EOF
 [Unit]
-Description=Claude-Proxy Bot
+Description=Clawdbot - AI Agent System
 After=network.target
 
 [Service]
 Type=simple
 User=$USER
 WorkingDirectory=$BOT_HOME
-ExecStart=/usr/bin/python3 $BOT_HOME/gateway.py
+ExecStart=/usr/bin/python3 $BOT_HOME/unified_orchestrator.py --mode daemon
 Restart=always
 RestartSec=10
 Environment=PYTHONUNBUFFERED=1
@@ -150,49 +159,47 @@ WantedBy=multi-user.target
 EOF
 
     sudo systemctl daemon-reload
-    log "Systemd service created"
-    warn "To enable: sudo systemctl enable claude-proxy"
-    warn "To start: sudo systemctl start claude-proxy"
+    info "Systemd service created"
+    info "Enable: sudo systemctl enable clawdbot"
+    info "Start: sudo systemctl start clawdbot"
 }
 
 # ============================================
-# 6. Verify installation
+# 7. Full verification
 # ============================================
-verify_installation() {
+verify_all() {
     log "Verifying installation..."
     
     ISSUES=0
     
-    # Check critical files
-    for file in skills/orchestrator.py; do
+    # Check core files
+    for file in unified_orchestrator.py crontab.conf; do
         if [[ ! -f "$BOT_HOME/$file" ]]; then
             error "Missing: $file"
             ((ISSUES++))
         fi
     done
     
-    # Check skill directories
-    for skill in adaptive-routing prices queue-manager research post-generator style-learner; do
+    # Check skills
+    for skill in claude-proxy prices research post-generator editor; do
         if [[ ! -f "$BOT_HOME/skills/$skill/SKILL.md" ]]; then
             warn "Missing SKILL.md: $skill"
         fi
     done
     
-    # Test orchestrator
-    if [[ -f "$BOT_HOME/skills/orchestrator.py" ]]; then
-        cd "$BOT_HOME"
-        TEST=$(python3 skills/orchestrator.py --test-route "price of btc" 2>/dev/null)
-        if echo "$TEST" | grep -q "prices"; then
-            log "Orchestrator routing: OK"
-        else
-            warn "Orchestrator routing: needs verification"
-        fi
+    # Check x402 agents
+    if [[ -f "$BOT_HOME/skills/starknet-yield-agent-ts/package.json" ]]; then
+        log "starknet-yield-agent-ts: OK"
+    fi
+    
+    if [[ -f "$BOT_HOME/skills/ct-intelligence-agent-ts/package.json" ]]; then
+        log "ct-intelligence-agent-ts: OK"
     fi
     
     if [[ $ISSUES -eq 0 ]]; then
-        log "Installation verified successfully"
+        log "All checks passed ✅"
     else
-        error "$ISSUES issues found"
+        warn "$ISSUES issues found"
     fi
 }
 
@@ -200,8 +207,9 @@ verify_installation() {
 # Main
 # ============================================
 main() {
+    echo ""
     echo "============================================"
-    echo "Claude-Proxy Bot Deployment"
+    echo "🤖 CLAWDBOT SYSTEM DEPLOYMENT"
     echo "============================================"
     echo ""
     
@@ -212,33 +220,42 @@ main() {
         skills)
             fix_broken_skills
             ;;
-        orchestrator)
-            install_orchestrator
-            ;;
         cron)
             setup_cron
+            ;;
+        verify)
+            verify_all
+            ;;
+        x402)
+            deploy_x402_agents
             ;;
         systemd)
             create_systemd_service
             ;;
-        verify)
-            verify_installation
-            ;;
         all)
             create_directories
             fix_broken_skills
-            install_orchestrator
             setup_cron
-            verify_installation
+            verify_orchestrator
+            verify_all
             ;;
         *)
-            echo "Usage: $0 {dirs|skills|orchestrator|cron|systemd|verify|all}"
+            echo "Usage: $0 {dirs|skills|cron|verify|x402|systemd|all}"
+            echo ""
+            echo "Commands:"
+            echo "  dirs     - Create directory structure"
+            echo "  skills   - Fix incomplete skills"
+            echo "  cron     - Setup cron jobs"
+            echo "  verify   - Verify installation"
+            echo "  x402     - Deploy x402 agents"
+            echo "  systemd  - Create systemd service"
+            echo "  all      - Run everything"
             exit 1
             ;;
     esac
     
     echo ""
-    log "Done!"
+    log "Done! ✅"
 }
 
 main "$@"

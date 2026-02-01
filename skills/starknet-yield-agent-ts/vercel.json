@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.ts"
+    }
+  ],
+  "env": {
+    "PAYMENTS_RECEIVABLE_ADDRESS": "0xAc7a6258252c29A7c127f98d530DBc244bB7D495",
+    "AVNU_API_KEY": "0c5c0b24-99a4-4ab3-93d4-f9db1cd61442"
+  },
+  "regions": ["iad1"],
+  "framework": "hono"
+}

@@ -9,6 +9,7 @@
 | Telegram | ✅ Connected | @Groove_Armada |
 | EDITOR skill | ✅ NEW | Dual-key failover, LLM integration |
 | **starknet-privacy** | ✅ NEW | ZK shielded pool, compiled Sierra v1 |
+| **starknet-whale-tracker** | ✅ NEW | Whale monitoring, mempool, arbitrage |
 
 ## 🚀 Skill Consolidation Plan (2026-01-30)
 
@@ -72,6 +73,13 @@
 | **Fast** | 1-29 | MiniMax-M2.1-Fast | Simple questions, greetings |
 | **Standard** | 30-70 | MiniMax-M2.1 | Standard tasks, coding |
 | **Deep** | 71-100 | MiniMax-M2.1-Deep | Complex reasoning, research |
+
+## 🔗 Starknet RPC Configuration
+
+| Provider | URL | Status |
+|----------|-----|--------|
+| **Lava** | `https://rpc.starknet.lava.build:443` | ✅ Active |
+| Alchemy | `https://starknet-mainnet.g.alchemy.com/v2/KEY` |备用 |
 
 ## 🛠️ What I Can Do Myself
 
