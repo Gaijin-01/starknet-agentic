@@ -38,6 +38,22 @@ class SkillType(Enum):
     BIRD = "bird"  # X/Twitter CLI
     X_ALGORITHM_OPTIMIZER = "x-algorithm-optimizer"
     SYSTEM_MANAGER = "system-manager"
+    # Consolidated skills (2026-01-30)
+    CORE = "core"
+    INTELLIGENCE = "intelligence"
+    PUBLISHER = "publisher"
+    SYSTEM = "system"
+    # Additional skills
+    BLOCKCHAIN_DEV = "blockchain-dev"
+    CRYPTO_TRADING = "crypto-trading"
+    CT_INTELLIGENCE = "ct-intelligence"
+    EDITOR = "editor"
+    MULTI_LAYER_STYLE = "multi-layer-style"
+    ORCHESTRATOR = "orchestrator"
+    SKILL_EVOLVER = "skill-evolver"
+    STARKNET_PY = "starknet-py"
+    STARKNET_PRIVACY = "starknet-privacy"
+    TWITTER_API = "twitter-api"
 
 
 # ============================================================

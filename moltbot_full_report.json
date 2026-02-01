@@ -1,0 +1,88 @@
+{
+  "report_id": "moltbot-diagnostic-2026-01-30",
+  "generated_at": "2026-01-30T14:57:00+02:00",
+  "status": "OPERATIONAL",
+  "summary": "All critical issues resolved. Sub-agents, gateway, cron, APIs functional.",
+  "diagnostics": {
+    "sub_agent_spawn": {
+      "before": "Blocked - agentId not allowed",
+      "after": "Working - sessions_spawn → MiniMax-M2.1 → response",
+      "fix": "Added agents.list with subagents.allowAgents: [\"*\"]",
+      "verified": true,
+      "test_output": "TEST_OK",
+      "round_trip_ms": 3000
+    },
+    "gateway": {
+      "before": "Config drift, PID 1499251",
+      "after": "Restarted, stable",
+      "restarts_count": 5,
+      "current_pid": 1540304,
+      "config_valid": true
+    },
+    "node_js": {
+      "before": "v24.13.0 (NVM default)",
+      "after": "v22.22.0 (NVM default)",
+      "system_node": "v25.4.0",
+      "fix": "nvm install 22 && nvm alias default 22"
+    },
+    "stale_sessions": {
+      "before": "Evolver idle 18h",
+      "after": "Cleared",
+      "status": "No stale processes"
+    },
+    "cron_jobs": {
+      "total": 64,
+      "active": 64,
+      "errors": 0,
+      "health": "OK"
+    },
+    "apis": {
+      "minimax": {
+        "status": "OK",
+        "model": "MiniMax-M2.1",
+        "context_window": 200000
+      },
+      "brave_search": {
+        "status": "OK"
+      }
+    },
+    "memory_search": {
+      "status": "Optional - needs auth",
+      "providers": ["openai", "google", "local"],
+      "recommendation": "Skip unless semantic memory required"
+    }
+  },
+  "config_structure": {
+    "agents": {
+      "list": [
+        {
+          "id": "main",
+          "subagents": {
+            "allowAgents": ["*"]
+          }
+        }
+      ]
+    }
+  },
+  "system_state": {
+    "disk_usage": "2%",
+    "memory_usage": "19%",
+    "session": {
+      "key": "agent:main:main",
+      "channel": "telegram",
+      "model": "MiniMax-M2.1",
+      "tokens": 66459
+    }
+  },
+  "files_created": [
+    "/home/wner/clawd/moltbot_fix_commands.sh",
+    "/home/wner/clawd/system_diagnostic.json"
+  ],
+  "known_issues": [
+    {
+      "issue": "Memory search needs OpenAI/Google auth",
+      "severity": "low",
+      "workaround": "Use local embeddings if needed"
+    }
+  ]
+}

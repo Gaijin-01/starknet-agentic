@@ -14,3 +14,15 @@ Provider: brave
 2026-01-30 10:00:01,572 | ERROR | Research failed: BRAVE_API_KEY not configured
 
 ❌ Error: BRAVE_API_KEY not configured
+2026-01-30 22:00:01,860 | INFO | Searching: starknet defi l2 zk rollup vocabulary trends
+2026-01-30 22:00:01,861 | ERROR | Research failed: BRAVE_API_KEY not configured
+
+❌ Error: BRAVE_API_KEY not configured
+2026-01-31 10:00:01,249 | INFO | Searching: starknet defi l2 zk rollup vocabulary trends
+2026-01-31 10:00:01,249 | ERROR | Research failed: BRAVE_API_KEY not configured
+
+❌ Error: BRAVE_API_KEY not configured
+2026-01-31 22:00:01,867 | INFO | Searching: starknet defi l2 zk rollup vocabulary trends
+2026-01-31 22:00:01,868 | ERROR | Research failed: BRAVE_API_KEY not configured
+
+❌ Error: BRAVE_API_KEY not configured

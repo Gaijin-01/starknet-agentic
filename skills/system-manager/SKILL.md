@@ -61,3 +61,45 @@ Skills are enabled/disabled via `~/.clawdbot/clawdbot.json`:
 ## Files
 
 - `scripts/main.py` - Main entry point
+
+## Workflow
+
+The system-manager skill operates as follows:
+
+```
+1. User issues command (voice or text)
+2. Parser determines command type (skills/memory/service/system)
+3. SystemManager executes requested operation
+4. Result returned to user (text response)
+```
+
+### Command Flow
+
+| Input Type | Parser | Handler | Output |
+|------------|--------|---------|--------|
+| `skills enable research` | argparse | `cmd_skills_enable()` | Status message |
+| `забэкапь память` | Voice parser | `cmd_memory_backup()` | Backup confirmation |
+| `перезапусти гейтвей` | Voice parser | `cmd_service_restart()` | Restart confirmation |
+
+### Error Handling
+
+- Unknown commands → "Unknown command" message
+- Missing files → Descriptive error
+- Subprocess failures → Stderr captured and displayed
+- All errors logged to console
+
+### Common Patterns
+
+```python
+# Adding a new skill to ALL_SKILLS
+ALL_SKILLS = [
+    "prices", "research", "post-generator", "queue-manager",
+    "style-learner", "camsnap", "mcporter", "songsee",
+    "adaptive-routing", "claude-proxy", "x-algorithm-optimizer",
+    "new-skill"  # <-- Add here
+]
+
+# Extending voice commands
+if "статус" in cmd and ("систем" in cmd or "состояние" in cmd):
+    print(manager.cmd_system_status())
+```

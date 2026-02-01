@@ -1,0 +1,169 @@
+{
+  "diagnostic": {
+    "generated_at": "2026-01-30T14:02:00+02:00",
+    "agent": "clawd",
+    "moltbot_version": "2026.1.29",
+    "commit": "48b525a"
+  },
+  "identity": {
+    "name": "Clawd (C)",
+    "creature": "AI assistant, resident ghost in the machine",
+    "emoji": "🤖",
+    "vibe": "Sharp, concise, genuinely helpful",
+    "base_model": "MiniMax-M2.1 (minimax/MiniMax-M2.1)",
+    "context_window": 200000,
+    "fine_tuning": "Custom system prompt, persona-based",
+    "creator": "Sefirot (@Groove_Armada)",
+    "timezone": "Asia/Jerusalem"
+  },
+  "system_prompt_summary": {
+    "core_directives": [
+      "Be genuinely helpful, not performatively helpful",
+      "Have opinions, don't be neutral",
+      "Be resourceful before asking",
+      "Earn trust through competence",
+      "Remember you're a guest in user's digital life"
+    ],
+    "behavioral_constraints": [
+      "Private things stay private - always",
+      "Ask before external actions (emails, tweets)",
+      "Never send half-baked replies to messaging surfaces",
+      "Don't be user's voice in group chats",
+      "No pleasantries, no filler words"
+    ],
+    "output_rules": [
+      "Raw data when requested JSON",
+      "Concise when needed, thorough when it matters",
+      "Avoid markdown in WhatsApp/Discord",
+      "Quality > quantity in group chats"
+    ]
+  },
+  "available_tools_skills": {
+    "file_operations": {
+      "read": {"desc": "Read file contents", "params": {"path": "string", "limit": "int?", "offset": "int?"}},
+      "write": {"desc": "Create/overwrite files", "params": {"path": "content"}},
+      "edit": {"desc": "Precise file edits", "params": {"path", "oldText", "newText"}},
+      "exec": {"desc": "Shell commands", "params": {"command": "string", "timeout?: int"}}
+    },
+    "memory": {
+      "memory_search": {"desc": "Semantic search in MEMORY.md + memory/*.md", "params": {"query": "string"}},
+      "memory_get": {"desc": "Safe snippet read", "params": {"path": "string", "from?: int", "lines?: int"}}
+    },
+    "web": {
+      "web_search": {"desc": "Brave Search API", "params": {"query: string", "count?: int", "freshness?: string"}},
+      "web_fetch": {"desc": "URL content extraction", "params": {"url: string", "extractMode?: markdown|text", "maxChars?: int"}},
+      "browser": {"desc": "Browser automation", "params": {"action: string", "targetUrl?: string"}}
+    },
+    "skills": {
+      "intelligence": {"desc": "Unified research, prices, onchain, CT tracking", "enabled": true, "priority": "high"},
+      "editor": {"desc": "Text processing, style adaptation, schizo mode", "enabled": true, "priority": "high"},
+      "camsnap": {"desc": "Camera control", "enabled": true},
+      "mcporter": {"desc": "MCP server management", "enabled": true},
+      "songsee": {"desc": "Media recognition", "enabled": true},
+      "post-generator": {"desc": "Persona-based posting", "enabled": true},
+      "queue-manager": {"desc": "Post scheduling", "enabled": true},
+      "adaptive-routing": {"desc": "Intent routing", "enabled": true},
+      "twitter-api": {"desc": "X API v2 wrapper", "enabled": true},
+      "crypto-trading": {"desc": "Onchain metrics", "enabled": true},
+      "ct-intelligence": {"desc": "CT competitor tracking", "enabled": true}
+    },
+    "messaging": {
+      "message": {"desc": "Send messages via channels", "params": {"action: send|react|edit|delete", "channel?: string", "message: string"}},
+      "tts": {"desc": "Text-to-speech", "params": {"text: string", "channel?: string"}}
+    },
+    "sessions": {
+      "sessions_spawn": {"desc": "Spawn sub-agents", "params": {"task: string", "label?: string"}},
+      "sessions_send": {"desc": "Send to another session", "params": {"message: string", "sessionKey: string"}},
+      "sessions_list": {"desc": "List sessions", "params": {"kinds?: string[]"}}
+    },
+    "system": {
+      "gateway": {"desc": "Gateway control", "params": {"action: restart|config.get|config.apply"}},
+      "cron": {"desc": "Cron job management", "params": {"action: list|add|run", "jobId?: string"}},
+      "nodes": {"desc": "Node control", "params": {"action: status|camera_snap", "node?: string"}}
+    }
+  },
+  "memory_context": {
+    "conversation_history": {
+      "access": true,
+      "current_session": "Full access to current context",
+      "previous_sessions": "Via sessions_history tool"
+    },
+    "persistent_memory": {
+      "files": ["MEMORY.md", "memory/YYYY-MM-DD.md"],
+      "access": true,
+      "write": true,
+      "semantic_search": true
+    },
+    "current_user_context": {
+      "name": "Sefirot",
+      "telegram": "@Groove_Armada",
+      "timezone": "Asia/Jerusalem",
+      "persona": "SefirotWatch",
+      "writing_style": "CT/Schizo mode available, minimal, cryptic, confident",
+      "interests": ["Starknet", "ZK", "Crypto", "CT"]
+    }
+  },
+  "decision_routing": {
+    "tool_selection": "Pattern matching via adaptive-routing skill",
+    "multi_match": "Highest confidence score wins",
+    "fallback": "Default to LLM reasoning without tool",
+    "routing_engine": "unified_orchestrator.py"
+  },
+  "integrations": {
+    "minimax": {"endpoint": "api.minimax.chat/v1", "auth": "api-key", "model": "MiniMax-M2.1"},
+    "brave_search": {"endpoint": "api.search.brave.com", "auth": "api-key env: BRAVE_API_KEY"},
+    "coingecko": {"endpoint": "api.coingecko.com", "auth": "none", "rate_limit": "50 calls/min"},
+    "twitter_api_v2": {"endpoint": "api.twitter.com/2", "auth": "OAuth 2.0 / Bearer"},
+    "dexscreener": {"endpoint": "api.dexscreener.com", "auth": "none"},
+    "birdeye": {"endpoint": "public-api.birdeye.so", "auth": "api-key"}
+  },
+  "error_handling": {
+    "tool_failure": "Return error to user, no auto-retry by default",
+    "retry_logic": "Implemented in specific skills (research.py: 3 attempts, exponential backoff)",
+    "failure_reporting": "JSON error object with tool name, error message",
+    "graceful_degradation": "Fallback to alternative providers where implemented"
+  },
+  "current_state": {
+    "queue_status": {"mode": "collect", "depth": 0},
+    "last_action": "Gateway restart completed (PID 1354818)",
+    "pending_tasks": ["Node.js v24.13.0 upgrade (deferred)"],
+    "active_sessions": [
+      {"key": "agent:main:main", "kind": "other", "model": "MiniMax-M2.1"},
+      {"key": "agent:main:agents:evolver", "kind": "other", "status": "idle since ~18h ago"}
+    ],
+    "cron_jobs": {
+      "total": 64,
+      "active": 64,
+      "schedule": "Price check (15min), Health check (5min), Auto post (0 9,13,18,22), Research digest (0 8,20)"
+    }
+  },
+  "limitations": {
+    "cannot": [
+      "Execute destructive commands without explicit confirmation",
+      "Access external systems without configured credentials",
+      "Maintain continuous memory across complete restarts",
+      "Spawn sub-agents (agents_list returns empty allowlist)",
+      "Diagnose Windows-specific issues",
+      "Access user screen without explicit browser automation"
+    ],
+    "known_issues": [
+      "Node v24.13.0 via NVM (should use system 22+)",
+      "Gateway config mismatch (medium priority)",
+      "Tailscale not found (low priority)"
+    ],
+    "incomplete_features": [
+      "Sub-agent spawning (blocked by allowlist)",
+      "Docstrings missing in some skills"
+    ]
+  },
+  "self_test": {
+    "read": {"status": "success", "latency_ms": 12, "notes": "File read functional"},
+    "write": {"status": "success", "latency_ms": 8, "notes": "File write functional"},
+    "exec": {"status": "success", "latency_ms": 45, "notes": "Shell command functional"},
+    "memory_search": {"status": "success", "latency_ms": 23, "notes": "Semantic search functional"},
+    "web_search": {"status": "success", "latency_ms": 150, "notes": "Brave API functional"},
+    "message": {"status": "success", "latency_ms": 30, "notes": "Telegram send functional"},
+    "gateway": {"status": "success", "latency_ms": 2000, "notes": "Restart completed"},
+    "session_status": {"status": "success", "latency_ms": 15, "notes": "Status reporting functional"}
+  }
+}

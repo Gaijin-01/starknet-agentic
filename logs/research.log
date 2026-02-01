@@ -55,3 +55,60 @@ Config: {
   "job": "research-digest",
   "schedule": "0 8,20 * * *"
 }
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "error": "Traceback (most recent call last):\n  File \"/home/wner/clawd/skills/research/scripts/main.py\", line 43, in <module>\n    main()\n  File \"/home/wner/clawd/skills/research/scripts/main.py\", line 32, in main\n    search = BraveSearch()\n             ^^^^^^^^^^^^^\nTypeError: BraveSearch.__init__() missing 1 required positional argument: 'api_key'\n"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "error": "Traceback (most recent call last):\n  File \"/home/wner/clawd/skills/research/scripts/main.py\", line 43, in <module>\n    main()\n  File \"/home/wner/clawd/skills/research/scripts/main.py\", line 32, in main\n    search = BraveSearch()\n             ^^^^^^^^^^^^^\nTypeError: BraveSearch.__init__() missing 1 required positional argument: 'api_key'\n"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "error": "Traceback (most recent call last):\n  File \"/home/wner/clawd/skills/research/scripts/main.py\", line 43, in <module>\n    main()\n  File \"/home/wner/clawd/skills/research/scripts/main.py\", line 32, in main\n    search = BraveSearch()\n             ^^^^^^^^^^^^^\nTypeError: BraveSearch.__init__() missing 1 required positional argument: 'api_key'\n"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}

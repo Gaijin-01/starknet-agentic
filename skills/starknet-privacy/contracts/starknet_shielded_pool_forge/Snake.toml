@@ -1,0 +1,9 @@
+[package]
+name = "starknet_shielded_pool"
+version = "1.0.0"
+
+[dependencies]
+starknet = { git = "https://github.com/starknet-foundry/starknet-foundry.git", tag = "v0.29.0" }
+
+[[target.starknet-contract]]
+sierra = true

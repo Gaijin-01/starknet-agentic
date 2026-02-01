@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 Sentiment Analysis for CT Intelligence.
+
+Error Handling:
+- All public methods wrap operations in try/except
+- Errors logged and propagated for caller handling
 """
 
 from typing import Dict, List, Optional
@@ -52,39 +56,43 @@ class SentimentAnalyzer:
         Returns:
             SentimentResult with analysis
         """
-        text_lower = text.lower()
-        
-        # Count keywords
-        pos_count = sum(1 for w in self.POSITIVE if w in text_lower)
-        neg_count = sum(1 for w in self.NEGATIVE if w in text_lower)
-        
-        # Calculate score
-        total = pos_count + neg_count
-        if total == 0:
-            score = 0.0
-            sentiment = "neutral"
-        else:
-            score = (pos_count - neg_count) / total
-            if score > 0.2:
-                sentiment = "positive"
-            elif score < -0.2:
-                sentiment = "negative"
-            else:
+        try:
+            text_lower = text.lower()
+            
+            # Count keywords
+            pos_count = sum(1 for w in self.POSITIVE if w in text_lower)
+            neg_count = sum(1 for w in self.NEGATIVE if w in text_lower)
+            
+            # Calculate score
+            total = pos_count + neg_count
+            if total == 0:
+                score = 0.0
                 sentiment = "neutral"
-        
-        # Extract keywords
-        keywords = [w for w in self.POSITIVE + self.NEGATIVE if w in text_lower]
-        
-        # Confidence based on keyword count
-        confidence = min(total / 5, 1.0)
-        
-        return SentimentResult(
-            text=text,
-            sentiment=sentiment,
-            score=score,
-            keywords=keywords,
-            confidence=confidence
-        )
+            else:
+                score = (pos_count - neg_count) / total
+                if score > 0.2:
+                    sentiment = "positive"
+                elif score < -0.2:
+                    sentiment = "negative"
+                else:
+                    sentiment = "neutral"
+            
+            # Extract keywords
+            keywords = [w for w in self.POSITIVE + self.NEGATIVE if w in text_lower]
+            
+            # Confidence based on keyword count
+            confidence = min(total / 5, 1.0)
+            
+            return SentimentResult(
+                text=text,
+                sentiment=sentiment,
+                score=score,
+                keywords=keywords,
+                confidence=confidence
+            )
+        except Exception as e:
+            logger.error(f"Failed to analyze text: {e}")
+            raise
     
     def analyze_tweets(self, tweets: List[Dict]) -> Dict:
         """
@@ -96,31 +104,39 @@ class SentimentAnalyzer:
         Returns:
             Aggregated sentiment analysis
         """
-        if not tweets:
-            return {"sentiment": "neutral", "score": 0.0, "count": 0}
-        
-        results = [self.analyze_text(t.get("text", "")) for t in tweets]
-        
-        # Aggregate
-        avg_score = sum(r.score for r in results) / len(results)
-        
-        sentiment_counts = Counter(r.sentiment for r in results)
-        dominant = sentiment_counts.most_common(1)[0][0]
-        
-        return {
-            "sentiment": dominant,
-            "score": round(avg_score, 3),
-            "count": len(results),
-            "breakdown": dict(sentiment_counts),
-            "keywords": self._top_keywords(results)
-        }
+        try:
+            if not tweets:
+                return {"sentiment": "neutral", "score": 0.0, "count": 0}
+            
+            results = [self.analyze_text(t.get("text", "")) for t in tweets]
+            
+            # Aggregate
+            avg_score = sum(r.score for r in results) / len(results)
+            
+            sentiment_counts = Counter(r.sentiment for r in results)
+            dominant = sentiment_counts.most_common(1)[0][0]
+            
+            return {
+                "sentiment": dominant,
+                "score": round(avg_score, 3),
+                "count": len(results),
+                "breakdown": dict(sentiment_counts),
+                "keywords": self._top_keywords(results)
+            }
+        except Exception as e:
+            logger.error(f"Failed to analyze tweets: {e}")
+            raise
     
     def _top_keywords(self, results: List[SentimentResult]) -> List[str]:
         """Get top mentioned keywords."""
-        all_keywords = []
-        for r in results:
-            all_keywords.extend(r.keywords)
-        return [k for k, _ in Counter(all_keywords).most_common(10)]
+        try:
+            all_keywords = []
+            for r in results:
+                all_keywords.extend(r.keywords)
+            return [k for k, _ in Counter(all_keywords).most_common(10)]
+        except Exception as e:
+            logger.error(f"Failed to get top keywords: {e}")
+            return []
     
     def get_account_sentiment(self, username: str, tweets: List[Dict]) -> Dict:
         """
@@ -133,16 +149,20 @@ class SentimentAnalyzer:
         Returns:
             Account sentiment profile
         """
-        analysis = self.analyze_tweets(tweets)
-        
-        return {
-            "username": username,
-            "sentiment": analysis["sentiment"],
-            "score": analysis["score"],
-            "tweet_count": analysis["count"],
-            "breakdown": analysis.get("breakdown", {}),
-            "top_keywords": analysis.get("keywords", [])
-        }
+        try:
+            analysis = self.analyze_tweets(tweets)
+            
+            return {
+                "username": username,
+                "sentiment": analysis["sentiment"],
+                "score": analysis["score"],
+                "tweet_count": analysis["count"],
+                "breakdown": analysis.get("breakdown", {}),
+                "top_keywords": analysis.get("keywords", [])
+            }
+        except Exception as e:
+            logger.error(f"Failed to get account sentiment for {username}: {e}")
+            raise
 
 
 def main():

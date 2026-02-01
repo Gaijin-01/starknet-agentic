@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 Tracker - Monitor CT accounts and detect trends.
+
+Error Handling:
+- All public methods wrap operations in try/except
+- Errors logged and propagated for caller handling
 """
 
 from typing import Dict, List, Optional
@@ -56,21 +60,33 @@ class Tracker:
         Returns:
             True if successful
         """
-        # Placeholder - would use twitter-api skill
-        logger.info(f"Added {username} to tracking")
-        return True
+        try:
+            # Placeholder - would use twitter-api skill
+            logger.info(f"Added {username} to tracking")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to add account {username}: {e}")
+            raise
     
     def remove_account(self, username: str) -> bool:
         """Remove account from tracking."""
-        if username in self.accounts:
-            del self.accounts[username]
-            logger.info(f"Removed {username} from tracking")
-            return True
-        return False
+        try:
+            if username in self.accounts:
+                del self.accounts[username]
+                logger.info(f"Removed {username} from tracking")
+                return True
+            return False
+        except Exception as e:
+            logger.error(f"Failed to remove account {username}: {e}")
+            raise
     
     def get_accounts(self) -> List[str]:
         """Get list of tracked accounts."""
-        return list(self.accounts.keys())
+        try:
+            return list(self.accounts.keys())
+        except Exception as e:
+            logger.error(f"Failed to get accounts: {e}")
+            raise
     
     def fetch_tweets(self, username: str, limit: int = 10) -> List[Dict]:
         """
@@ -83,9 +99,13 @@ class Tracker:
         Returns:
             List of tweet dicts
         """
-        # Placeholder - would use twitter-api skill
-        logger.info(f"Fetching {limit} tweets from {username}")
-        return []
+        try:
+            # Placeholder - would use twitter-api skill
+            logger.info(f"Fetching {limit} tweets from {username}")
+            return []
+        except Exception as e:
+            logger.error(f"Failed to fetch tweets from {username}: {e}")
+            raise
     
     def detect_trends(self, hours: int = 24) -> List[Trend]:
         """
@@ -97,14 +117,22 @@ class Tracker:
         Returns:
             List of detected trends
         """
-        # Placeholder - would analyze tweets
-        logger.info(f"Detecting trends from last {hours}h")
-        return []
+        try:
+            # Placeholder - would analyze tweets
+            logger.info(f"Detecting trends from last {hours}h")
+            return []
+        except Exception as e:
+            logger.error(f"Failed to detect trends: {e}")
+            raise
     
     def get_trending(self, limit: int = 10) -> List[Trend]:
         """Get top trending keywords."""
-        sorted_trends = sorted(self.trends, key=lambda x: x.count, reverse=True)
-        return sorted_trends[:limit]
+        try:
+            sorted_trends = sorted(self.trends, key=lambda x: x.count, reverse=True)
+            return sorted_trends[:limit]
+        except Exception as e:
+            logger.error(f"Failed to get trending: {e}")
+            raise
 
 
 def main():

@@ -12,6 +12,18 @@
     "songsee": {
       "version": "1.0.0",
       "installedAt": 1769633480523
+    },
+    "x402": {
+      "version": "1.0.0",
+      "installedAt": 1769851590589
+    },
+    "x402-client": {
+      "version": "1.0.0",
+      "installedAt": 1769851613596
+    },
+    "x-search": {
+      "version": "1.0.0",
+      "installedAt": 1769851688405
     }
   }
 }

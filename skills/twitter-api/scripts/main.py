@@ -3,6 +3,11 @@
 Twitter API Skill - Main Entry Point.
 
 CLI interface for Twitter/X operations.
+
+Error Handling:
+- All command functions wrap operations in try/except
+- Errors returned as JSON with error message
+- Non-zero exit codes on failure
 """
 
 import sys
@@ -23,112 +28,168 @@ from scripts.quote import QuoteManager
 
 def cmd_post(args):
     """Post a tweet."""
-    poster = TweetPoster()
-    result = poster.post(args.text)
-    print(json.dumps(result, indent=2))
+    try:
+        poster = TweetPoster()
+        result = poster.post(args.text)
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_reply(args):
     """Reply to a tweet."""
-    reply_mgr = ReplyManager()
-    result = reply_mgr.reply_with_context(
-        args.tweet_id,
-        args.text,
-        include_context=not args.no_context
-    )
-    print(json.dumps(result, indent=2))
+    try:
+        reply_mgr = ReplyManager()
+        result = reply_mgr.reply_with_context(
+            args.tweet_id,
+            args.text,
+            include_context=not args.no_context
+        )
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_quote(args):
     """Quote a tweet."""
-    quote_mgr = QuoteManager()
-    result = quote_mgr.quote(args.tweet_id, args.comment)
-    print(json.dumps(result, indent=2))
+    try:
+        quote_mgr = QuoteManager()
+        result = quote_mgr.quote(args.tweet_id, args.comment)
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_delete(args):
     """Delete a tweet."""
-    poster = TweetPoster()
-    result = poster.delete_tweet(args.tweet_id)
-    print(json.dumps(result, indent=2))
+    try:
+        poster = TweetPoster()
+        result = poster.delete_tweet(args.tweet_id)
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_get(args):
     """Get tweet details."""
-    poster = TweetPoster()
-    result = poster.get_tweet(args.tweet_id)
-    print(json.dumps(result, indent=2))
+    try:
+        poster = TweetPoster()
+        result = poster.get_tweet(args.tweet_id)
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_schedule(args):
     """Schedule a tweet."""
-    poster = TweetPoster()
-    post_time = datetime.fromisoformat(args.at)
-    result = poster.schedule_post(args.text, post_time)
-    print(json.dumps(result, indent=2))
+    try:
+        poster = TweetPoster()
+        post_time = datetime.fromisoformat(args.at)
+        result = poster.schedule_post(args.text, post_time)
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_scheduled(args):
     """List scheduled tweets."""
-    poster = TweetPoster()
-    scheduled = poster.get_scheduled()
-    print(json.dumps(scheduled, indent=2))
+    try:
+        poster = TweetPoster()
+        scheduled = poster.get_scheduled()
+        print(json.dumps(scheduled, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_cancel(args):
     """Cancel scheduled tweet."""
-    poster = TweetPoster()
-    result = poster.cancel_scheduled(args.file)
-    print(json.dumps(result, indent=2))
+    try:
+        poster = TweetPoster()
+        result = poster.cancel_scheduled(args.file)
+        print(json.dumps(result, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_search(args):
     """Search tweets."""
-    client = get_client()
-    tweets = client.search_recent_tweets(args.query, max_results=args.limit)
-    results = [t.to_dict() for t in tweets]
-    print(json.dumps(results, indent=2))
+    try:
+        client = get_client()
+        tweets = client.search_recent_tweets(args.query, max_results=args.limit)
+        results = [t.to_dict() for t in tweets]
+        print(json.dumps(results, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_mentions(args):
     """Get mentions."""
-    reply_mgr = ReplyManager()
-    mentions = reply_mgr.get_mentions(since_id=args.since, max_results=args.limit)
-    print(json.dumps(mentions, indent=2))
+    try:
+        reply_mgr = ReplyManager()
+        mentions = reply_mgr.get_mentions(since_id=args.since, max_results=args.limit)
+        print(json.dumps(mentions, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_thread(args):
     """Post a thread."""
-    with open(args.file) as f:
-        tweets = [line.strip() for line in f if line.strip()]
-    
-    poster = TweetPoster()
-    results = poster.post_thread(tweets, delay_seconds=args.delay)
-    print(json.dumps(results, indent=2))
+    try:
+        with open(args.file) as f:
+            tweets = [line.strip() for line in f if line.strip()]
+        
+        poster = TweetPoster()
+        results = poster.post_thread(tweets, delay_seconds=args.delay)
+        print(json.dumps(results, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_whoami(args):
     """Get current user."""
-    client = get_client()
-    me = client.get_me()
-    print(json.dumps(me, indent=2))
+    try:
+        client = get_client()
+        me = client.get_me()
+        print(json.dumps(me, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_followers(args):
     """Get followers."""
-    client = get_client()
-    user_id = args.user_id
-    if not user_id:
-        user_id = client.get_me()["data"]["id"]
-    followers = client.get_followers(user_id, max_results=args.limit)
-    print(json.dumps(followers, indent=2))
+    try:
+        client = get_client()
+        user_id = args.user_id
+        if not user_id:
+            user_id = client.get_me()["data"]["id"]
+        followers = client.get_followers(user_id, max_results=args.limit)
+        print(json.dumps(followers, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_rate(args):
     """Get rate limit status."""
-    client = get_client()
-    status = client.get_rate_limit_status()
-    print(json.dumps(status, indent=2))
+    try:
+        client = get_client()
+        status = client.get_rate_limit_status()
+        print(json.dumps(status, indent=2))
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def main():

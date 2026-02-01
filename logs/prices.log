@@ -3183,3 +3183,3223 @@ Config: {
   "job": "price-check",
   "schedule": "*/15 * * * *"
 }
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"ETH\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"ETH\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "STRK",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"STRK\", \"BTC\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"BTC\", \"STRK\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"STRK\", \"BTC\", \"ETH\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1-Fast",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "error": "usage: main.py [-h] [--token TOKEN] [--json]\nmain.py: error: unrecognized arguments: {\"raw_message\": \"check prices for BTC, ETH, STRK\", \"tokens\": [\"ETH\", \"BTC\", \"STRK\"]}\n"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}

@@ -3,6 +3,11 @@
 Crypto Trading Skill - Main Entry Point.
 
 CLI interface for on-chain metrics, whale tracking, and arbitrage detection.
+
+Error Handling:
+- All functions wrap operations in try/except
+- Errors logged to console with context
+- Non-zero exit codes on failure
 """
 
 #!/usr/bin/env python3
@@ -25,78 +30,90 @@ from scripts.arbitrage import ArbitrageDetector, SyncArbitrageDetector
 
 def cmd_metrics(args):
     """Get token metrics."""
-    metrics = SyncOnChainMetrics()
-    if args.token:
-        result = metrics.get_token_metrics(args.token, args.chain)
-        if result:
-            print(json.dumps(result.__dict__, indent=2, default=str))
+    try:
+        metrics = SyncOnChainMetrics()
+        if args.token:
+            result = metrics.get_token_metrics(args.token, args.chain)
+            if result:
+                print(json.dumps(result.__dict__, indent=2, default=str))
+            else:
+                print(json.dumps({"error": "Token not found"}, indent=2))
+        elif args.search:
+            results = metrics.search_tokens(args.search, limit=args.limit)
+            print(json.dumps([r.__dict__ for r in results], indent=2, default=str))
+        elif args.pools:
+            pools = metrics.get_top_pools(args.chain, limit=args.limit)
+            print(json.dumps([p.__dict__ for p in pools], indent=2, default=str))
+        elif args.trending:
+            pools = metrics.get_trending_pools(args.chain, limit=args.limit)
+            print(json.dumps([p.__dict__ for p in pools], indent=2, default=str))
         else:
-            print(json.dumps({"error": "Token not found"}, indent=2))
-    elif args.search:
-        results = metrics.search_tokens(args.search, limit=args.limit)
-        print(json.dumps([r.__dict__ for r in results], indent=2, default=str))
-    elif args.pools:
-        pools = metrics.get_top_pools(args.chain, limit=args.limit)
-        print(json.dumps([p.__dict__ for p in pools], indent=2, default=str))
-    elif args.trending:
-        pools = metrics.get_trending_pools(args.chain, limit=args.limit)
-        print(json.dumps([p.__dict__ for p in pools], indent=2, default=str))
-    else:
-        overview = metrics.get_market_overview(args.chains)
-        print(json.dumps(overview, indent=2, default=str))
-    metrics.close()
+            overview = metrics.get_market_overview(args.chains)
+            print(json.dumps(overview, indent=2, default=str))
+        metrics.close()
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_whale(args):
     """Whale tracking commands."""
-    tracker = SyncWhaleTracker()
-    
-    if args.add:
-        tracker.add_tracked_wallet(
-            args.add,
-            label=args.label,
-            tags=args.tags.split(",") if args.tags else []
-        )
-        print(json.dumps({"status": "added", "address": args.add}))
-    elif args.list:
-        wallets = tracker.list_tracked_wallets()
-        print(json.dumps([w.__dict__ for w in wallets], indent=2, default=str))
-    elif args.transactions:
-        txs = tracker.get_large_transactions(args.chain, min_value_usd=args.min_value)
-        print(json.dumps([tx.__dict__ for tx in txs], indent=2, default=str))
-    elif args.wallet:
-        txs = tracker.get_wallet_transactions(args.wallet, args.chain)
-        print(json.dumps([tx.__dict__ for tx in txs], indent=2, default=str))
-    elif args.update:
-        updated = tracker.update_tracked_wallets(args.chains)
-        print(json.dumps({k: v.__dict__ for k, v in updated.items()}, indent=2, default=str))
-    else:
-        txs = tracker.get_large_transactions(args.chain, min_value_usd=args.min_value)
-        analysis = tracker.analyze_flow(txs)
-        sentiment = tracker.get_whale_sentiment(txs)
-        print(json.dumps({"analysis": analysis, "sentiment": sentiment}, indent=2, default=str))
-    
-    tracker.close()
+    try:
+        tracker = SyncWhaleTracker()
+        
+        if args.add:
+            tracker.add_tracked_wallet(
+                args.add,
+                label=args.label,
+                tags=args.tags.split(",") if args.tags else []
+            )
+            print(json.dumps({"status": "added", "address": args.add}))
+        elif args.list:
+            wallets = tracker.list_tracked_wallets()
+            print(json.dumps([w.__dict__ for w in wallets], indent=2, default=str))
+        elif args.transactions:
+            txs = tracker.get_large_transactions(args.chain, min_value_usd=args.min_value)
+            print(json.dumps([tx.__dict__ for tx in txs], indent=2, default=str))
+        elif args.wallet:
+            txs = tracker.get_wallet_transactions(args.wallet, args.chain)
+            print(json.dumps([tx.__dict__ for tx in txs], indent=2, default=str))
+        elif args.update:
+            updated = tracker.update_tracked_wallets(args.chains)
+            print(json.dumps({k: v.__dict__ for k, v in updated.items()}, indent=2, default=str))
+        else:
+            txs = tracker.get_large_transactions(args.chain, min_value_usd=args.min_value)
+            analysis = tracker.analyze_flow(txs)
+            sentiment = tracker.get_whale_sentiment(txs)
+            print(json.dumps({"analysis": analysis, "sentiment": sentiment}, indent=2, default=str))
+        
+        tracker.close()
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def cmd_arbitrage(args):
     """Arbitrage detection commands."""
-    detector = SyncArbitrageDetector(
-        gas_price_gwei=args.gas,
-        profit_threshold_percent=args.threshold
-    )
-    
-    if args.analyze:
-        result = detector.analyze_pair(args.analyze, args.quote)
-        print(json.dumps(result, indent=2, default=str))
-    else:
-        opportunities = detector.find_opportunities(
-            min_spread_percent=args.threshold,
-            max_results=args.limit
+    try:
+        detector = SyncArbitrageDetector(
+            gas_price_gwei=args.gas,
+            profit_threshold_percent=args.threshold
         )
-        print(json.dumps([opp.__dict__ for opp in opportunities], indent=2, default=str))
-    
-    detector.close()
+        
+        if args.analyze:
+            result = detector.analyze_pair(args.analyze, args.quote)
+            print(json.dumps(result, indent=2, default=str))
+        else:
+            opportunities = detector.find_opportunities(
+                min_spread_percent=args.threshold,
+                max_results=args.limit
+            )
+            print(json.dumps([opp.__dict__ for opp in opportunities], indent=2, default=str))
+        
+        detector.close()
+    except Exception as e:
+        print(json.dumps({"error": str(e)}, indent=2))
+        sys.exit(1)
 
 
 def main():
