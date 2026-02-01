@@ -59,7 +59,15 @@ class PriceFetcher:
     Fetch real prices from multiple sources
     Sources: Direct RPC, AVNU API, Blixt API
     """
-
+    
+    # Starknet RPC Endpoints
+    RPC_ENDPOINTS = [
+        "https://rpc.starknet.lava.build:443",
+        "https://starknet-mainnet.g.alchemy.com/v2/YOUR_KEY",
+        "https://rpc.starknet.blockpi.org/v1/pubic",
+        "https://starknet.drpc.org",
+    ]
+    
     # Known DEX contracts on Starknet (real addresses)
     DEX_CONTRACTS = {
         "jediswap": {
@@ -116,8 +124,9 @@ class PriceFetcher:
         "AAVE": "0x08d9b7a85c5d1bb7a5d3d9e6f8a7c5b4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9c",
     }
 
-    def __init__(self, rpc_url: str = "https://rpc.starknet.lava.build:443"):
-        self.rpc_url = rpc_url
+    def __init__(self, rpc_url: str = None):
+        # Use Lava RPC by default, fallback to environment
+        self.rpc_url = rpc_url or "https://rpc.starknet.lava.build:443"
         self.session = None
         self.cache = {}
         self.cache_time = None
@@ -290,25 +299,36 @@ class PriceFetcher:
             USDT = "0x068f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8"
             STRK = "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
 
-            # DEX Factory addresses
-            JEDISWAP_FACTORY = "0x05e5f0e40a15d85f5eb3c52f9e1a79c7c7a5a7e9d5e5c5e5d5c5e5f5a5e5d5b"
-
             async def rpc_call(method: str, params: list = None):
-                """Make JSON-RPC call"""
+                """Make JSON-RPC call with failover"""
                 payload = {
                     "jsonrpc": "2.0",
                     "id": 1,
                     "method": method,
                     "params": params or []
                 }
-                async with aiohttp.ClientSession() as session:
-                    async with session.post(self.rpc_url, json=payload) as resp:
-                        result = await resp.json()
-                        return result.get("result")
+                
+                # Try all endpoints
+                for rpc_url in self.RPC_ENDPOINTS:
+                    try:
+                        async with aiohttp.ClientSession() as session:
+                            async with session.post(rpc_url, json=payload, timeout=aiohttp.ClientTimeout(total=5)) as resp:
+                                if resp.status == 200:
+                                    result = await resp.json()
+                                    if result.get("result"):
+                                        self.rpc_url = rpc_url
+                                        return result.get("result")
+                    except Exception:
+                        continue
+                
+                return None
 
             # Test connection
             block = await rpc_call("starknet_blockNumber")
-            print(f"📊 RPC block: {block}")
+            if block:
+                print(f"✅ Lava RPC connected: block {block}")
+            else:
+                print("⚠️ All RPC endpoints failed")
 
             # For each DEX pair, we would need to:
             # 1. Call get_pair(factory, token_a, token_b) -> pair_address
@@ -318,7 +338,7 @@ class PriceFetcher:
             # This requires starknet.py for ABI/call data generation
             # For now, fall back to CoinGecko
 
-            print("📊 Direct RPC requires starknet.py for contract calls")
+            print("📊 Direct RPC requires starknet.py for contract reads")
             return {}
 
         except Exception as e:
