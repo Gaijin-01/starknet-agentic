@@ -490,12 +490,232 @@ async def find_opportunities():
 3. Add tests for new functionality
 4. Submit pull request
 
+## Real Integrations
+
+### Ekubo API Client
+
+The tracker uses the `ekubo_client.py` module for real-time pool data and prices.
+
+**Module:** `scripts.ekubo_client.EkuboClient`
+
+**API Base URL:** `https://prod-api.ekubo.org`
+
+**Key Endpoints:**
+| Method | Description |
+|--------|-------------|
+| `get_tokens()` | List all tokens on Starknet |
+| `get_token(chain_id, address)` | Get specific token metadata |
+| `get_overview_pairs()` | Get top trading pairs by TVL |
+| `get_tvl_stats()` | Get TVL statistics |
+| `get_volume_stats()` | Get volume statistics |
+| `get_prices(tokens)` | Get USD prices for tokens |
+
+**Client Usage:**
+```python
+from scripts.ekubo_client import EkuboClient
+
+async def get_ekubo_data():
+    async with EkuboClient() as client:
+        # Get top pairs
+        pairs = await client.get_overview_pairs()
+        
+        # Get specific token price
+        price = await client.get_price(token_address)
+        
+        # Get liquidity depth
+        depth = await client.get_liquidity_depth(token_a, token_b)
+```
+
+**Configuration:**
+```bash
+# Environment variable (optional)
+EKUBO_API_KEY=your-api-key
+```
+
+**Starknet Chain ID:** `1` (mainnet)
+
+### Arbitrage Tracker
+
+The `arbitrage_tracker.py` module provides arbitrage detection using real Ekubo data:
+
+```python
+from scripts.arbitrage_tracker import ArbitrageTracker
+
+async def find_opportunities():
+    async with ArbitrageTracker(min_profit_percent=0.5) as tracker:
+        opportunities = await tracker.get_arbitrage_opportunities()
+        return opportunities
+```
+
+**Features:**
+- Real-time price comparison across DEXs
+- Liquidity depth filtering
+- Profit estimation
+- Confidence scoring
+
+---
+
+### CoinGecko Price Feeds
+
+For cross-referencing and additional market data, use the prices skill's `coingecko_client.py`:
+
+**Module:** `prices.scripts.coingecko_client.CoinGeckoClient`
+
+**API Base URL:** `https://api.coingecko.com/api/v3`
+
+**Key Methods:**
+| Method | Description |
+|--------|-------------|
+| `get_prices(ids)` | Get token prices |
+| `get_ohlcv(id, days)` | Get OHLCV chart data |
+| `get_top_coins(limit)` | Get top coins by market cap |
+
+**Client Usage:**
+```python
+from prices.scripts.coingecko_client import CoinGeckoClient
+
+async def get_market_prices():
+    async with CoinGeckoClient() as client:
+        # Get multiple prices
+        prices = await client.get_prices(
+            ["bitcoin", "ethereum", "starknet"],
+            currency="usd",
+            include_24h_change=True
+        )
+        
+        # Get OHLCV for analysis
+        ohlcv = await client.get_ohlcv("bitcoin", days="7")
+```
+
+---
+
+### AVNU Swap API (Optional)
+
+For executing swaps and getting best routes.
+
+**API Base URL:** `https://api.avnu.fi`
+
+**Key Endpoints:**
+| Endpoint | Description |
+|----------|-------------|
+| `GET /swap/v1/quotes` | Get swap quotes |
+| `POST /swap/v1/build` | Build swap transaction calls |
+
+**Rate Limits:**
+- Public: 300 requests per 5 minutes
+- Integrated: Higher limits with API key
+
+---
+
+## Configuration
+
+### Environment Variables
+
+```bash
+# Ekubo (optional, currently public)
+EKUBO_API_KEY=
+
+# CoinGecko (optional, for higher rate limits)
+COINGECKO_API_KEY=
+
+# AVNU (optional)
+AVNU_API_KEY=
+```
+
+### config.yaml Integration
+
+```yaml
+apis:
+  ekubo:
+    enabled: true
+    base_url: "https://prod-api.ekubo.org"
+    chain_id: 1  # Starknet mainnet
+  
+  coingecko:
+    enabled: true
+    base_url: "https://api.coingecko.com/api/v3"
+    api_key: ${COINGECKO_API_KEY}
+    rate_limit_delay: 1.5  # seconds between requests
+  
+  avnu:
+    enabled: false  # Set true for swap execution
+    base_url: "https://api.avnu.fi"
+    api_key: ${AVNU_API_KEY}
+```
+
+---
+
+## Usage Examples
+
+### Complete Price Monitoring Setup
+```python
+import asyncio
+from scripts.ekubo_client import EkuboClient
+from prices.scripts.coingecko_client import CoinGeckoClient
+
+async def monitor_prices():
+    async with EkuboClient() as ekubo, CoinGeckoClient() as cg:
+        # Get Ekubo pool data
+        pairs = await ekubo.get_overview_pairs()
+        
+        # Cross-reference with CoinGecko
+        prices = await cg.get_prices(
+            ["starknet", "ethereum"],
+            include_24h_change=True
+        )
+        
+        # Detect price discrepancies
+        for pair in pairs:
+            print(f"Pair: {pair.token0}/{pair.token1}")
+            print(f"Depth: {pair.depth0}")
+
+asyncio.run(monitor_prices())
+```
+
+### Whale Activity with Price Context
+```python
+async def get_whale_activity_with_prices():
+    async with EkuboClient() as ekubo:
+        # Get current prices for context
+        strk_price = await ekubo.get_strk_price()
+        eth_price = await ekubo.get_eth_price()
+        
+        print(f"STRK: ${strk_price}")
+        print(f"ETH: ${eth_price}")
+        
+        # Get top pools for whale movement context
+        pairs = await ekubo.get_overview_pairs()
+        return pairs
+```
+
+---
+
+## Rate Limit Handling
+
+All clients implement automatic rate limiting:
+
+```python
+class EkuboClient:
+    # Default: No explicit rate limiting (public API)
+    # Monitor response headers for 429 errors
+
+class CoinGeckoClient:
+    # Default: 1.5 second delay between requests
+    # Automatic retry on 429 with exponential backoff
+
+class AVNUClient:
+    # Default: 300 req/5min for public
+    # Use API key for higher limits
+```
+
+---
+
 ## License
 
 MIT License - See LICENSE file for details.
 
 ---
 
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Last Updated:** 2026-02-01  
 **Author:** Clawd / Sefirot

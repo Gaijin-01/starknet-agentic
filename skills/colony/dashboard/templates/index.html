@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starknet Intelligence Colony</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'starknet': '#5d6bf9',
+                        'starknet-dark': '#3d4b99',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow { box-shadow: 0 0 20px rgba(93, 107, 249, 0.3); }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .card { @apply bg-gray-800 rounded-xl p-6 shadow-lg; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <nav class="border-b border-gray-700 bg-gray-800/50 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-starknet rounded-lg flex items-center justify-center">
+                    <span class="text-xl">🧠</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold">Starknet Colony</h1>
+                    <p class="text-xs text-gray-400">Multi-Agent DeFi Intelligence</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div id="status" class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full pulse"></span>
+                    <span class="text-sm">System Active</span>
+                </div>
+                <span id="time" class="text-sm text-gray-400"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="card">
+                <p class="text-gray-400 text-sm">Total TVL</p>
+                <p id="tvl" class="text-2xl font-bold text-starknet">$--</p>
+                <p class="text-xs text-gray-500 mt-1">Across protocols</p>
+            </div>
+            <div class="card">
+                <p class="text-gray-400 text-sm">24h Volume</p>
+                <p id="volume" class="text-2xl font-bold text-green-400">$--</p>
+                <p class="text-xs text-gray-500 mt-1">Trading volume</p>
+            </div>
+            <div class="card">
+                <p class="text-gray-400 text-sm">Arbitrage</p>
+                <p id="arbitrage-count" class="text-2xl font-bold text-yellow-400">--</p>
+                <p class="text-xs text-gray-500 mt-1">Opportunities</p>
+            </div>
+            <div class="card">
+                <p class="text-gray-400 text-sm">Whale Activity</p>
+                <p id="whale-count" class="text-2xl font-bold text-purple-400">--</p>
+                <p class="text-xs text-gray-500 mt-1">Large transfers</p>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid lg:grid-cols-2 gap-6 mb-8">
+            <!-- Prices -->
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>💰</span> Token Prices
+                </h2>
+                <div id="prices" class="space-y-2">
+                    <div class="animate-pulse flex gap-4">
+                        <div class="h-4 bg-gray-700 rounded w-1/4"></div>
+                        <div class="h-4 bg-gray-700 rounded w-1/4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arbitrage -->
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>⚡</span> Arbitrage Opportunities
+                </h2>
+                <div id="arbitrage" class="space-y-2">
+                    <p class="text-gray-400 text-sm">No opportunities detected</p>
+                </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="grid lg:grid-cols-3 gap-4 mb-8">
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>🔒</span> Security Overview
+                </h2>
+                <div id="security-score" class="text-center">
+                    <div class="text-4xl font-bold text-starknet" id="sec-score">--</div>
+                    <p class="text-sm text-gray-400 mt-1">Security Score</p>
+                    <p class="text-xs text-gray-500" id="sec-risk">Risk: --</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>⚠️</span> Critical Alerts
+                </h2>
+                <div id="security-alerts" class="space-y-2">
+                    <p class="text-gray-400 text-sm">Loading...</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>📊</span> Protocol Status
+                </h2>
+                <div id="protocol-status" class="space-y-2">
+                    <p class="text-gray-400 text-sm">Loading...</p>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- Whale Activity -->
+        <div class="card mb-8">
+            <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                <span>🐋</span> Recent Whale Activity
+            </h2>
+            <div id="whales" class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="text-gray-400 border-b border-gray-700">
+                        <tr>
+                            <th class="text-left py-2">Token</th>
+                            <th class="text-right py-2">Amount</th>
+                            <th class="text-right py-2">USD Value</th>
+                            <th class="text-right py-2">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="whales-body" class="divide-y divide-gray-700">
+                        <tr><td colspan="4" class="py-4 text-center text-gray-400">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Recent Content -->
+        <div class="grid lg:grid-cols-2 gap-6">
+            <!-- Research -->
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>📚</span> Recent Research
+                </h2>
+                <div id="research" class="space-y-3">
+                    <p class="text-gray-400 text-sm">No research reports yet</p>
+                </div>
+            </div>
+
+            <!-- Generated Content -->
+            <div class="card">
+                <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span>📝</span> Generated Content
+                </h2>
+                <div id="content" class="space-y-3">
+                    <p class="text-gray-400 text-sm">No content generated yet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="card mt-6">
+            <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                <span>🔔</span> Recent Alerts
+            </h2>
+            <div id="alerts" class="space-y-2">
+                <p class="text-gray-400 text-sm">No alerts</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-700 mt-12 py-6 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-400 text-sm">
+            <p>🧠 Starknet Intelligence Colony - Powered by AI Agents</p>
+            <p class="mt-1">Auto-updates every 30 seconds</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update time
+        function updateTime() {
+            document.getElementById('time').textContent = new Date().toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Fetch dashboard data
+        async function fetchData() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+            }
+        }
+
+        function updateDashboard(data) {
+            // Stats
+            document.getElementById('tvl').textContent = formatCurrency(data.market_data?.total_tvl);
+            document.getElementById('volume').textContent = formatCurrency(data.market_data?.total_volume_24h);
+            document.getElementById('arbitrage-count').textContent = data.market_data?.arbitrage_count || 0;
+            document.getElementById('whale-count').textContent = data.market_data?.whale_count || 0;
+
+            // Prices
+            const pricesEl = document.getElementById('prices');
+            const prices = data.market_data?.prices || {};
+            if (Object.keys(prices).length > 0) {
+                pricesEl.innerHTML = Object.entries(prices).map(([token, price]) => `
+                    <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                        <span class="font-medium">${token}</span>
+                        <span class="text-green-400">$${Number(price).toFixed(2)}</span>
+                    </div>
+                `).join('');
+            }
+
+            // Arbitrage
+            const arbEl = document.getElementById('arbitrage');
+            const arbitrage = data.arbitrage || [];
+            if (arbitrage.length > 0) {
+                arbEl.innerHTML = arbitrage.slice(0, 5).map(arb => `
+                    <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                        <div>
+                            <span class="font-medium">${arb.token}</span>
+                            <span class="text-xs text-gray-400 ml-2">${arb.buy_dex} → ${arb.sell_dex}</span>
+                        </div>
+                        <span class="text-yellow-400 font-semibold">+${arb.profit_percent?.toFixed(2)}%</span>
+                    </div>
+                `).join('');
+            } else {
+                arbEl.innerHTML = '<p class="text-gray-400 text-sm">No opportunities detected</p>';
+            }
+
+            // Whales
+            const whalesBody = document.getElementById('whales-body');
+            const whales = data.whales || [];
+            if (whales.length > 0) {
+                whalesBody.innerHTML = whales.slice(0, 10).map(w => `
+                    <tr>
+                        <td class="py-2">${w.token}</td>
+                        <td class="text-right">${formatNumber(w.amount)}</td>
+                        <td class="text-right text-purple-400">$${formatNumber(w.amount_usd)}</td>
+                        <td class="text-right text-gray-400">${timeAgo(w.timestamp)}</td>
+                    </tr>
+                `).join('');
+            } else {
+                whalesBody.innerHTML = '<tr><td colspan="4" class="py-4 text-center text-gray-400">No whale activity</td></tr>';
+            }
+
+            // Research
+            const researchEl = document.getElementById('research');
+            const research = data.research || [];
+            if (research.length > 0) {
+                researchEl.innerHTML = research.slice(0, 3).map(r => `
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <p class="font-medium text-sm">${r.title}</p>
+                        <p class="text-xs text-gray-400 mt-1">${r.summary?.substring(0, 100)}...</p>
+                    </div>
+                `).join('');
+            }
+
+            // Content
+            const contentEl = document.getElementById('content');
+            const content = data.content || [];
+            if (content.length > 0) {
+                contentEl.innerHTML = content.slice(0, 3).map(c => `
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-xs px-2 py-0.5 bg-starknet/30 rounded">${c.type}</span>
+                            <span class="text-xs text-gray-400">${c.platform}</span>
+                        </div>
+                        <p class="font-medium text-sm">${c.title}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Alerts
+            const alertsEl = document.getElementById('alerts');
+            const alerts = data.alerts || [];
+            if (alerts.length > 0) {
+                alertsEl.innerHTML = alerts.slice(0, 5).map(a => `
+                    <div class="p-3 rounded-lg ${getAlertClass(a.severity)}">
+                        <p class="text-sm">${a.message}</p>
+                        <p class="text-xs opacity-70 mt-1">${timeAgo(a.timestamp)}</p>
+                    </div>
+                `).join('');
+            }
+            
+            // Security data
+            fetchSecurityData();
+        }
+
+        async function fetchSecurityData() {
+            try {
+                const response = await fetch('/api/security');
+                const data = await response.json();
+                
+                if (data.error) return;
+                
+                // Update security score
+                const scoreEl = document.getElementById('sec-score');
+                const riskEl = document.getElementById('sec-risk');
+                if (data.average_score) {
+                    scoreEl.textContent = Math.round(data.average_score);
+                    scoreEl.className = `text-4xl font-bold ${getScoreColor(data.average_score)}`;
+                    riskEl.textContent = `Protocols: ${data.protocols_monitored}`;
+                }
+                
+                // Update protocol status
+                const statusEl = document.getElementById('protocol-status');
+                const protocols = data.protocol_status || {};
+                if (Object.keys(protocols).length > 0) {
+                    statusEl.innerHTML = Object.entries(protocols).slice(0, 5).map(([name, status]) => `
+                        <div class="flex justify-between items-center py-1">
+                            <span class="text-sm capitalize">${name}</span>
+                            <span class="text-xs px-2 py-0.5 rounded ${getScoreBadge(status.score)}">${status.score}/100</span>
+                        </div>
+                    `).join('');
+                }
+                
+                // Update security alerts
+                const alertsEl = document.getElementById('security-alerts');
+                const criticalAlerts = alerts.filter(a => 
+                    a.severity === 'critical' || a.type?.includes('security')
+                ).slice(0, 3);
+                
+                if (criticalAlerts.length > 0) {
+                    alertsEl.innerHTML = criticalAlerts.map(a => `
+                        <div class="p-2 bg-red-500/20 border border-red-500/30 rounded text-sm">
+                            ${a.message?.substring(0, 50)}...
+                        </div>
+                    `).join('');
+                } else {
+                    alertsEl.innerHTML = '<p class="text-gray-400 text-sm">✅ No critical security alerts</p>';
+                }
+                
+            } catch (error) {
+                console.error('Failed to fetch security data:', error);
+            }
+        }
+
+        function getScoreColor(score) {
+            if (score >= 80) return 'text-green-400';
+            if (score >= 60) return 'text-yellow-400';
+            if (score >= 40) return 'text-orange-400';
+            return 'text-red-400';
+        }
+
+        function getScoreBadge(score) {
+            if (score >= 80) return 'bg-green-500/20 text-green-400';
+            if (score >= 60) return 'bg-yellow-500/20 text-yellow-400';
+            if (score >= 40) return 'bg-orange-500/20 text-orange-400';
+            return 'bg-red-500/20 text-red-400';
+        }
+
+        function formatCurrency(value) {
+            if (!value) return '$--';
+            if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
+            if (value >= 1000) return '$' + (value / 1000).toFixed(1) + 'K';
+            return '$' + value.toFixed(2);
+        }
+
+        function formatNumber(value) {
+            if (!value) return '0';
+            if (value >= 1000000) return (value / 1000000).toFixed(2) + 'M';
+            if (value >= 1000) return (value / 1000).toFixed(2) + 'K';
+            return value.toFixed(2);
+        }
+
+        function timeAgo(timestamp) {
+            const seconds = Math.floor((new Date() - new Date(timestamp)) / 1000);
+            if (seconds < 60) return seconds + 's ago';
+            if (seconds < 3600) return Math.floor(seconds / 60) + 'm ago';
+            if (seconds < 86400) return Math.floor(seconds / 3600) + 'h ago';
+            return Math.floor(seconds / 86400) + 'd ago';
+        }
+
+        function getAlertClass(severity) {
+            const classes = {
+                'info': 'bg-blue-500/20 border border-blue-500/30',
+                'warning': 'bg-yellow-500/20 border border-yellow-500/30',
+                'error': 'bg-red-500/20 border border-red-500/30',
+                'critical': 'bg-red-600/30 border border-red-600',
+            };
+            return classes[severity] || classes['info'];
+        }
+
+        // Initial fetch and periodic updates
+        fetchData();
+        setInterval(fetchData, 30000);
+    </script>
+</body>
+</html>

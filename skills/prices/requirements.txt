@@ -1,0 +1,5 @@
+# Prices Skill Dependencies
+
+# Core
+aiohttp>=3.9.0
+asyncio

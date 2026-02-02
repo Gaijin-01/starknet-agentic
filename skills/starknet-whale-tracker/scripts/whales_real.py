@@ -188,18 +188,31 @@ def get_defi_protocols() -> List[WhaleAddress]:
 # === STATS ===
 
 def get_stats() -> Dict:
-    """Get database statistics"""
-    return {
-        "total_whales": len(STARKNET_WHALES),
-        "by_category": {
-            cat: len(get_by_category(cat)) 
-            for cat in WHALE_CATEGORIES.keys()
-        },
-        "large_holders": len(get_large_holders()),
-        "smart_money": len(get_smart_money()),
-        "defi_protocols": len(get_defi_protocols()),
-        "exchange_wallets": len(get_exchange_wallets())
-    }
+    """
+    Get database statistics.
+    
+    This module reads from static data - errors would occur at import time
+    if data is malformed. No runtime error handling needed.
+    
+    Returns:
+        Dict with whale database statistics
+    """
+    try:
+        return {
+            "total_whales": len(STARKNET_WHALES),
+            "by_category": {
+                cat: len(get_by_category(cat)) 
+                for cat in WHALE_CATEGORIES.keys()
+            },
+            "large_holders": len(get_large_holders()),
+            "smart_money": len(get_smart_money()),
+            "defi_protocols": len(get_defi_protocols()),
+            "exchange_wallets": len(get_exchange_wallets())
+        }
+    except Exception as e:
+        # Log error but return minimal valid response
+        print(f"Warning: Error calculating whale stats: {e}")
+        return {"total_whales": 0, "by_category": {}, "error": str(e)}
 
 
 def print_summary():

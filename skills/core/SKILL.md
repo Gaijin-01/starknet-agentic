@@ -241,3 +241,116 @@ Old skills kept as aliases for backward compatibility.
 | crypto-trading | whale, arbitrage, on-chain, tvl |
 | ct-intelligence | competitor, trend, viral, monitor |
 | claude-proxy | default routing for general queries |
+
+## Troubleshooting
+
+### Claude Proxy Issues
+
+**Task execution fails**
+```bash
+# Check logs
+python3 main.py health --verbose
+
+# Restart proxy
+python3 main.py proxy --task "status check"
+```
+
+**Autonomous mode doesn't start**
+- Verify LLM configuration: `python3 main.py config get claude_proxy.llm.primary`
+- Check model availability: `python3 main.py status`
+- Review reasoning logs in `memory/`
+
+**Model returns empty responses**
+- Increase confidence threshold: `python3 main.py config add orchestrator.confidence_threshold 0.7`
+- Check fallback models configured
+
+### Orchestrator Issues
+
+**Messages routed to wrong skill**
+- Update skill keywords: `python3 main.py route --skills`
+- Check confidence score: Increase threshold
+- Review routing logs in `memory/`
+
+**Skills not found**
+- Verify skills path: `python3 main.py config get orchestrator.skills_path`
+- Run analysis: `python3 main.py proxy --analyze-all`
+- Check skill directories exist at configured path
+
+### MCP Server Issues
+
+**Server not responding**
+```bash
+# Check status
+python3 main.py mcp daemon status
+
+# Restart
+python3 main.py mcp daemon stop
+python3 main.py mcp daemon start
+
+# Check logs
+cat ~/.config/clawdbot/mcporter.log
+```
+
+**Tool call fails**
+- Verify server is running: `python3 main.py mcp list`
+- Check tool name format: `server.tool_name`
+- Verify JSON args format
+
+### Configuration Issues
+
+**Config not loading**
+```bash
+# Debug config loading
+python3 main.py config list
+
+# Check config directory exists
+ls ~/.config/clawdbot/
+
+# Verify file permissions
+chmod 600 ~/.config/clawdbot/*.yaml
+```
+
+**Doctor --fix reset config**
+- Restore from backup: `cp ~/.moltbot/moltbot.json.backup ~/.moltbot/moltbot.json`
+- Manual recovery from memory/evolution.md logs
+
+### Common Error Messages
+
+| Error | Solution |
+|-------|----------|
+| `Model not found` | Check LLM config, verify API keys |
+| `Skill not loaded` | Run `python3 main.py proxy --analyze-all` |
+| `MCP server timeout` | Increase timeout in config, restart daemon |
+| `Confidence too low` | Lower threshold or improve query |
+| `Permission denied` | Check file/directory permissions |
+
+### Debug Commands
+
+```bash
+# Full health check
+python3 main.py check
+
+# Verbose status
+python3 main.py health --verbose
+
+# Route test
+python3 main.py route --test "your query"
+
+# Config debug
+python3 main.py config list
+
+# MCP diagnostics
+python3 main.py mcp list
+python3 main.py mcp daemon status
+
+# Log analysis
+tail -f ~/.config/clawdbot/mcporter.log
+cat memory/*.log | grep ERROR
+```
+
+### Getting Help
+
+1. Check logs: `python3 main.py health --verbose`
+2. Run diagnostics: `python3 main.py check`
+3. Review skill-evolver: `cat memory/evolution.md`
+4. Check Moltbot docs: `/home/wner/moltbot/docs/`

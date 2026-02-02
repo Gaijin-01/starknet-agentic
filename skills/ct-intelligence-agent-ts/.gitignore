@@ -1,6 +1,0 @@
-.vercel
-node_modules
-.bun-install
-dist
-.env
-*.log

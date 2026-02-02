@@ -1,0 +1,148 @@
+{
+  "sources": {
+    "twitter": {
+      "enabled": true,
+      "accounts": [
+        "@CryptoHayes",
+        "@Starknet",
+        "@StarkWareLtd",
+        "@VitalikButerin",
+        "@domothy",
+        "@danoseth",
+        "@EliBenSasson",
+        "@tsarevsky",
+        "@StarknetWarrior",
+        "@StarknetBull",
+        "@StarknetDaily"
+      ],
+      "keywords": [
+        "starknet",
+        "strk",
+        "l2",
+        "zk",
+        "zero-knowledge",
+        "starknet-eco",
+        "argent",
+        "braavos",
+        "$SLAY",
+        "$DREAMS",
+        "$SURVIVOR",
+        "$SCHIZODIO",
+        "$STRK",
+        "$ETH",
+        "$BTC",
+        "starknet ecosystem",
+        "starknet DeFi"
+      ],
+      "max_results": 50,
+      "sentiment_keywords": {
+        "bullish": ["moon", "lfg", "bullish", "up only", "gm", "green", "pump"],
+        "bearish": ["dump", "rugged", "scam", "bearish", "rekt", "rug", "death"]
+      }
+    },
+    "reddit": {
+      "enabled": true,
+      "subreddits": [
+        "ethfinance",
+        "Starknet",
+        "CryptoCurrency",
+        "ethdev",
+        "defi"
+      ],
+      "max_posts": 20,
+      "min_score": 5
+    },
+    "hacker_news": {
+      "enabled": true,
+      "keywords": [
+        "starknet",
+        "l2",
+        "zero-knowledge",
+        "starkware",
+        " Cairo"
+      ],
+      "max_stories": 15
+    },
+    "onchain": {
+      "enabled": true,
+      "dexscreener": {
+        "enabled": true,
+        "chains": ["starknet", "ethereum"],
+        "tokens": ["SLAY", "STRK", "ETH", "BTC", "DREAMS", "SURVIVOR", "SCHIZODIO"],
+        "max_pools": 30
+      },
+      "birdeye": {
+        "enabled": true,
+        "chains": ["starknet"]
+      },
+      "whale_tracker": {
+        "enabled": true,
+        "db_path": "../starknet-whale-tracker/data/whales.db",
+        "min_value_strk": 10000,
+        "activity_hours": 24
+      }
+    }
+  },
+  "filtering": {
+    "min_relevance_score": 0.5,
+    "max_items_per_digest": 20,
+    "deduplicate": true,
+    "similarity_threshold": 0.85
+  },
+  "ranking": {
+    "weights": {
+      "relevance": 0.4,
+      "engagement": 0.25,
+      "recency": 0.2,
+      "source_quality": 0.15
+    },
+    "source_quality": {
+      "twitter": 0.8,
+      "reddit": 0.75,
+      "hacker_news": 0.9,
+      "onchain": 0.95,
+      "whale_tracker": 0.85
+    }
+  },
+  "schedules": {
+    "daily_pulse": ["08:00", "13:00", "18:00"],
+    "weekly_digest": "09:00 Monday",
+    "weekly_wrap": "20:00 Friday",
+    "research_digest": ["08:00", "20:00"]
+  },
+  "output": {
+    "base_dir": "data",
+    "raw_dir": "data/raw",
+    "processed_dir": "data/processed",
+    "outputs_dir": "data/outputs"
+  },
+  "whale_tracker_integration": {
+    "enabled": true,
+    "alert_min_value": 1000,
+    "track_large_transfers": true,
+    "track_new_positions": true,
+    "track_arbitrage": true
+  },
+  "token_alerts": {
+    "enabled": true,
+    "tokens": ["SLAY", "STRK", "ETH", "BTC", "DREAMS", "SURVIVOR", "SCHIZODIO"],
+    "price_change_threshold_percent": 5,
+    "volume_spike_multiplier": 2.0,
+    "notify_on": [
+      "large_price_move",
+      "volume_spike",
+      "whale_activity",
+      "new_mention"
+    ],
+    "alert_channels": ["telegram"]
+  },
+  "content_templates": {
+    "thread": {
+      "max_length": 2800,
+      "parts": 10
+    },
+    "post": {
+      "max_length": 280
+    }
+  }
+}

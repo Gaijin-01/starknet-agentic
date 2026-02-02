@@ -5,6 +5,10 @@ import os
 from dataclasses import dataclass
 from typing import List, Optional
 
+# Get Alchemy key from environment
+ALCHEMY_KEY = os.getenv("ALCHEMY_API_KEY", "")
+ALCHEMY_URL = f"https://starknet-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}" if ALCHEMY_KEY else ""
+
 
 @dataclass
 class StarknetConfig:
@@ -90,7 +94,7 @@ class Config:
 # Default config for development
 DEFAULT_CONFIG = Config(
     starknet=StarknetConfig(
-        rpc_url="https://starknet-mainnet.g.alchemy.com/v2/YOUR_KEY",
+        rpc_url=ALCHEMY_URL if ALCHEMY_URL else os.getenv("STARKNET_RPC_URL", "https://rpc.starknet.lava.build:443"),
         indexer_url="https://api.starknet.io/v1"
     ),
     whales=WhaleConfig(
