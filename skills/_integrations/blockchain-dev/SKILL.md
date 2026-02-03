@@ -853,3 +853,79 @@ Agent:
 5. **Upgradeability**: Proxy patterns + timelock
 6. **Monitoring**: Events + alerting
 7. **Key management**: Multi-sig + hardware wallets
+
+---
+
+## Implemented Contracts
+
+### Privacy-Preserving Voting Contract (Starknet)
+
+**Location:** `contracts/privacy_voting/`
+
+**Purpose:** Privacy-preserving governance voting with MEV protection for DAOs.
+
+**Features:**
+- Encrypted vote commitments using Poseidon hashing
+- Two-phase voting: commit → reveal
+- MEV protection through vote encryption
+- Slashing mechanism for double-voting prevention
+- Time-locked reveal mechanism
+
+**Contract Structure:**
+```
+contracts/privacy_voting/
+├── src/
+│   ├── lib.cairo          # Module entry point
+│   └── voting.cairo       # Main contract
+├── Scarb.toml             # Project config
+└── tests/
+    └── test_voting.cairo  # Unit tests
+```
+
+**Key Functions:**
+- `submit_vote_commitment()`: Submit encrypted vote hash
+- `reveal_vote()`: Reveal actual vote after commit period
+- `finalize_voting()`: Finalize results after reveal period
+- `slash_double_voter()`: Penalize double-voting attempts
+
+**Usage:**
+```bash
+# Initialize project
+cd contracts/privacy_voting
+
+# Build contract
+scarb build
+
+# Run tests
+scarb test
+
+# Deploy to testnet
+starknet deploy --network testnet --contract target/dev/privacy_voting_PrivacyVoting.contract_class.json
+```
+
+**Integration Example:**
+```cairo
+use privacy_voting::voting::{PrivacyVoting, IPrivacyVoting};
+
+// Initialize
+let contract = PrivacyVoting::constructor(
+    contract_address_const::<0>(),
+    admin,
+    proposal_hash,
+    100,  // voting duration
+    50    // reveal duration
+);
+
+// Submit encrypted vote
+let commitment = compute_vote_hash(option_id, secret_nonce);
+contract.submit_vote_commitment(commitment);
+
+// Reveal after voting period
+contract.reveal_vote(option_id, secret_nonce);
+```
+
+**Research Context:**
+This contract addresses the gap in DAO governance privacy identified in crypto_research.md:
+- MEV protection for voting decisions
+- Privacy from front-running vote manipulation
+- Transparent yet secret voting mechanism

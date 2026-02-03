@@ -4800,3 +4800,101 @@ Active: 0
 ---
   ETH→USDC: n=10, mean=0.0500%
 ---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2298.28, STRK=$0.057883, WBTC=$76406
+📊 Market prices: ETH=$2298.28, STRK=$0.057883, WBTC=$76406 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2291.72, STRK=$0.057537, WBTC=$76254
+📊 Market prices: ETH=$2291.72, STRK=$0.057537, WBTC=$76254 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
