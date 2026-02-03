@@ -158,3 +158,28 @@
 ❌ starknet.py required for DEX prices - not found
    Install: pip install starknet-py
    Or set PYTHONPATH to include starknet-py installation
+
+## 2026-02-03T19:30:19.677857
+❌ starknet.py required for DEX prices - not found
+   Install: pip install starknet-py
+   Or set PYTHONPATH to include starknet-py installation
+
+## 2026-02-03T19:30:34.204532
+❌ starknet.py required for DEX prices - not found
+   Install: pip install starknet-py
+   Or set PYTHONPATH to include starknet-py installation
+
+## 2026-02-03T20:00:20.233272
+❌ starknet.py required for DEX prices - not found
+   Install: pip install starknet-py
+   Or set PYTHONPATH to include starknet-py installation
+
+## 2026-02-03T20:00:27.428033
+❌ starknet.py required for DEX prices - not found
+   Install: pip install starknet-py
+   Or set PYTHONPATH to include starknet-py installation
+
+## 2026-02-03T20:30:12.395000
+❌ starknet.py required for DEX prices - not found
+   Install: pip install starknet-py
+   Or set PYTHONPATH to include starknet-py installation

@@ -7875,3 +7875,259 @@ Config: {
   "job": "price-check",
   "schedule": "*/15 * * * *"
 }
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "STRK",
+        "BTC",
+        "ETH"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "ETH",
+        "BTC",
+        "STRK"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "ETH",
+      "BTC"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "STRK",
+        "ETH",
+        "BTC"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "STRK",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "BTC",
+        "STRK",
+        "ETH"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "BTC",
+        "ETH",
+        "STRK"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "STRK",
+      "BTC",
+      "ETH"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "STRK",
+        "BTC",
+        "ETH"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "BTC",
+      "ETH",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "BTC",
+        "ETH",
+        "STRK"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
+{
+  "message": "check prices for BTC, ETH, STRK",
+  "skill": "prices",
+  "confidence": 0.9,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 10,
+  "params": {
+    "raw_message": "check prices for BTC, ETH, STRK",
+    "tokens": [
+      "ETH",
+      "BTC",
+      "STRK"
+    ]
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "check prices for BTC, ETH, STRK",
+      "tokens": [
+        "ETH",
+        "BTC",
+        "STRK"
+      ]
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "price-check",
+  "schedule": "*/15 * * * *"
+}
