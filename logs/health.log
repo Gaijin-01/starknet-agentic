@@ -18924,3 +18924,103 @@ ModuleNotFoundError: No module named 'main'
   "job": "health-check",
   "schedule": "*/5 * * * *"
 }
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
