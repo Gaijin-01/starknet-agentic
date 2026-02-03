@@ -1,0 +1,423 @@
+{
+  "timestamp": "2026-02-02T22:27:27+02:00",
+  "total": 81,
+  "skills": [
+    {
+      "name": "1password",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "adaptive-routing",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "apple-notes",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "apple-reminders",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "arbitrage-signal",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "avnu",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "bear-notes",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "bird",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "blockchain-dev",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "blogwatcher",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "blucli",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "bluebubbles",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "camsnap",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "canvas",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "claude-proxy",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "clawhub",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "coding-agent",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "colony",
+      "status": "failed",
+      "duration": 0,
+      "log": "/home/wner/clawd/logs/test-colony-20260202-222727.log"
+    },
+    {
+      "name": "config",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "core",
+      "status": "passed",
+      "duration": 0,
+      "log": "/home/wner/clawd/logs/test-core-20260202-222727.log"
+    },
+    {
+      "name": "crypto-trading",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "ct-intelligence",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "discord",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "editor",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "eightctl",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "food-order",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "gemini",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "gifgrep",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "github",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "gog",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "goplaces",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "himalaya",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "imsg",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "intelligence",
+      "status": "passed",
+      "duration": 0,
+      "log": "/home/wner/clawd/logs/test-intelligence-20260202-222727.log"
+    },
+    {
+      "name": "local-places",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "mcporter",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "model-usage",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "multi-layer-style",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "nano-banana-pro",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "nano-pdf",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "notion",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "obsidian",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "openai-image-gen",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "openai-whisper",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "openai-whisper-api",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "openhue",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "oracle",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "orchestrator",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "ordercli",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "peekaboo",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "post-generator",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "prices",
+      "status": "passed",
+      "duration": 2,
+      "log": "/home/wner/clawd/logs/test-prices-20260202-222727.log"
+    },
+    {
+      "name": "publisher",
+      "status": "passed",
+      "duration": 0,
+      "log": "/home/wner/clawd/logs/test-publisher-20260202-222729.log"
+    },
+    {
+      "name": "queue-manager",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "research",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "sag",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "session-logs",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "sherpa-onnx-tts",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "skill-creator",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "skill-evolver",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "slack",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "songsee",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "sonoscli",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "spotify-player",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "starknet-privacy",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "starknet-py",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "starknet-whale-tracker",
+      "status": "passed",
+      "duration": 2,
+      "log": "/home/wner/clawd/logs/test-starknet-whale-tracker-20260202-222729.log"
+    },
+    {
+      "name": "starknet-yield-agent",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "style-learner",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "summarize",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "system",
+      "status": "passed",
+      "duration": 0,
+      "log": "/home/wner/clawd/logs/test-system-20260202-222731.log"
+    },
+    {
+      "name": "system-manager",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "things-mac",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "tmux",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "trello",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "twitter-api",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "video-frames",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "voice-call",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "wacli",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "weather",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "x-algorithm-optimizer",
+      "status": "no_tests",
+      "duration": 0
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "skipped": 74
+  }
+}

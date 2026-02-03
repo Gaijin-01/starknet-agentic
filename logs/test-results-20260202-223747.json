@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-02-02T22:37:47+02:00",
+  "total": 2,
+  "skills": [
+    {
+      "name": "_integrations",
+      "status": "no_tests",
+      "duration": 0
+    },
+    {
+      "name": "_system",
+      "status": "no_tests",
+      "duration": 0
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 0,
+    "skipped": 2
+  }
+}

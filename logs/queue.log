@@ -190,3 +190,25 @@
   "job": "queue-cleanup",
   "schedule": "0 */6 * * *"
 }
+{
+  "message": "queue cleanup max_age=24h",
+  "skill": "queue-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "queue cleanup max_age=24h"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "queue cleanup max_age=24h"
+    },
+    "tier": "fast"
+  },
+  "error": null,
+  "job": "queue-cleanup",
+  "schedule": "0 */6 * * *"
+}

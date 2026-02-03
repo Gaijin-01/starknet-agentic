@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"41itdouqck9v0","package_name":"test","contract_name":"ShieldedPool","module_path":"test::ShieldedPool","artifacts":{"sierra":"test_ShieldedPool.contract_class.json","casm":null}}]}

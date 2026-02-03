@@ -1,0 +1,15 @@
+usage: main.py [-h] {search,prices,onchain,ct,report} ...
+
+Intelligence - Unified intelligence gathering
+
+positional arguments:
+  {search,prices,onchain,ct,report}
+                        Commands
+    search              Web search
+    prices              Crypto prices
+    onchain             Onchain data
+    ct                  Crypto Twitter intelligence
+    report              Comprehensive intelligence report
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,21 @@
+# Tech-Int Scanner — Test Targets
+# For educational and security research purposes only
+# Only scan targets you own or have explicit permission
+
+# === EDUCATIONAL / PRACTICE (Safe to test) ===
+testphp.vulnweb.com
+dvwa.co.uk
+juice-shop.herokuapp.com
+webscantest.com
+altoromutual.com
+scanme.nmap.org
+testfire.net
+demo.testfire.net
+
+# === LOCALHOST (Safe for self-testing) ===
+localhost:8080
+localhost:3000
+localhost:8000
+127.0.0.1:9200
+127.0.0.1:5601
+127.0.0.1:5000

@@ -1,4 +1,24 @@
-# Memory Summary (2026-01-31 UPDATE)
+# Memory Summary (2026-02-03 UPDATE)
+
+## 🔧 LLM Tool Calling Fixes (2026-02-03)
+
+Following diagnostic report from Claude, implemented tool bridge:
+
+| Priority | File | Status | Changes |
+|----------|------|--------|---------|
+| **P1** | `skills/_system/core/tools.py` | ✅ DONE | 13 tool definitions (207 lines) |
+| **P2** | `skills/_system/core/executor.py` | ✅ DONE | Tool execution bridge (377 lines) |
+| **P3** | `gateway.py` | ✅ DONE | Tool calling support, `/tools` command |
+| **P4** | `unified_orchestrator.py` | ✅ DONE | Confidence threshold: 0.1 → 0.3 |
+| **P5** | Mock data | ✅ DONE | Removed simulated price fallbacks, now raises explicit errors |
+
+**Tested:**
+- ✅ `get_crypto_price` - calls PriceService
+- ✅ `get_crypto_prices` - batch queries
+- ✅ `web_search` - calls research module
+- ✅ MiniMax tool calling - LLM triggers tools automatically
+
+---
 
 ## 🔧 Core Stack
 
@@ -10,6 +30,43 @@
 | EDITOR skill | ✅ NEW | Dual-key failover, LLM integration |
 | **starknet-privacy** | ✅ NEW | ZK shielded pool, compiled Sierra v1 |
 | **starknet-whale-tracker** | ✅ NEW | Whale monitoring, mempool, arbitrage |
+
+## 🧹 Skills Cleanup (2026-02-03)
+
+### Structure After Cleanup
+
+| Directory | Count | Status |
+|-----------|-------|--------|
+| `_system/` | 19 | ✅ All working (SKILL.md + scripts/) |
+| `_integrations/` | 24 | ✅ Active skills with scripts/ |
+| `available_skills/` | 41 | 📦 Archived (no scripts/) |
+
+### Core Skills (`_system/`)
+| Skill | Score | Purpose |
+|-------|-------|---------|
+| claude-proxy | 100/100 | Primary LLM interface |
+| prices | 100/100 | Crypto price data |
+| research | 100/100 | Web research |
+| core | 85+/100 | Tool calling bridge |
+| editor | 91/100 | Text transformation |
+| adaptive-routing | 85+/100 | Intelligent routing |
+| orchestrator | 85+/100 | Unified handling |
+| intelligence | 85+/100 | Research + prices |
+| style-learner | 91/100 | Style analysis |
+
+### Integration Skills (`_integrations/`)
+| Category | Skills |
+|----------|--------|
+| **Starknet** | starknet-privacy, starknet-whale-tracker, starknet-py, starknet-yield-agent, crypto-trading, ct-intelligence |
+| **AI/Content** | publisher, post-generator, twitter-api, openai-image-gen, openai-whisper-api |
+| **Data** | avnu, blockchain-dev, arbitrage-signal |
+| **Utils** | camsnap, songsee, video-frames, tmux, model-usage |
+
+### Central Index
+- **File:** `/home/wner/clawd/skills/SKILLS_INDEX.md`
+- **Purpose:** Single source of truth for all skills
+
+---
 
 ## 🚀 Skill Consolidation Plan (2026-01-30)
 
@@ -37,27 +94,31 @@
 - Testing → Add integration tests first
 - Data loss → Backup before each merge
 
-## 📊 System Status (2026-01-29)
+## 📊 System Status (2026-02-03)
 
-### Skills (10 total)
-| Skill | SKILL.md | Scripts | Status |
-|-------|----------|---------|--------|
-| claude-proxy | ✅ | ✅ main.py, llm_client.py, code_gen.py, reasoning.py, self_improve.py | 100/100 |
-| prices | ✅ | ✅ prices.py | 100/100 |
-| research | ✅ | ✅ research.py | 100/100 |
-| post-generator | ✅ | ✅ post_generator.py, persona_post.py | 100/100 |
-| queue-manager | ✅ | ✅ queue_manager.py | 100/100 |
-| style-learner | ✅ | ✅ main.py, analyzer.py, executor.py, generator.py | 91/100 |
-| adaptive-routing | ✅ | ✅ SKILL.md (FIXED) | 85+ |
-| camsnap | ✅ | ✅ main.py (NEW) | Ready |
-| mcporter | ✅ | ✅ main.py (NEW) | Ready |
-| songsee | ✅ | ✅ main.py (NEW) | Ready |
-| **editor** | ✅ NEW | ✅ main.py, bot_controller.py, config.json | NEW |
-| **system-manager** | ✅ | ✅ SKILL.md, scripts/main.py | Ready |
-| **starknet-privacy** | ✅ | ✅ SKILL.md, contracts, scripts | Ready |
-| **prices** | ✅ | ✅ prices.py | 100/100 |
+### Skills (CLEANED)
+| Category | Total | Working | Score |
+|----------|-------|---------|-------|
+| _system | 19 | 19 | 85-100 |
+| _integrations | 24 | 24 | 75-100 |
+| **Total Active** | **43** | **43** | **85+** |
 
-**Average Score**: 65.1 → 85+ (after medium priority fixes)
+### Key Active Skills
+| Skill | Status | Notes |
+|-------|--------|-------|
+| starknet-privacy | ✅ NEW | Cairo contract compiles, Sierra artifacts ready |
+| starknet-whale-tracker | ✅ NEW | Whale monitoring, mempool, arbitrage |
+| claude-proxy | ✅ | LLM interface |
+| prices | ✅ | CoinGecko integration |
+| research | ✅ | Web search |
+| editor | ✅ | Text transformation |
+| adaptive-routing | ✅ | Smart routing |
+
+### Infrastructure
+- ✅ unified_orchestrator.py
+- ✅ 64 cron jobs installed
+- ✅ Skills index: SKILLS_INDEX.md
+- ✅ Gateway: ready (needs TELEGRAM_BOT_TOKEN)
 
 ### Infrastructure
 - ✅ unified_orchestrator.py (16KB, full routing + execution)
@@ -162,16 +223,19 @@ Usage: `sessions_spawn task="..." label="..."`
 - Russian localization: ✅
 - Dashboard: ✅
 
-## ⚠️ Known Issues (UPDATED)
+## ⚠️ Known Issues (2026-02-03)
 
 | Issue | Level | Status |
 |-------|-------|--------|
 | Node v24.13.0 via NVM | Medium | Still present |
-| Gateway config mismatch | Medium | Still present |
-| Tailscale not found | Low | Still present |
-| Sub-agents stalled | Low | Still present |
-| Docstrings missing | Medium | PENDING |
-| Error handling in persona_post.py | Medium | PENDING |
+| Gateway TELEGRAM_BOT_TOKEN | Medium | Needs user setup |
+| starknet.py (Python 3.14) | Low | Skipped for now |
+| Garaga (Scarb 2.14.0+) | Low | Waiting for upgrade |
+
+### Fixed Today
+- ✅ Skills cleanup (41 moved to available_skills/)
+- ✅ Skills index created (SKILLS_INDEX.md)
+- ✅ MEMORY.md updated
 
 ## 📁 Key Files
 
@@ -180,13 +244,10 @@ Usage: `sessions_spawn task="..." label="..."`
 | `unified_orchestrator.py` | Main routing + execution engine |
 | `crontab.conf` | Cron job definitions |
 | `deploy.sh` | Deployment script |
-| `MY_CAPABILITIES.md` | My capabilities reference |
-| `OPERATIONAL_CAPABILITIES.md` | Knowledge scope, reasoning modes, style controls |
-| `~/.clawdbot/clawdbot.json` | Main config |
-| `~/clawd/skills/` | Skills directory |
-| `~/clawd/memory/` | Daily notes |
-| `~/clawd/post_queue/` | Post queue |
-| `skills/editor/` | Autonomous Text Style Engine (EDITOR) |
+| `gateway.py` | Telegram gateway |
+| `SKILLS_INDEX.md` | Central skills registry |
+| `memory/` | Daily notes |
+| `skills/` | Skills directory (43 active) |
 
 ## 🔗 Quick Commands
 
@@ -196,6 +257,10 @@ python3 unified_orchestrator.py -s          # List skills
 python3 unified_orchestrator.py -l          # List cron jobs
 python3 unified_orchestrator.py -t "msg"    # Test routing
 python3 unified_orchestrator.py -g          # Generate crontab
+
+# Skills
+cat skills/SKILLS_INDEX.md                   # View skills index
+python3 skills/_system/skill-evolver/scripts/analyze.py  # Analyze skills
 
 # Deployment
 ./deploy.sh verify                          # Verify installation

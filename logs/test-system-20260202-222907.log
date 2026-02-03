@@ -1,0 +1,15 @@
+usage: main.py [-h] {system,evolve,route,check,health} ...
+
+System - Unified system management
+
+positional arguments:
+  {system,evolve,route,check,health}
+                        Commands
+    system              System management
+    evolve              Skill analysis and improvement
+    route               Route a message
+    check               Full system check
+    health              Health check
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,29 @@
+{
+  "type": "research",
+  "timestamp": "2026-02-02T20:38:43.118766",
+  "data": {
+    "reports": [
+      {
+        "id": "1491c7ef",
+        "topic": "Starknet DeFi protocols",
+        "title": "Research Brief: Starknet DeFi protocols",
+        "summary": "Research on Starknet DeFi protocols - limited data available.",
+        "findings": [],
+        "risks": [
+          "Impermanent loss for liquidity providers",
+          "Smart contract risk - always audit before investing",
+          "Oracle dependency risks"
+        ],
+        "opportunities": [
+          "Early ecosystem participation potential",
+          "Low gas fees for DeFi strategies",
+          "STRK token incentives"
+        ],
+        "sources": [],
+        "timestamp": "2026-02-02T20:38:43.115731",
+        "sentiment": "neutral",
+        "confidence": 0.5
+      }
+    ]
+  }
+}

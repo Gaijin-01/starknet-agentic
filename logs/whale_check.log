@@ -1,0 +1,3087 @@
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2318.67, STRK=$0.056367, WBTC=$77924
+📊 Market prices: ETH=$2318.67, STRK=$0.056367, WBTC=$77924 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2333.13, STRK=$0.056516, WBTC=$78285
+📊 Market prices: ETH=$2333.13, STRK=$0.056516, WBTC=$78285 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2328.44, STRK=$0.056362, WBTC=$78160
+📊 Market prices: ETH=$2328.44, STRK=$0.056362, WBTC=$78160 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2339.05, STRK=$0.056481, WBTC=$78400
+📊 Market prices: ETH=$2339.05, STRK=$0.056481, WBTC=$78400 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2339.36, STRK=$0.056542, WBTC=$78439
+📊 Market prices: ETH=$2339.36, STRK=$0.056542, WBTC=$78439 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2343.28, STRK=$0.056709, WBTC=$78747
+📊 Market prices: ETH=$2343.28, STRK=$0.056709, WBTC=$78747 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2339.58, STRK=$0.056687, WBTC=$78582
+📊 Market prices: ETH=$2339.58, STRK=$0.056687, WBTC=$78582 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2349.14, STRK=$0.056704, WBTC=$78752
+📊 Market prices: ETH=$2349.14, STRK=$0.056704, WBTC=$78752 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2348.13, STRK=$0.056786, WBTC=$78684
+📊 Market prices: ETH=$2348.13, STRK=$0.056786, WBTC=$78684 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2350.52, STRK=$0.056655, WBTC=$78694
+📊 Market prices: ETH=$2350.52, STRK=$0.056655, WBTC=$78694 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2339.08, STRK=$0.056544, WBTC=$78524
+📊 Market prices: ETH=$2339.08, STRK=$0.056544, WBTC=$78524 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2348.52, STRK=$0.056594, WBTC=$78831
+📊 Market prices: ETH=$2348.52, STRK=$0.056594, WBTC=$78831 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2343.94, STRK=$0.05648, WBTC=$78681
+📊 Market prices: ETH=$2343.94, STRK=$0.05648, WBTC=$78681 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2326.97, STRK=$0.056164, WBTC=$78395
+📊 Market prices: ETH=$2326.97, STRK=$0.056164, WBTC=$78395 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2342.71, STRK=$0.056284, WBTC=$78826
+📊 Market prices: ETH=$2342.71, STRK=$0.056284, WBTC=$78826 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2343.8, STRK=$0.056263, WBTC=$78841
+📊 Market prices: ETH=$2343.8, STRK=$0.056263, WBTC=$78841 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2350.61, STRK=$0.056294, WBTC=$78988
+📊 Market prices: ETH=$2350.61, STRK=$0.056294, WBTC=$78988 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2345.38, STRK=$0.056284, WBTC=$78825
+📊 Market prices: ETH=$2345.38, STRK=$0.056284, WBTC=$78825 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2349.01, STRK=$0.056214, WBTC=$78829
+📊 Market prices: ETH=$2349.01, STRK=$0.056214, WBTC=$78829 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2347.05, STRK=$0.056169, WBTC=$78813
+📊 Market prices: ETH=$2347.05, STRK=$0.056169, WBTC=$78813 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2351.45, STRK=$0.056306, WBTC=$78933
+📊 Market prices: ETH=$2351.45, STRK=$0.056306, WBTC=$78933 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2329.77, STRK=$0.056042, WBTC=$78519
+📊 Market prices: ETH=$2329.77, STRK=$0.056042, WBTC=$78519 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2327.64, STRK=$0.056007, WBTC=$78618
+📊 Market prices: ETH=$2327.64, STRK=$0.056007, WBTC=$78618 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2315.79, STRK=$0.055881, WBTC=$78383
+📊 Market prices: ETH=$2315.79, STRK=$0.055881, WBTC=$78383 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2298.41, STRK=$0.055705, WBTC=$77841
+📊 Market prices: ETH=$2298.41, STRK=$0.055705, WBTC=$77841 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2303.26, STRK=$0.055823, WBTC=$77988
+📊 Market prices: ETH=$2303.26, STRK=$0.055823, WBTC=$77988 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2312.13, STRK=$0.055911, WBTC=$78200
+📊 Market prices: ETH=$2312.13, STRK=$0.055911, WBTC=$78200 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2327.81, STRK=$0.056576, WBTC=$78513
+📊 Market prices: ETH=$2327.81, STRK=$0.056576, WBTC=$78513 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2340.03, STRK=$0.056836, WBTC=$78707
+📊 Market prices: ETH=$2340.03, STRK=$0.056836, WBTC=$78707 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2343.5, STRK=$0.056871, WBTC=$78651
+📊 Market prices: ETH=$2343.5, STRK=$0.056871, WBTC=$78651 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2332.71, STRK=$0.056751, WBTC=$78445
+📊 Market prices: ETH=$2332.71, STRK=$0.056751, WBTC=$78445 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2351.34, STRK=$0.057098, WBTC=$78907
+📊 Market prices: ETH=$2351.34, STRK=$0.057098, WBTC=$78907 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2343.76, STRK=$0.057143, WBTC=$78737
+📊 Market prices: ETH=$2343.76, STRK=$0.057143, WBTC=$78737 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2325.83, STRK=$0.056831, WBTC=$78465
+📊 Market prices: ETH=$2325.83, STRK=$0.056831, WBTC=$78465 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2326.25, STRK=$0.056708, WBTC=$78349
+📊 Market prices: ETH=$2326.25, STRK=$0.056708, WBTC=$78349 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2319.8, STRK=$0.056641, WBTC=$78281
+📊 Market prices: ETH=$2319.8, STRK=$0.056641, WBTC=$78281 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2315.29, STRK=$0.05658, WBTC=$78204
+📊 Market prices: ETH=$2315.29, STRK=$0.05658, WBTC=$78204 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2304.23, STRK=$0.056323, WBTC=$78034
+📊 Market prices: ETH=$2304.23, STRK=$0.056323, WBTC=$78034 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2318.11, STRK=$0.056456, WBTC=$78396
+📊 Market prices: ETH=$2318.11, STRK=$0.056456, WBTC=$78396 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2317.9, STRK=$0.056668, WBTC=$78427
+📊 Market prices: ETH=$2317.9, STRK=$0.056668, WBTC=$78427 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2319.86, STRK=$0.056792, WBTC=$78516
+📊 Market prices: ETH=$2319.86, STRK=$0.056792, WBTC=$78516 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2323.72, STRK=$0.056899, WBTC=$78720
+📊 Market prices: ETH=$2323.72, STRK=$0.056899, WBTC=$78720 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2320.72, STRK=$0.056849, WBTC=$78616
+📊 Market prices: ETH=$2320.72, STRK=$0.056849, WBTC=$78616 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2325.59, STRK=$0.056953, WBTC=$78734
+📊 Market prices: ETH=$2325.59, STRK=$0.056953, WBTC=$78734 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2320.09, STRK=$0.056932, WBTC=$78652
+📊 Market prices: ETH=$2320.09, STRK=$0.056932, WBTC=$78652 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2313.34, STRK=$0.056839, WBTC=$78498
+📊 Market prices: ETH=$2313.34, STRK=$0.056839, WBTC=$78498 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2326.66, STRK=$0.056948, WBTC=$78849
+📊 Market prices: ETH=$2326.66, STRK=$0.056948, WBTC=$78849 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2325.35, STRK=$0.056923, WBTC=$78919
+📊 Market prices: ETH=$2325.35, STRK=$0.056923, WBTC=$78919 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2313.74, STRK=$0.056602, WBTC=$78666
+📊 Market prices: ETH=$2313.74, STRK=$0.056602, WBTC=$78666 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2293.49, STRK=$0.056552, WBTC=$78250
+📊 Market prices: ETH=$2293.49, STRK=$0.056552, WBTC=$78250 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2278.69, STRK=$0.056032, WBTC=$78017
+📊 Market prices: ETH=$2278.69, STRK=$0.056032, WBTC=$78017 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2292.97, STRK=$0.056124, WBTC=$78271
+📊 Market prices: ETH=$2292.97, STRK=$0.056124, WBTC=$78271 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2291.38, STRK=$0.056275, WBTC=$78341
+📊 Market prices: ETH=$2291.38, STRK=$0.056275, WBTC=$78341 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2294.46, STRK=$0.056314, WBTC=$78461
+📊 Market prices: ETH=$2294.46, STRK=$0.056314, WBTC=$78461 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2292.45, STRK=$0.05632, WBTC=$78422
+📊 Market prices: ETH=$2292.45, STRK=$0.05632, WBTC=$78422 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2277.81, STRK=$0.056068, WBTC=$78084
+📊 Market prices: ETH=$2277.81, STRK=$0.056068, WBTC=$78084 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2279.89, STRK=$0.056007, WBTC=$78009
+📊 Market prices: ETH=$2279.89, STRK=$0.056007, WBTC=$78009 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2278.75, STRK=$0.056101, WBTC=$78149
+📊 Market prices: ETH=$2278.75, STRK=$0.056101, WBTC=$78149 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2273.07, STRK=$0.056207, WBTC=$77981
+📊 Market prices: ETH=$2273.07, STRK=$0.056207, WBTC=$77981 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2276.03, STRK=$0.056351, WBTC=$78165
+📊 Market prices: ETH=$2276.03, STRK=$0.056351, WBTC=$78165 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2278.45, STRK=$0.056442, WBTC=$78103
+📊 Market prices: ETH=$2278.45, STRK=$0.056442, WBTC=$78103 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2290.14, STRK=$0.056535, WBTC=$78174
+📊 Market prices: ETH=$2290.14, STRK=$0.056535, WBTC=$78174 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---
+✅ starknet.py available - real DEX prices enabled
+📊 Scanning arbitrage...
+   (Cross-DEX + Triangular + Gas + Slippage)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+📊 CoinGecko: ETH=$2292.07, STRK=$0.056715, WBTC=$78214
+📊 Market prices: ETH=$2292.07, STRK=$0.056715, WBTC=$78214 (CoinGecko)
+✅ Connected to RPC: rpc.starknet.lava.build:443
+⚠️ No real DEX prices available
+=== WHALE TRACKER REPORT ===
+⛽ GAS ESTIMATION
+---
+   Triangular (3 swaps): 55,000 units = $0.0012
+---
+   Cross-DEX (2 swaps): 40,000 units = $0.0009
+---
+📉 SLIPPAGE CURVE (Ekubo)
+---
+   1k: 0.25% slippage
+---
+   5k: 0.15% slippage
+---
+   10k: 0.10% slippage
+---
+🎯 OPTIMAL SIZE (0.5% spread)
+---
+   $1K → ~$0 profit
+---
+📊 WHALE DATABASE
+Total: 12
+  Foundation: 3
+  Protocols: 6
+  Smart Money: 1
+Arbitrage: 0 opportunities
+---
+📈 TRACKING STATS
+Total logged: 30
+Executed: 0
+Active: 0
+---
+📊 PATTERN ANALYSIS
+---
+  STRK→ETH: n=10, mean=0.0500%
+---
+  STRK→USDC: n=10, mean=0.0500%
+---
+  ETH→USDC: n=10, mean=0.0500%
+---

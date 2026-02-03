@@ -1,0 +1,9 @@
+[package]
+name = "starknet_shielded_pool"
+version = "1.0.0"
+
+[dependencies]
+starknet = ">=2.0.0"
+
+[[target.starknet-contract]]
+sierra = true

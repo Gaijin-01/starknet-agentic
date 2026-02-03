@@ -91,7 +91,7 @@ class TierResult:
 def classify_tier(query: str) -> TierResult:
     """Classify query complexity for model tier selection."""
     if not query:
-        return TierResult(10, "fast", "MiniMax-M2.1-Fast", TIER_PROMPTS["fast"])
+        return TierResult(10, "fast", "MiniMax-M2.1", TIER_PROMPTS["fast"])
     
     query_lower = query.lower()
     score = 10
@@ -110,7 +110,7 @@ def classify_tier(query: str) -> TierResult:
     score = max(1, min(100, score))
     
     if score < 30:
-        return TierResult(score, "fast", "MiniMax-M2.1-Fast", TIER_PROMPTS["fast"])
+        return TierResult(score, "fast", "MiniMax-M2.1", TIER_PROMPTS["fast"])
     elif score <= 70:
         return TierResult(score, "standard", "MiniMax-M2.1", TIER_PROMPTS["standard"])
     else:
@@ -208,13 +208,13 @@ class UnifiedRouter:
         ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
         
         # 2. Select skill
-        if ranked[0][1] < 0.1:
+        if ranked[0][1] < 0.3:  # Increased from 0.1 for better accuracy
             best_skill = SkillType.CLAUDE_PROXY
             confidence = 0.5
         else:
             best_skill, confidence = ranked[0]
         
-        fallback = ranked[1][0] if len(ranked) > 1 and ranked[1][1] > 0.1 else None
+        fallback = ranked[1][0] if len(ranked) > 1 and ranked[1][1] > 0.3 else None
         
         # 3. Determine tier
         tier = classify_tier(message)

@@ -1,0 +1,30 @@
+🐋 Starknet Whale Tracker
+==================================================
+
+📊 Market Summary
+   TVL: $1,276,469
+   24h Volume: $256,630
+   Pools: 25
+
+💰 Arbitrage Opportunities
+   Found: 3
+
+   Trade: 0xdac17f95... → 0xf939e0a0...
+   Profit: 0.50% ($483.73)
+   Depth: $96,746
+   Confidence: 100%
+
+   Trade: 0x18084fba... → 0x2260fac5...
+   Profit: 0.50% ($71.59)
+   Depth: $14,318
+   Confidence: 100%
+
+   Trade: 0xa0b86991... → 0xf939e0a0...
+   Profit: 0.50% ($34.65)
+   Depth: $6,930
+   Confidence: 69%
+
+🐋 Recent Whale Movements
+   Found: 1
+   large_transfer: 10000 STRK
+   0x049d36570d4e46...

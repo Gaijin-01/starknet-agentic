@@ -1,0 +1,16 @@
+usage: main.py [-h] {generate,queue,post,post-queue,schedule,optimize} ...
+
+Publisher - Unified content publishing
+
+positional arguments:
+  {generate,queue,post,post-queue,schedule,optimize}
+                        Commands
+    generate            Generate content
+    queue               Queue management
+    post                Post to X
+    post-queue          Post from ready queue
+    schedule            Schedule post
+    optimize            Optimization recommendations
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"9a8n9ndkuf63i","package_name":"test","contract_name":"TestContract","module_path":"test::TestContract","artifacts":{"sierra":"test_TestContract.contract_class.json","casm":null}}]}

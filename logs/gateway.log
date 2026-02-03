@@ -1,0 +1,112 @@
+2026-02-03 13:24:06,450 - INFO - Starting Clawdbot Gateway...
+2026-02-03 13:24:06,450 - INFO - Tool support: ✅ Available
+2026-02-03 13:24:06,768 - INFO - HTTP Request: POST https://api.telegram.org/bot8544870971:AAGpJwoCNv5ZiZ6Fb011zm4ZU_zb1qIT2_c/getMe "HTTP/1.1 200 OK"
+2026-02-03 13:24:06,770 - INFO - Application started
+2026-02-03 13:24:06,845 - INFO - HTTP Request: POST https://api.telegram.org/bot8544870971:AAGpJwoCNv5ZiZ6Fb011zm4ZU_zb1qIT2_c/deleteWebhook "HTTP/1.1 200 OK"
+2026-02-03 13:24:06,846 - INFO - Gateway started. Press Ctrl+C to stop.
+2026-02-03 13:24:12,854 - INFO - HTTP Request: POST https://api.telegram.org/bot8544870971:AAGpJwoCNv5ZiZ6Fb011zm4ZU_zb1qIT2_c/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-03 13:24:12,855 - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-03 13:24:18,412 - INFO - HTTP Request: POST https://api.telegram.org/bot8544870971:AAGpJwoCNv5ZiZ6Fb011zm4ZU_zb1qIT2_c/getUpdates "HTTP/1.1 409 Conflict"
+2026-02-03 13:24:18,413 - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/linuxbrew/.linuxbrew/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running

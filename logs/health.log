@@ -16679,3 +16679,2248 @@ Unknown job: health-check
   "job": "health-check",
   "schedule": "*/5 * * * *"
 }
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/wner/clawd/skills/_system/intelligence/__init__.py", line 10, in <module>
+    from main import IntelligenceSkill
+ModuleNotFoundError: No module named 'main'
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}
+{
+  "message": "run health-check",
+  "skill": "system-manager",
+  "confidence": 0.3,
+  "tier": "fast",
+  "model": "MiniMax-M2.1",
+  "score": 5,
+  "params": {
+    "raw_message": "run health-check",
+    "action": "system_health"
+  },
+  "status": "success",
+  "output": {
+    "error": "system-manager not installed",
+    "action": "system_health"
+  },
+  "error": null,
+  "job": "health-check",
+  "schedule": "*/5 * * * *"
+}

@@ -1,0 +1,40 @@
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent registered: market
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent registered: research
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent registered: content
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent registered: security
+2026-02-02 22:39:06,126 - __main__ - INFO - All agents registered
+2026-02-02 22:39:06,126 - orchestrator - INFO - Orchestrator starting
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent starting: market
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent starting: research
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent starting: content
+2026-02-02 22:39:06,126 - orchestrator - INFO - Agent starting: security
+2026-02-02 22:39:06,126 - orchestrator - INFO - Scheduled market report every 3600s
+2026-02-02 22:39:06,126 - orchestrator - INFO - Scheduled whale report every 3600s
+2026-02-02 22:39:06,126 - orchestrator - INFO - Scheduled content report every 3600s
+2026-02-02 22:39:06,126 - orchestrator - INFO - Scheduled research report every 86400s
+2026-02-02 22:39:06,126 - agents.market_agent - INFO - Market Agent starting
+2026-02-02 22:39:06,128 - agents.research_agent - INFO - Research Agent starting
+2026-02-02 22:39:06,128 - agents.research_agent - INFO - Researching: Starknet DeFi protocols
+2026-02-02 22:39:06,128 - shared_state - INFO - Research report: Research Brief: Starknet DeFi protocols
+2026-02-02 22:39:06,128 - agents.research_agent - INFO - Research complete: Starknet DeFi protocols
+2026-02-02 22:39:06,128 - agents.content_agent - INFO - Content Agent starting
+2026-02-02 22:39:06,128 - agents.content_agent - INFO - Generating hourly content
+2026-02-02 22:39:06,128 - shared_state - INFO - Content generated: report - telegram
+2026-02-02 22:39:06,128 - agents.content_agent - INFO - Generated market brief
+2026-02-02 22:39:06,129 - shared_state - INFO - Content generated: thread - twitter
+2026-02-02 22:39:06,129 - agents.content_agent - INFO - Generated Twitter thread with 4 tweets
+2026-02-02 22:39:06,129 - shared_state - INFO - Content generated: article - blog
+2026-02-02 22:39:06,129 - agents.content_agent - INFO - Generated analysis article
+2026-02-02 22:39:06,129 - shared_state - INFO - Content generated: digest - all
+2026-02-02 22:39:06,129 - agents.security_agent - INFO - Security Agent starting
+2026-02-02 22:39:06,129 - agents.security_agent - ERROR - Security Agent error: 'SecurityAgent' object has no attribute '_run_security_scan'
+2026-02-02 22:39:06,129 - shared_state - INFO - Alert: [error] 'SecurityAgent' object has no attribute '_run_security_scan'
+2026-02-02 22:39:06,129 - orchestrator - INFO - Report generated: /home/wner/clawd/skills/_integrations/colony/reports/market_20260202_2039.json
+2026-02-02 22:39:06,130 - orchestrator - INFO - Report generated: /home/wner/clawd/skills/_integrations/colony/reports/whale_20260202_2039.json
+2026-02-02 22:39:06,130 - orchestrator - INFO - Report generated: /home/wner/clawd/skills/_integrations/colony/reports/content_20260202_2039.json
+2026-02-02 22:39:06,130 - orchestrator - INFO - Report generated: /home/wner/clawd/skills/_integrations/colony/reports/research_20260202_2039.json
+2026-02-02 22:39:06,130 - clients.whale_db_client - INFO - No existing whale data found
+2026-02-02 22:39:06,347 - shared_state - INFO - Market data updated: 5 tokens
+2026-02-02 22:39:06,347 - agents.market_agent - INFO - Price update: 5 tokens
+2026-02-02 22:39:06,347 - shared_state - INFO - Market data updated: 5 tokens
+2026-02-02 22:39:06,347 - agents.market_agent - INFO - TVL update: $32,700,000 TVL, $4,740,000 24h vol

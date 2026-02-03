@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "circom2": "^0.2.22",
     "node-llama-cpp": "^3.15.1"
   }
 }

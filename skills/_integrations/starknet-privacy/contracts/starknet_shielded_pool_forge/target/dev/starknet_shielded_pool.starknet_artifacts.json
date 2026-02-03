@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"mq9pepl8s6nes","package_name":"starknet_shielded_pool","contract_name":"ShieldedPoolMinimal","module_path":"starknet_shielded_pool::ShieldedPoolMinimal","artifacts":{"sierra":"starknet_shielded_pool_ShieldedPoolMinimal.contract_class.json","casm":null}}]}
