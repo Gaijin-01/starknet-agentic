@@ -46,9 +46,24 @@ def get_skill_dirs(skills_path: str, excluded: List[str] = None) -> List[Path]:
         return []
     
     skills = []
+    
+    # First, check for skills directly in the root
     for item in skills_path.iterdir():
         if item.is_dir() and item.name not in excluded and not item.name.startswith('.'):
-            skills.append(item)
+            # Check if it's a valid skill (has SKILL.md)
+            if (item / "SKILL.md").exists():
+                skills.append(item)
+    
+    # If no skills found directly, look inside subdirectories (_system, _integrations, etc.)
+    if not skills:
+        for category in ['_system', '_integrations', 'available_skills']:
+            category_path = skills_path / category
+            if category_path.exists() and category_path.is_dir():
+                for item in category_path.iterdir():
+                    if item.is_dir() and item.name not in excluded:
+                        # Check if it's a valid skill (has SKILL.md)
+                        if (item / "SKILL.md").exists():
+                            skills.append(item)
     
     return sorted(skills)
 

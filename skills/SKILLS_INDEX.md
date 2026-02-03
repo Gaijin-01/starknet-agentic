@@ -1,167 +1,139 @@
-# Skills Index — Clawd Workspace
+# Skills Index — OpenClaw
 
+**Total Active Skills:** 81
 **Last Updated:** 2026-02-03
-**Purpose:** Central registry of all working skills
 
----
+## Active Skills
 
-## 🎯 CORE SKILLS (`_system/`)
-
-Core skills form the backbone of Clawd's AI capabilities.
+### `_system/` (16 skills) — Core System
 
 | Skill | Score | Purpose |
 |-------|-------|---------|
-| **claude-proxy** | 100/100 | Primary LLM interface (MiniMax-M2.1) |
-| **prices** | 100/100 | Crypto price data (CoinGecko) |
-| **research** | 100/100 | Web research & search |
-| **core** | 85+/100 | Tool calling bridge, executor |
-| **editor** | 91/100 | Text transformation & styling |
-| **adaptive-routing** | 85+/100 | Intelligent request routing |
-| **orchestrator** | 85+/100 | Unified request handling |
-| **intelligence** | 85+/100 | Research + prices + crypto-trading |
-| **style-learner** | 91/100 | Writing style analysis |
-| **prices** | 100/100 | Price monitoring & alerts |
-| **research** | 100/100 | Web research |
-| **multi-layer-style** | 85+/100 | Multi-layer text processing |
-| **skill-creator** | 90/100 | Skill creation tool |
-| **skill-evolver** | 90/100 | Skill analysis & evolution |
-| **session-logs** | 75/100 | Session log analysis |
-| **mcporter** | 75/100 | MCP server tool |
-| **config** | 85+/100 | Configuration management |
-| **system** | 85+/100 | System info |
-| **system-manager** | 85+/100 | System management |
+| claude-proxy | 100 | Autonomous backup agent |
+| prices | 100 | Crypto price data |
+| research | 100 | Web research |
+| crypto-trading | 100 | Trading signals |
+| ct-intelligence | 100 | CT sentiment analysis |
+| core | 100 | Tool calling bridge |
+| intelligence | 100 | Research + prices |
+| orchestrator | 100 | Unified routing |
+| system | 100 | System management |
+| adaptive-routing | 90 | Intelligent routing |
+| editor | 86 | Text transformation |
+| mcporter | 85 | MCP server management |
+| multi-layer-style | 85 | Style analysis |
+| model-usage | 81 | Token tracking |
+| skill-creator | 76 | Skill creation |
+| skill-evolver | 76 | Skill improvement |
+| style-learner | 91 | Style learning |
+| system-manager | 90 | System monitoring |
+
+### `_integrations/` (22 skills) — Working Integrations
+
+| Skill | Score | Purpose |
+|-------|-------|---------|
+| starknet-privacy | 90 | ZK privacy pool ⭐ |
+| starknet-whale-tracker | 90 | Whale monitoring ⭐ |
+| starknet-yield-agent | 90 | DeFi yields |
+| starknet-py | 80 | Python SDK |
+| arbitrage-signal | 90 | Arbitrage detection |
+| avnu | 80 | DeFi swaps |
+| blockchain-dev | 95 | Contract development |
+| camsnap | 90 | Camera integration |
+| colony | 100 | Colony protocol |
+| nano-banana-pro | 80 | Banana money |
+| openai-image-gen | 69 | Image generation |
+| openai-whisper-api | 65 | Speech-to-text |
+| post-generator | 100 | Content generation |
+| publisher | 100 | Publishing queue |
+| queue-manager | 100 | Queue management |
+| songsee | 85 | Audio recognition |
+| tech-int | 70 | Tech intelligence |
+| twitter-api | 100 | X/Twitter API |
+| video-frames | 65 | Video processing |
+
+## Archived Skills
+
+### `available_skills/` (43 skills) — Inactive
+
+These skills are archived and not currently used:
+
+| Skill | Reason |
+|-------|--------|
+| 1password | No scripts |
+| apple-notes | No scripts |
+| apple-reminders | No scripts |
+| bear-notes | No scripts |
+| bird (X/Twitter) | No scripts |
+| blogwatcher | No scripts |
+| blucli | Missing scripts |
+| bluebubbles | Missing integration |
+| canvas | Missing scripts |
+| clawhub | Missing scripts |
+| coding-agent | Missing scripts |
+| discord | Missing scripts |
+| eightctl | Missing scripts |
+| food-order | Not maintained |
+| gemini | Missing scripts |
+| github | Missing scripts |
+| gog | Missing scripts |
+| goplaces | Missing scripts |
+| himalaya | Missing scripts |
+| imsg | Missing scripts |
+| local-places | Critical (48) |
+| nano-pdf | No scripts |
+| notion | Missing scripts |
+| obsidian | Not maintained |
+| openhue | Missing scripts |
+| openai-whisper | No scripts |
+| ordercli | Missing scripts |
+| oracle | Not maintained |
+| sag | Missing scripts |
+| sherpa-onnx-tts | No scripts |
+| slack | Missing scripts |
+| peekaboo | Missing scripts |
+| session-logs | Missing scripts |
+| sonoscli | Missing scripts |
+| spotify-player | Missing scripts |
+| summarize | Missing scripts |
+| things-mac | Not maintained |
+| tmux | Critical (54) |
+| trello | Missing scripts |
+| voice-call | Missing scripts |
+| wacli | No scripts |
+| weather | Missing scripts |
+
+## Recent Changes
+
+### 2026-02-03
+- ✅ Added: starknet-privacy (ported to starknet-agentic)
+- ✅ Added: starknet-whale-tracker (ported to starknet-agentic)
+- 🗑️ Moved: tmux → available_skills/ (critical)
+- 🗑️ Moved: local-places → available_skills/ (critical)
+
+## Contributing to starknet-agentic
+
+**Your PR Merged:** ✅ PR #1
+- https://github.com/keep-starknet-strange/starknet-agentic/pull/1
+
+**Skills ported:**
+- starknet-privacy (ZK shielded pool)
+- starknet-whale-tracker (whale monitoring)
+
+**Can contribute next:**
+- starknet-py (Python SDK)
+- starknet-yield-agent (DeFi yields)
+- crypto-trading (trading signals)
+- ct-intelligence (sentiment)
+
+## Statistics
+
+| Category | Count | Average Score |
+|----------|-------|---------------|
+| _system/ | 16 | ~91 |
+| _integrations/ | 22 | ~82 |
+| available_skills/ | 43 | ~40 |
+| **Total** | **81** | **~71** |
 
 ---
-
-## 🔗 INTEGRATION SKILLS (`_integrations/`)
-
-Integration skills connect Clawd to external services and blockchains.
-
-### 🌐 STARKNET ECOSYSTEM
-
-| Skill | Purpose |
-|-------|---------|
-| **starknet-privacy** | ZK privacy pool (Cairo contracts, Merkle tree) |
-| **starknet-whale-tracker** | Whale wallet monitoring, mempool, arbitrage |
-| **starknet-py** | Python SDK for Starknet |
-| **starknet-yield-agent** | DeFi yields API (x402 payments) |
-| **crypto-trading** | On-chain metrics, whale tracking |
-| **ct-intelligence** | Crypto Twitter intelligence |
-
-### 🤖 AI & CONTENT
-
-| Skill | Purpose |
-|-------|---------|
-| **publisher** | Post generation & scheduling |
-| **post-generator** | Social media content |
-| **queue-manager** | Post queue management |
-| **twitter-api** | X/Twitter API integration |
-| **openai-image-gen** | AI image generation |
-| **openai-whisper-api** | Speech-to-text |
-
-### 📊 DATA & ANALYTICS
-
-| Skill | Purpose |
-|-------|---------|
-| **avnu** | Starknet DEX integration (AVNU API) |
-| **blockchain-dev** | Multi-chain development (Solidity, Rust, Cairo) |
-| **arbitrage-signal** | Arbitrage opportunity detection |
-
-### 🔧 UTILITIES
-
-| Skill | Purpose |
-|-------|---------|
-| **camsnap** | Camera capture (RTSP/ONVIF) |
-| **songsee** | Audio spectrogram analysis |
-| **video-frames** | Video frame extraction |
-| **tmux** | Terminal session control |
-| **model-usage** | Model usage tracking |
-
----
-
-## 📦 ARCHIVED SKILLS (`available_skills/`)
-
-Skills without scripts/ directories were moved here for cleanup.
-
-To restore a skill:
-```bash
-mv /home/wner/clawd/skills/available_skills/<skill_name> /home/wner/clawd/skills/_integrations/
-```
-
----
-
-## 🚀 QUICK START
-
-### Using a Skill
-
-```python
-from skills._system.prices.scripts.prices import PriceService
-
-service = PriceService()
-price = await service.get_price("bitcoin")
-```
-
-### Creating a New Skill
-
-```bash
-cd /home/wner/clawd/skills
-# Use skill-creator to scaffold new skill
-python3 _system/skill-creator/scripts/main.py create --name my_skill
-```
-
----
-
-## 📋 SKILL METADATA SCHEMA
-
-Each skill should have:
-
-```
-skill_name/
-├── SKILL.md              # Required: documentation
-├── scripts/
-│   └── main.py           # Required: executable entrypoint
-├── requirements.txt      # Optional: Python dependencies
-└── config.yaml           # Optional: skill configuration
-```
-
-### SKILL.md Template
-
-```markdown
----
-name: skill-name
-description: |
-  One-line description of the skill
----
-
-# Skill Name
-
-## Overview
-
-## Features
-
-## Usage
-
-## Configuration
-```
-
----
-
-## 🔧 SKILL SCORING CRITERIA
-
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| SKILL.md | 20% | Complete documentation |
-| scripts/ | 30% | Working scripts |
-| Tests | 20% | Test coverage |
-| Dependencies | 15% | Clean dependency management |
-| Usage | 15% | Used in production |
-
-**Score Ranges:**
-- 90-100: Production ready
-- 70-89: Stable
-- 50-69: Beta
-- <50: Alpha/Experimental
-
----
-
-*Generated by skill-evolver*
+*Generated by skill-evolver analyzer*
