@@ -1,0 +1,11 @@
+# bird CLI Configuration
+
+# Get cookies from browser DevTools:
+# 1. Open twitter.com
+# 2. F12 → Application → Cookies
+# 3. Copy auth_token and ct0 values
+
+export BIRD_COOKIES="auth_token=...; ct0=..."
+
+# Optional: Default tweet text
+# BIRD_DEFAULT_TEXT="🐦 Posted via bird CLI"
