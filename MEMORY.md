@@ -229,10 +229,13 @@ Usage: `sessions_spawn task="..." label="..."`
 |-------|-------|--------|
 | Node v24.13.0 via NVM | Medium | Still present |
 | Gateway TELEGRAM_BOT_TOKEN | Medium | Needs user setup |
-| starknet.py (Python 3.14) | Low | Skipped for now |
+| starknet.py (Python 3.14) | Low | ✅ SOLVED - Python 3.12 venv |
 | Garaga (Scarb 2.14.0+) | Low | Waiting for upgrade |
 
 ### Fixed Today
+- ✅ Python 3.12 venv for starknet-py
+- ✅ starknet-py imports verified (Account, KeyPair, FullNodeClient)
+- ✅ Deploy script updated (scripts/deploy_python312.sh)
 - ✅ Skills cleanup (41 moved to available_skills/)
 - ✅ Skills index created (SKILLS_INDEX.md)
 - ✅ MEMORY.md updated
