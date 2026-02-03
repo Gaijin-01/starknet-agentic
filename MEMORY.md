@@ -238,7 +238,7 @@ Usage: `sessions_spawn task="..." label="..."`
 - ✅ Deploy script updated (scripts/deploy_python312.sh)
 - ✅ Skills cleanup (41 moved to available_skills/)
 - ✅ Skills index created (SKILLS_INDEX.md)
-- ✅ MEMORY.md updated
+- ✅ **tech-int scanner fixed** - created detectors, installed deps
 
 ## 📁 Key Files
 
