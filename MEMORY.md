@@ -691,3 +691,30 @@ Before publishing, verify:
 
 *Last updated: 2026-01-29*
 *Source: Sefirot's architectural insight on multi-layer style system*
+
+---
+
+## 📚 LESSONS LEARNED
+
+### 2026-02-03: Git Before Fixing
+
+**Mistake:** Created duplicate files for tech-int scanner (same as commit 0a5231f from previous day).
+
+**Lesson:**
+> **Before "fixing" anything — CHECK GIT LOG first.**
+
+**What went wrong:**
+- Created detectors/cms.py, server.py, framework.py
+- These files ALREADY existed in commit 0a5231f
+- Wasted time creating duplicate work
+
+**Correct approach:**
+1. Check git log: `git log --oneline -10`
+2. Check recent commits for same files: `git log --since="yesterday" --all -- <path>`
+3. Compare before creating: `diff <(git show <commit>:<file>) <file>`
+4. Only create if truly missing
+
+**Files affected:** tech-int scanners, detectors/
+
+*Last updated: 2026-02-03*
+*Lesson from duplicate tech-int commit*
