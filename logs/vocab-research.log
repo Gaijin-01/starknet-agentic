@@ -27,3 +27,4 @@ Provider: brave
 
 ❌ Error: BRAVE_API_KEY not configured
 /usr/bin/python3: can't open file '/home/wner/clawd/skills/research/scripts/research.py': [Errno 2] No such file or directory
+/usr/bin/python3: can't open file '/home/wner/clawd/skills/research/scripts/research.py': [Errno 2] No such file or directory
