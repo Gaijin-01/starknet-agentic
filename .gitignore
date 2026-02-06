@@ -1,0 +1,64 @@
+# ============================================
+# OpenClaw GitIgnore
+# Generated for security - API keys must never leak to GitHub
+# ============================================
+
+# Shell configs with secrets
+.bashrc
+.bash_profile
+.zshrc
+.profile
+.env
+.env.*
+.secrets
+
+# Credentials
+.credentials/
+credentials/
+*.pem
+*.key
+
+# SSH
+.ssh/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Node modules
+node_modules/
+
+# Logs (may contain sensitive data)
+*.log
+logs/
+
+# Backups
+*.tar.gz
+backups/
+
+# Local configs
+*.local.json
+*.local.yaml
+clawdbot.json
+
+# Media
+media/inbound/
+
+# Temporary development files
+*.bak
+*.orig
+*.rej
