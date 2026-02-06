@@ -282,6 +282,36 @@ git log --oneline -5                        # Recent commits
 5. **Sub-agents for complex tasks** - sessions_spawn for heavy lifting
 6. **EDITOR skill** - 6-stage autonomous text processing (Intake → Classify → MetaController → Styler → Safety → Formatter)
 7. **BotController** - High-level orchestrator with 6 agents (IntakeAgent, ClassifierAgent, MetaControllerAgent, StylerAgent, SafetyAgent, FormatterAgent)
+8. **API Key Security** - Keys NEVER in code: use `os.getenv()`, store in `~/.bashrc` or `~/.openclaw/`, `.gitignore` protects from GitHub leaks
+
+## 🔐 API Key Security (2026-02-06)
+
+### Where Keys Are Stored
+| Key | Location |
+|-----|----------|
+| MiniMax, OpenAI, Anthropic | `~/.openclaw/openclaw.json` |
+| Telegram Bot | Gateway config |
+| Twitter/X Cookies | `~/.twitter_cookies.json` |
+| Starknet Alchemy | `~/.bashrc` (STARKNET_ALCHEMY_KEY) |
+
+### Best Practices
+- ✅ Always use `os.getenv("KEY_NAME", "")` in code
+- ✅ Store keys in `~/.bashrc` or `~/.openclaw/` (outside project)
+- ✅ `.gitignore` includes: `.bashrc`, `.env`, `credentials/`, `*.log`, `backups/`
+- ❌ NEVER hardcode keys in source files
+- ❌ NEVER commit keys to GitHub
+
+### Commit: c29facc
+`security: Add .gitignore to prevent API key leaks`
+
+### Files Protected
+```
+.bashrc              (home directory - not tracked)
+~/.openclaw/*        (config directory - not tracked)
+credentials/         (gitignored)
+*.log                (gitignored)
+backups/             (gitignored)
+```
 
 ## 📝 WRITING STYLE PROTOCOL (2026-01-29)
 
@@ -718,3 +748,33 @@ Before publishing, verify:
 
 *Last updated: 2026-02-03*
 *Lesson from duplicate tech-int commit*
+
+---
+
+## 🔧 Starknet Mini-Pay Token Addresses FIXED (2026-02-04)
+
+**Problem:** ETH and USDC balance queries were failing with "contract not found"
+
+**Solution:** Found official addresses from starknet-addresses repository
+
+### Working Token Addresses (Starknet Mainnet)
+```
+ETH:  0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7
+STRK: 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d
+USDC: 0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8
+```
+
+### Sources
+- **ETH/STRK:** https://docs.starknet.io/resources/chain-info/
+- **Bridged tokens:** https://github.com/starknet-io/starknet-addresses/blob/master/bridged_tokens/mainnet.json
+
+### Verified Balances
+Address `0x068047beadC45aFF253839D4DD7c2cD1c27D502738BAd0AF935D402bdf9244ED`:
+- ETH: 0.0
+- STRK: 26.66
+- USDC: 0.000736
+
+### Files Updated
+- `/home/wner/clawd/skills/_integrations/starknet-mini-pay/scripts/mini_pay.py`
+
+*Last updated: 2026-02-04*
