@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 # Get Alchemy key from environment
-ALCHEMY_KEY = os.getenv("ALCHEMY_API_KEY", "")
+ALCHEMY_KEY = os.getenv("STARKNET_ALCHEMY_KEY", os.getenv("ALCHEMY_API_KEY", ""))
 ALCHEMY_URL = f"https://starknet-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}" if ALCHEMY_KEY else ""
 
 
