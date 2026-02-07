@@ -1,9 +1,9 @@
 ---
 name: starknet-privacy
 description: |
-  Privacy protocols for Starknet: confidential transactions, shielded pools, and note-based privacy using ZK-SNARKs.
-version: 1.0.0
-updated: 2026-02-01
+  Privacy protocols for Starknet: confidential transactions, shielded pools, and note-based privacy using ZK-SNARKs. Supports both Python (local testing) and Node.js (starknet-agentic integration).
+version: 2.0.0
+updated: 2026-02-07
 ---
 
 # Starknet Privacy Skill
@@ -15,8 +15,25 @@ Privacy-preserving protocols for Starknet using confidential notes, shielded poo
 Enable private transactions on Starknet through:
 - **Confidential Notes** - Encrypted UTXO-style notes
 - **Shielded Pools** - Privacy pools (like Zcash shielded pool)
-- **ZK-SNARKs** - Zero-knowledge proofs via Garaga library
+- **ZK-SNARKs** - Zero-knowledge proofs via Circom + SnarkJS
 - **Selective Privacy** - Choose transparent or shielded transfers
+
+## Two Implementation Paths
+
+### 🔵 Node.js (starknet-agentic integration) - RECOMMENDED
+```bash
+cd skills/starknet-privacy/scripts
+npm install
+node test-privacy.js
+```
+
+### 🐍 Python (Local testing)
+```bash
+cd skills/starknet-privacy
+python3 tests/test_privacy_pool.py -v
+```
+
+## Quick Start - Node.js
 
 ## Architecture
 
@@ -30,6 +47,65 @@ User → Shielded Pool (encrypted notes)
     Recipient scans events, decrypts note
       ↓
     Private balance confirmed
+```
+
+## Quick Start - Node.js
+
+### Installation
+```bash
+cd skills/starknet-privacy/scripts
+npm install
+```
+
+### Check Status
+```bash
+node starknet-privacy.js status
+```
+
+### Run Demo
+```bash
+node starknet-privacy.js demo
+```
+
+### Run Tests
+```bash
+node test-privacy.js
+```
+
+### Setup ZK Circuits
+```bash
+# Compile circuits and run trusted setup
+bash setup-circuits.sh
+```
+
+### Generate Proof
+```bash
+# Generate ZK proof for spending a note
+bash generate-proof.sh
+```
+
+### Node.js Usage
+```javascript
+const { StarknetPrivacyPool } = require('./starknet-privacy');
+
+async function example() {
+    const pool = new StarknetPrivacyPool(32);
+    
+    // 1. Generate commitment (for deposit)
+    const commitment = await pool.generateCommitment(1000, 12345n);
+    
+    // 2. Build Merkle tree
+    const { root } = await pool.buildMerkleTree([commitment]);
+    
+    // 3. Generate ZK proof (for spend/withdraw)
+    const result = await pool.generateProof(
+        amount, salt, secret,
+        commitments, leafIndex, root
+    );
+    
+    // 4. Verify proof
+    const isValid = await pool.verifyProof(result.proof, result.public);
+}
 ```
 
 ## Workflow
@@ -205,12 +281,31 @@ await tx.wait()
 
 ## CLI Usage
 
+### Node.js CLI
 ```bash
-# Status and pool info
-python3.12 scripts/cli.py status
+# Check status
+node scripts/starknet-privacy.js status
 
 # Run demo
-python3.12 scripts/cli.py demo
+node scripts/starknet-privacy.js demo
+
+# Run tests
+node scripts/test-privacy.js
+
+# Setup circuits
+bash scripts/setup-circuits.sh
+
+# Generate proof
+bash scripts/generate-proof.sh
+```
+
+### Python CLI (Local Testing)
+```bash
+# Status and pool info
+python3 scripts/cli.py status
+
+# Run demo
+python3 scripts/zk_snarkjs_workflow.py
 
 # Deposit 100 ETH to shielded pool (auto-generates secret)
 python3.12 scripts/cli.py deposit --amount 100
@@ -237,21 +332,29 @@ python3.12 scripts/cli.py import --input my_pool.json
 
 ### Demo Flow
 
+#### Node.js Demo
 ```bash
-# 1. Run demo to see full workflow
-python3.12 scripts/cli.py demo
+# 1. Install dependencies
+cd scripts
+npm install
 
-# 2. Deposit 100 ETH (auto-generates secret)
-python3.12 scripts/cli.py deposit --amount 100
+# 2. Check status
+node starknet-privacy.js status
 
-# 3. Check balance
-python3.12 scripts/cli.py balance --secret <your-secret>
+# 3. Run demo
+node starknet-privacy.js demo
 
-# 4. Transfer 50 ETH (creates new notes)
-python3.12 scripts/cli.py transfer --from-note <commitment> --to-address 0x... --amount 50 --secret <your-secret>
+# 4. Run full test suite
+node test-privacy.js
+```
 
-# 5. Check integrity
-python3.12 scripts/cli.py integrity
+#### Python Demo
+```bash
+# Run Python demo (simulated Pedersen for local tests)
+python3 scripts/zk_snarkjs_workflow.py
+
+# Run Python tests
+python3 tests/test_privacy_pool.py -v
 ```
 
 ## Privacy Levels
@@ -317,12 +420,20 @@ Garaga provides circuits for:
 
 ## Troubleshooting
 
-### Installation Issues
+### Node.js Issues
+
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| `snarkjs command not found` | Not installed | `npm install -g snarkjs` or `npm install snarkjs` |
+| `circom command not found` | Not installed | `npm install -g circom` |
+| `Module not found` | npm packages not installed | `cd scripts && npm install` |
+
+### Python Issues
 
 | Issue | Cause | Solution |
 |-------|-------|----------|
 | `ModuleNotFoundError: No module named 'starknet_py'` | starknet-py not installed | `pip install starknet-py --break-system-packages` |
-| `ModuleNotFoundError: No module named 'garaga'` | garaga not installed | `pip install garaga --break-system-packages` |
+| `ModuleNotFoundError: No module named 'garaga'` | garaga not installed | Use simulated Pedersen for local tests |
 | `cryptography` import fails | Missing cryptography lib | `pip install cryptography` |
 
 ### Runtime Errors
@@ -366,3 +477,49 @@ python3 scripts/cli.py export --output debug_pool.json
 - [SNIP-10: Privacy-Preserving Transactions](https://community.starknet.io/t/snip-10)
 - [Garaga Library](https://github.com/keep-starknet-strange/garaga)
 - [Privacy on Starknet (NOKLabs)](https://medium.com/@NOKLabs)
+- [Circom Documentation](https://docs.circom.io)
+- [SnarkJS](https://github.com/iden3/snarkjs)
+- [Groth16 Paper](https://eprint.iacr.org/2016/260)
+
+## Prerequisites
+
+### For Node.js (starknet-agentic integration)
+```bash
+# Node.js 18+
+node --version
+
+# npm
+npm --version
+
+# circom (optional - for circuit compilation)
+npm install -g circom
+
+# snarkjs (optional - for proof generation)
+npm install -g snarkjs
+```
+
+### For Python (local testing)
+```bash
+# Python 3.10-3.12 for Garaga, 3.14 for local tests
+python3 --version
+
+# For starknet.py integration
+pip install starknet.py --break-system-packages
+```
+
+## Files
+
+### Node.js Scripts
+- `scripts/starknet-privacy.js` - Main module
+- `scripts/test-privacy.js` - Test suite
+- `scripts/setup-circuits.sh` - Circuit setup
+- `scripts/generate-proof.sh` - Proof generation
+- `scripts/package.json` - npm config
+- `scripts/README.md` - Node.js documentation
+
+### Python Scripts
+- `scripts/zk_snarkjs_workflow.py` - ZK workflow wrapper
+- `tests/test_privacy_pool.py` - Unit tests
+
+### Circuits
+- `zk_circuits/privacy_pool_production.circom` - Production ZK circuit

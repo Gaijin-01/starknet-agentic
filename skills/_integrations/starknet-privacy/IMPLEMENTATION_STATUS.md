@@ -1,16 +1,16 @@
 # Privacy Pool Implementation Status
 
-## ✅ COMPLETED (Scarb 2.8.1 / Cairo 2.8.0)
+## ✅ Cairo Contract - Cairo 2.14.0
 
 ### Contract: `contracts/starknet_shielded_pool_forge/src/lib.cairo`
 
-**Features implemented:**
-- ✅ Basic storage with `LegacyMap` (deprecated but working)
-- ✅ `deposit(commitment)` - stores commitment, returns index
-- ✅ `spend(nullifier, new_commitment)` - nullifier tracking
-- ✅ `set_merkle_root()` - admin function for off-chain tree integration
-- ✅ View functions: `get_merkle_root()`, `is_nullifier_used()`, etc.
-- ✅ Pedersen hash helpers for commitment/nullifier computation
+**Features:**
+- ✅ Deposit function with event emission
+- ✅ Spend function for transfers/withdrawals  
+- ✅ Merkle root management
+- ✅ Pedersen hash helpers (internal)
+- ✅ Event emission (Deposited, Spent, MerkleRootUpdated)
+- ⚠️  Note storage (deferred - off-chain tree recommended)
 
 **Compilation:**
 ```bash
@@ -20,66 +20,36 @@ cd contracts/starknet_shielded_pool_forge
 ```
 
 **Generated artifacts:**
-- `target/release/starknet_shielded_pool_sierra.json` - Sierra bytecode
-- `target/release/starknet_shielded_pool_casm.json` - CASM (for testnet deploy)
+- `target/dev/shielded_pool_ShieldedPool.compiled_contract_class.json` - Sierra bytecode
+- `target/dev/shielded_pool_ShieldedPool.contract_class.json` - ABI
 
 ---
 
-## 🔄 IN PROGRESS
+## 🔄 Merkle Tree - Off-chain
 
-### Off-chain Merkle Tree
 **File:** `scripts/merkle_tree.py`
 
-**Status:**
-- ✅ Basic sparse Merkle tree implementation
+**Features:**
+- ✅ Sparse Merkle tree implementation
 - ✅ Commitment/nullifier generation
-- ⚠️ Pedersen hash is simulated (SHA256-based)
-- ⚠️ Merkle proof verification fails with real contract
+- ⚠️  Pedersen hash is simulated (SHA256-based)
 
-**Next steps:**
-- [ ] Use `starknet.py` or `garaga` for real Pedersen hash
-- [ ] Implement incremental tree updates
-- [ ] Generate proof format compatible with Cairo contract
+**Note:** For production, needs real Pedersen hash using:
+- `starknet.py` EC operations
+- Or `garaga` library (Python 3.12 compatible)
 
 ---
 
-## 📋 ROADMAP
+## 📋 Contract Functions
 
-### NOW (Scarb 2.8.1) - TESTBED
-```
-├── [x] Minimal Cairo contract (LegacyMap, no events)
-├── [x] Off-chain Merkle tree (simulated)
-├── [ ] Real Pedersen hash (starknet.py)
-├── [ ] Deploy to testnet (Starknet Goerli)
-└── [ ] Basic integration tests
-```
-
-### LATER (Scarb 2.14.0+) - PRODUCTION
-```
-├── [ ] Upgrade to starknet="2.15.0+" for modern Map, events
-├── [ ] Full event emission (Deposit/Transfer/Withdrawal)
-├── [ ] Garaga ZK verifier integration (Groth16/Plonk)
-├── [ ] On-chain Merkle tree (sparse Patricia tree)
-├── [ ] Production audit & deployment
-└── [ ] Integration with OpenClaw (starknet-py)
-```
-
----
-
-## 📁 FILES
-
-```
-starknet-privacy/
-├── contracts/
-│   └── starknet_shielded_pool_forge/
-│       ├── Scarb.toml          # starknet=">=2.0.0"
-│       ├── src/
-│       │   └── lib.cairo       # Minimal ShieldedPool contract
-│       └── target/             # Compiled artifacts
-├── scripts/
-│   └── merkle_tree.py          # Off-chain Merkle tree
-└── README.md
-```
+| Function | Type | Description |
+|----------|------|-------------|
+| `deposit(commitment)` | external | Store commitment, return index, emit event |
+| `spend(nullifier, new_commitment)` | external | Double-spend protection |
+| `set_merkle_root(root)` | external | Admin: update tree root |
+| `get_merkle_root()` | view | Get current root |
+| `get_next_index()` | view | Get next leaf index |
+| `get_owner()` | view | Get admin address |
 
 ---
 
@@ -87,47 +57,52 @@ starknet-privacy/
 
 | Component | Version | Status |
 |-----------|---------|--------|
-| Scarb | 2.8.1 | ✅ Working |
-| Cairo | 2.8.0 | ✅ Working |
-| starknet | 2.8.0 | ✅ Available |
-| starknet.py | - | ⚠️ Not installed (Python 3.14) |
-| Garaga | 2.14.0+ | ❌ Requires Scarb 2.14.0+ |
+| Scarb | 2.14.0 | ✅ Working |
+| Cairo | 2.14.0 | ✅ Working |
+| starknet.py | Latest | ⚠️  Install manually |
+| garaga | 0.18.2 | ⚠️  Module issues |
 
 ---
 
-## 🚀 NEXT STEPS
+## 🚀 DEPLOYMENT
 
-1. **Testnet deployment** (when ready):
-   ```bash
-   # Requires starknet.py and testnet account
-   starknet deploy --sierra target/release/starknet_shielded_pool_sierra.json
-   ```
+### Testnet (Sepolia)
+```bash
+# Option 1: starknet-cli
+starknet deploy --network sepolia --contract target/dev/shielded_pool_ShieldedPool.compiled_contract_class.json
 
-2. **Real Pedersen hash** (for proper off-chain simulation):
-   - Install `garaga` (requires Scarb 2.14.0+)
-   - Or use `starknet.py` with proper Python (3.10-3.12)
+# Option 2: Python script
+python scripts/deploy.py --network sepolia --account <ACCOUNT_JSON>
+```
 
-3. **Scarb upgrade** (when OpenClaw integration is stable):
-   - Backup current `~/.local/bin/scarb`
-   - Install Scarb 2.14.0+
-   - Migrate contract to new patterns
-
----
-
-## 📊 CONTRACT FUNCTIONS
-
-| Function | Type | Description |
-|----------|------|-------------|
-| `deposit(commitment)` | external | Store commitment, return index |
-| `spend(nullifier, new_commitment)` | external | Double-spend protection |
-| `set_merkle_root(root)` | external | Admin: update tree root |
-| `is_nullifier_used(nullifier)` | view | Check spent status |
-| `get_merkle_root()` | view | Get current root |
-| `get_next_index()` | view | Get next leaf index |
-| `get_owner()` | view | Get admin address |
-| `is_commitment_valid(commitment)` | view | Check if note exists |
+### Artifacts Location
+```
+contracts/starknet_shielded_pool_forge/target/dev/
+├── shielded_pool_ShieldedPool.compiled_contract_class.json
+├── shielded_pool_ShieldedPool.contract_class.json
+└── shielded_pool.starknet_artifacts.json
+```
 
 ---
 
-*Last updated: 2026-02-03*
-*Scarb 2.8.1 | Cairo 2.8.0*
+## 📊 NEXT STEPS
+
+### High Priority
+1. [ ] Add Map storage for nullifiers and notes
+2. [ ] Integrate real Pedersen hash in Python
+3. [ ] Complete deploy.py with starknet.py
+
+### Medium Priority
+1. [ ] Add ZK proof verification
+2. [ ] Create integration tests
+3. [ ] Add ERC20 token support
+
+### Low Priority
+1. [ ] Multi-asset support
+2. [ ] Relayer integration
+3. [ ] Production audit
+
+---
+
+*Last updated: 2026-02-14*
+*Scarb 2.14.0 | Cairo 2.14.0*

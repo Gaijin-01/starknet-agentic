@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"pvbkbg336nnqs","package_name":"starknet_shielded_pool","contract_name":"ShieldedPool","module_path":"starknet_shielded_pool::ShieldedPool","artifacts":{"sierra":"shielded_pool_ShieldedPool.contract_class.json","casm":"shielded_pool_ShieldedPool.compiled_contract_class.json"}}]}
