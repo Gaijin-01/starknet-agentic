@@ -70,6 +70,7 @@ We are implementing a parity-core approach for ERC-8004 so integrations can be r
 | `starknet-wallet` | Wallet management, session keys, transfers, balances | Complete |
 | `starknet-mini-pay` | P2P payments, invoices, QR flows, Telegram support | Complete |
 | `starknet-anonymous-wallet` | Privacy-focused wallet operations | Complete |
+| `starknet-privacy` | ZK privacy pools with Circom + SnarkJS proofs | In Progress |
 | `starknet-defi` | DeFi actions (swaps/staking/lending/LP) | Template |
 | `starknet-identity` | ERC-8004 identity/reputation/validation workflows | Template |
 | `huginn-onboard` | Huginn onboarding flow | In Progress |
