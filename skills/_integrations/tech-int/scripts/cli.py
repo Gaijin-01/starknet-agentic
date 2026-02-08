@@ -7,7 +7,15 @@ Usage: python3 cli.py [command] [options]
 import argparse
 import sys
 import os
+import logging
 from pathlib import Path
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Add parent to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -19,22 +27,47 @@ from cve.cve_db import CVEdb
 
 def cmd_scan(args):
     """Scan target(s) for technology intelligence"""
-    db = Database(args.db or "tech_int.db")
-    scanner = Scanner(db, threads=args.threads, stealth=args.stealth, browser=args.browser)
-    
-    if args.file:
-        targets = [line.strip() for line in open(args.file) if line.strip() and not line.startswith("#")]
-        for target in targets:
-            scanner.scan_single(target)
-    elif args.targets:
-        targets = [t.strip() for t in args.targets.split(",") if t.strip()]
-        for target in targets:
-            scanner.scan_single(target)
-    else:
-        scanner.scan_single(args.target)
-    
-    db.close()
-    print(f"[+] Scan complete. Results in {args.db or 'tech_int.db'}")
+    try:
+        db = Database(args.db or "tech_int.db")
+        scanner = Scanner(db, threads=args.threads, stealth=args.stealth, browser=args.browser)
+        
+        if args.file:
+            try:
+                with open(args.file) as f:
+                    targets = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+            except FileNotFoundError:
+                logger.error(f"Target file not found: {args.file}")
+                return
+            except IOError as e:
+                logger.error(f"Failed to read target file: {e}")
+                return
+                
+            for target in targets:
+                try:
+                    scanner.scan_single(target)
+                except Exception as e:
+                    logger.error(f"Scan failed for {target}: {e}")
+                    continue
+        elif args.targets:
+            targets = [t.strip() for t in args.targets.split(",") if t.strip()]
+            for target in targets:
+                try:
+                    scanner.scan_single(target)
+                except Exception as e:
+                    logger.error(f"Scan failed for {target}: {e}")
+                    continue
+        else:
+            try:
+                scanner.scan_single(args.target)
+            except Exception as e:
+                logger.error(f"Scan failed for {args.target}: {e}")
+                return
+        
+        db.close()
+        logger.info(f"Scan complete. Results in {args.db or 'tech_int.db'}")
+    except Exception as e:
+        logger.error(f"Scan command failed: {e}")
+        sys.exit(1)
 
 
 def cmd_search(args):

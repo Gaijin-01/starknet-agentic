@@ -72,8 +72,7 @@ class PriceFetcher:
                 "ids": "ethereum,starknet,usd-coin,tether,bitcoin,chainlink",
                 "order": "market_cap_desc",
                 "per_page": 6,
-                "page": 1,
-                "sparkline": False
+                "page": 1
             }
             
             async with aiohttp.ClientSession() as session:

@@ -7,8 +7,11 @@ import asyncio
 import sys
 from pathlib import Path
 
+# Use absolute paths for cron compatibility
+CLAWD_DIR = Path("/home/wner/clawd")
+SCRIPTS_DIR = CLAWD_DIR / "skills" / "_integrations" / "starknet-whale-tracker" / "scripts"
+
 # Add paths
-SCRIPTS_DIR = Path(__file__).parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 # Import whales_real
@@ -19,10 +22,10 @@ spec.loader.exec_module(whales_module)
 get_stats = whales_module.get_stats
 get_by_tag = whales_module.get_by_tag
 
-# Import coingecko
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "_system" / "prices" / "scripts"))
-spec = importlib.util.spec_from_file_location("coingecko_client", str(Path(__file__).parent.parent.parent.parent / "_system" / "prices" / "scripts" / "coingecko_client.py"))
-cg_spec = importlib.util.spec_from_file_location("coingecko_client", str(Path(__file__).parent.parent.parent.parent / "_system" / "prices" / "scripts" / "coingecko_client.py"))
+# Import coingecko using absolute path
+COINGECKO_PATH = CLAWD_DIR / "skills" / "_system" / "prices" / "scripts" / "coingecko_client.py"
+sys.path.insert(0, str(COINGECKO_PATH.parent))
+cg_spec = importlib.util.spec_from_file_location("coingecko_client", str(COINGECKO_PATH))
 cg_module = importlib.util.module_from_spec(cg_spec)
 cg_spec.loader.exec_module(cg_module)
 CoinGeckoClient = cg_module.CoinGeckoClient

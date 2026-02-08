@@ -35,6 +35,7 @@
 | starknet-whale-tracker | 90 | Whale monitoring ⭐ |
 | starknet-yield-agent | 90 | DeFi yields |
 | starknet-py | 80 | Python SDK |
+| starknet-mini-pay | NEW ⭐ | P2P payments (like Lightning native) |
 | arbitrage-signal | 90 | Arbitrage detection |
 | avnu | 80 | DeFi swaps |
 | blockchain-dev | 95 | Contract development |
@@ -63,8 +64,8 @@ These were experimental skills that were never completed or working. Only fully 
 | Category | Count | Average Score |
 |----------|-------|---------------|
 | _system/ | 17 | ~91 |
-| _integrations/ | 23 | ~82 |
-| **Total Active** | **40** | **~87** |
+| _integrations/ | 24 | ~82 |
+| **Total Active** | **41** | **~87** |
 
 ## Contributing to starknet-agentic
 

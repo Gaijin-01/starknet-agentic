@@ -160,3 +160,171 @@ Config: {
   "job": "research-digest",
   "schedule": "0 8,20 * * *"
 }
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}
+{
+  "message": "research digest for crypto, starknet, defi",
+  "skill": "research",
+  "confidence": 0.3,
+  "tier": "standard",
+  "model": "MiniMax-M2.1",
+  "score": 35,
+  "params": {
+    "raw_message": "research digest for crypto, starknet, defi",
+    "query": "research digest for crypto, starknet, defi"
+  },
+  "status": "success",
+  "output": {
+    "action": "delegate_to_llm",
+    "params": {
+      "raw_message": "research digest for crypto, starknet, defi",
+      "query": "research digest for crypto, starknet, defi"
+    },
+    "tier": "standard"
+  },
+  "error": null,
+  "job": "research-digest",
+  "schedule": "0 8,20 * * *"
+}

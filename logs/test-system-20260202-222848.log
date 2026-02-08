@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 189, in _run_module_as_main
-  File "<frozen runpy>", line 148, in _get_module_details
-  File "<frozen runpy>", line 112, in _get_module_details
-  File "/home/wner/clawd/skills/system/__init__.py", line 10, in <module>
-    from main import SystemSkill
-ModuleNotFoundError: No module named 'main'

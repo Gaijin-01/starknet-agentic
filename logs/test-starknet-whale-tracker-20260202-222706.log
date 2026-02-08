@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "/home/wner/clawd/skills/starknet-whale-tracker/main.py", line 11, in <module>
-    from arbitrage_tracker import ArbitrageTracker
-  File "/home/wner/clawd/skills/starknet-whale-tracker/scripts/arbitrage_tracker.py", line 217
-    try:
-    ^^^
-IndentationError: expected an indented block after 'try' statement on line 216

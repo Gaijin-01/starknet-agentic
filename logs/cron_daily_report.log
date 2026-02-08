@@ -121,3 +121,163 @@ d07c661 fix: Add scripts to TS skills (45→90+)
 
 📜 Today's Logs:
 41
+=== Daily Report - Wed Feb  4 05:30:01 IST 2026 ===
+
+📊 System Health:
+/dev/sdd       1007G   36G  920G   4% /
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       1.6Gi       376Mi       3.6Mi       5.6Gi       5.8Gi
+
+🔀 Git Status:
+ ? fork_starknet-agentic
+ M logs/evolution.log
+ M logs/health.log
+ M logs/prices.log
+ M logs/queue.log
+ M logs/style-learn.log
+ M logs/whale_check.log
+ M logs/whale_tracker.log
+?? backups/clawd-20260204.tar.gz
+?? logs/cairo_dev.log
+?? logs/crypto_research.log
+?? logs/daily_report_2026-02-04.txt
+?? skills/_system/claude-proxy/scripts/__pycache__/code_gen.cpython-312.pyc
+?? skills/_system/claude-proxy/scripts/__pycache__/llm_client.cpython-312.pyc
+?? skills/_system/claude-proxy/scripts/__pycache__/reasoning.cpython-312.pyc
+?? skills/_system/claude-proxy/scripts/__pycache__/self_improve.cpython-312.pyc
+
+📝 Recent Commits:
+659201a feat: Privacy voting contract + 5h dev agent
+f424281 fix: Update SKILLS_INDEX.md - bird skill added (now 40 active skills)
+81f1d79 feat: Add bird skill (X/Twitter CLI via cookies)
+05efa17 chore: Cleanup all archived skills - 39 working skills remain
+b231ce9 chore: Delete all archived skills
+
+⏰ Cron Jobs:
+24
+
+📜 Today's Logs:
+46
+=== Daily Report - Fri Feb  6 05:30:01 IST 2026 ===
+
+📊 System Health:
+/dev/sdd       1007G   36G  920G   4% /
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       1.2Gi       5.7Gi       3.9Mi       657Mi       6.2Gi
+
+🔀 Git Status:
+ M MEMORY.md
+ M crontab.conf
+ D fork_starknet-agentic
+ M logs/cron_daily_report.log
+ M logs/evolution.log
+ M logs/health.log
+ M logs/posts.log
+ M logs/prices.log
+ M logs/queue.log
+ M logs/research.log
+ M logs/style-learn.log
+ M logs/vocab-research.log
+ M logs/whale_check.log
+ M logs/whale_tracker.log
+ M memory/evolution.md
+ M memory/starknet_errors.md
+ M skills/SKILLS_INDEX.md
+ D skills/_integrations/avnu/scripts/__pycache__/avnu_client.cpython-314.pyc
+ M skills/_integrations/bird/scripts/main.py
+ M skills/_integrations/blockchain-dev/scripts/agent-loop.py
+
+📝 Recent Commits:
+659201a feat: Privacy voting contract + 5h dev agent
+f424281 fix: Update SKILLS_INDEX.md - bird skill added (now 40 active skills)
+81f1d79 feat: Add bird skill (X/Twitter CLI via cookies)
+05efa17 chore: Cleanup all archived skills - 39 working skills remain
+b231ce9 chore: Delete all archived skills
+
+⏰ Cron Jobs:
+23
+
+📜 Today's Logs:
+49
+=== Daily Report - Sat Feb  7 05:30:01 IST 2026 ===
+
+📊 System Health:
+/dev/sdd       1007G   37G  920G   4% /
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       1.3Gi       5.7Gi       3.8Mi       644Mi       6.1Gi
+
+🔀 Git Status:
+ D __pycache__/gateway.cpython-314.pyc
+ D __pycache__/unified_orchestrator.cpython-314.pyc
+ M crontab.conf
+ D fork_starknet-agentic
+ M logs/cron_daily_report.log
+ M logs/evolution.log
+ M logs/health.log
+ M logs/posts.log
+ M logs/prices.log
+ M logs/queue.log
+ M logs/research.log
+ M logs/style-learn.log
+ M logs/vocab-research.log
+ M logs/whale_check.log
+ M logs/whale_tracker.log
+ M memory/evolution.md
+ M memory/starknet_errors.md
+ M skills/SKILLS_INDEX.md
+ D skills/_integrations/avnu/scripts/__pycache__/avnu_client.cpython-314.pyc
+ M skills/_integrations/bird/scripts/main.py
+
+📝 Recent Commits:
+4f02daa docs: Add API key security guidelines to MEMORY.md
+c29facc security: Add .gitignore to prevent API key leaks
+887adc2 fix: Support STARKNET_ALCHEMY_KEY env variable for Alchemy RPC
+659201a feat: Privacy voting contract + 5h dev agent
+f424281 fix: Update SKILLS_INDEX.md - bird skill added (now 40 active skills)
+
+⏰ Cron Jobs:
+22
+
+📜 Today's Logs:
+49
+=== Daily Report - Sun Feb  8 05:30:01 IST 2026 ===
+
+📊 System Health:
+/dev/sdd       1007G   37G  920G   4% /
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       1.4Gi       5.4Gi       3.9Mi       827Mi       6.0Gi
+
+🔀 Git Status:
+ D CLAWDBOT_FULL_SYSTEM_REPORT.zip
+ D CLAWDBOT_SYSTEM_REPORT.zip
+ D CLAWDBOT_TECHNICAL_AUDIT.tar.gz
+ D SYSTEM_ARCHITECTURE_REPORT.md
+ D __pycache__/gateway.cpython-314.pyc
+ D __pycache__/unified_orchestrator.cpython-314.pyc
+ D backups/clawd-20260130-095439.tar.gz
+ D backups/clawd-20260130.tar.gz
+ D backups/clawd-20260131.tar.gz
+ D backups/clawd-memory-20260131-070007.tar.gz
+ D backups/clawd-memory-20260201-070017.tar.gz
+ D backups/crontab.backup.20260129
+ D backups/memory-20260130-070012.tar.gz
+ D backups/memory-20260202-070018.tar.gz
+ D claude_report.tar.gz
+ D clawdbot_system_report.json
+ D clawdbot_system_report.json.gz
+ D clawdbot_system_report.txt
+ D complete-work-report.zip
+ M crontab.conf
+
+📝 Recent Commits:
+a7b116b feat(starknet-privacy): add ZK privacy pool skill with Node.js integration
+4f02daa docs: Add API key security guidelines to MEMORY.md
+c29facc security: Add .gitignore to prevent API key leaks
+887adc2 fix: Support STARKNET_ALCHEMY_KEY env variable for Alchemy RPC
+659201a feat: Privacy voting contract + 5h dev agent
+
+⏰ Cron Jobs:
+22
+
+📜 Today's Logs:
+19
