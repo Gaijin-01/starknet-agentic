@@ -28,6 +28,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 from pathlib import Path
+import os
 
 from starknet_py.contract import Contract
 from starknet_py.net import Account
@@ -58,6 +59,11 @@ class OracleConfig:
     sources: Dict[str, Dict] = None
     
     def __post_init__(self):
+        # Load private key from env var first, fall back to config value
+        env_private_key = os.environ.get('ORACLE_KEEPER_PRIVATE_KEY')
+        if env_private_key:
+            self.private_key = env_private_key
+        
         self.sources = {
             "binance": {
                 "enabled": True,

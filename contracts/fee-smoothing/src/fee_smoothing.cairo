@@ -4,13 +4,14 @@ pub mod FeeSmoothing {
     use starknet::{ContractAddress, get_block_timestamp, get_caller_address};
     use starknet::storage::*;
     use openzeppelin::access::ownable::OwnableComponent;
+    use openzeppelin::security::reentrancyguard::ReentrancyGuardComponent;
 
     // ─── Constants ───────────────────────────────────────────────────────
     // Price scaling: 10^12 for fixed-point arithmetic
     const PRICE_SCALE: u128 = 1_000_000_000_000;
     
-    // $10^{-9} STRK per L2gas minimum (protocol minimum)
-    const MIN_BASE_FEE_STRK: u128 = 3_000_000_000;
+    // $10^{-6} STRK per L2gas minimum (protocol minimum, = 0.001/gas)
+    const MIN_BASE_FEE_STRK: u128 = 2_000_000_000_000;
     
     // TWAP window: 24 hours in seconds
     const TWAP_WINDOW_SECONDS: u64 = 86400;
@@ -19,7 +20,7 @@ pub mod FeeSmoothing {
     const MAX_PRICE_AGE: u64 = 3600;
     
     // Maximum price deviation per update: 20%
-    const MAX_PRICE_DEVIATION: u128 = 200_000_000_000;  // 20% of PRICE_SCALE
+    const MAX_PRICE_DEVIATION: u128 = 20_000_000_000;  // 20% of PRICE_SCALE
     
     // Valid price range: $0.01 to $100.00 (scaled)
     const MIN_VALID_PRICE: u128 = 10_000_000_000;   // $0.01
@@ -30,17 +31,23 @@ pub mod FeeSmoothing {
     
     // ─── Components ─────────────────────────────────────────────────────
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
+    component!(
+        path: ReentrancyGuardComponent, storage: reentrancy_guard, event: ReentrancyGuardEvent
+    );
 
     #[abi(embed_v0)]
     impl OwnableImpl = OwnableComponent::OwnableImpl<ContractState>;
     impl OwnableInternalImpl = OwnableComponent::InternalImpl<ContractState>;
+    impl ReentrancyGuardInternalImpl = ReentrancyGuardComponent::InternalImpl<ContractState>;
 
     // ─── Storage ─────────────────────────────────────────────────────────
     #[storage]
     struct Storage {
         #[substorage(v0)]
         ownable: OwnableComponent::Storage,
-        
+        #[substorage(v0)]
+        reentrancy_guard: ReentrancyGuardComponent::Storage,
+
         // Price data (STRK/USD, scaled by PRICE_SCALE)
         current_price: u128,
         price_cumulative: u256,
@@ -65,6 +72,8 @@ pub mod FeeSmoothing {
     pub enum Event {
         #[flat]
         OwnableEvent: OwnableComponent::Event,
+        #[flat]
+        ReentrancyGuardEvent: ReentrancyGuardComponent::Event,
         PriceUpdated: PriceUpdated,
         FeeCalculated: FeeCalculated,
         ParametersUpdated: ParametersUpdated,
@@ -133,6 +142,7 @@ pub mod FeeSmoothing {
         
         /// Update price from oracle (only owner or oracle)
         fn update_price(ref self: ContractState, new_price: u128) {
+            self.reentrancy_guard.start();
             let caller = get_caller_address();
             let owner = self.ownable.owner();
             
@@ -150,7 +160,9 @@ pub mod FeeSmoothing {
             let time_elapsed = now - self.price_last_update.read();
             
             // Check price deviation (prevent flash attacks)
-            let max_change = (old_price * self.max_deviation_percent.read()) / PRICE_SCALE;
+            // max_change = old_price * deviation_percent / PRICE_SCALE / 100
+            let deviation = self.max_deviation_percent.read();
+            let max_change = (old_price * deviation) / PRICE_SCALE / 100;
             assert(
                 new_price >= old_price - max_change && new_price <= old_price + max_change,
                 'Price deviation too large'
@@ -193,6 +205,7 @@ pub mod FeeSmoothing {
                 twap,
                 timestamp: now,
             });
+            self.reentrancy_guard.end();
         }
 
         /// Get fee in STRK for a given gas amount
@@ -203,9 +216,9 @@ pub mod FeeSmoothing {
             let price = self.get_effective_price();
             let target_usd = self.target_usd_per_gas.read();
             
-            // fee_STRK = (target_USD / price_USD) * gas
-            let fee_per_gas = (target_usd * PRICE_SCALE) / price;
-            let total_fee = fee_per_gas * gas_amount / PRICE_SCALE;
+            // fee_STRK = (target_USD * 1_000_000) / price_STRK (in 10^-6 units)
+            let fee_per_gas = (target_usd * 1_000_000) / price;
+            let total_fee = fee_per_gas * gas_amount;
             
             // Ensure minimum protocol fee
             let min_fee = gas_amount * MIN_BASE_FEE_STRK;
@@ -276,7 +289,7 @@ pub mod FeeSmoothing {
 
         fn set_smoothing_factor(ref self: ContractState, new_smoothing: u128) {
             self.ownable.assert_only_owner();
-            assert(new_smoothing <= PRICE_SCALE, 'Smoothing must be 0-1');
+            assert(new_smoothing < PRICE_SCALE, 'Smoothing must be 0-1');
             let old = self.smoothing_factor.read();
             self.smoothing_factor.write(new_smoothing);
             
@@ -331,16 +344,19 @@ pub mod FeeSmoothing {
             
             // TWAP = (cumulative_now - cumulative_at_window_start) / window_elapsed
             // This gives true time-weighted average price over the window
-            if window_elapsed > 0 {
-                let twap_cumulative = cumulative - cumulative_at_start;
-                let twap = twap_cumulative / window_elapsed.into();
-                
-                match twap.try_into() {
-                    Option::Some(price) => price,
-                    Option::None(_) => self.current_price.read(),
+            // Guard: if cumulative_at_start is zero AND window_elapsed is 0, return spot
+            if window_elapsed == 0 {
+                if cumulative_at_start == 0 {
+                    return self.current_price.read();
                 }
-            } else {
-                self.current_price.read()
+                return self.current_price.read();
+            }
+            let twap_cumulative = cumulative - cumulative_at_start;
+            let twap = twap_cumulative / window_elapsed.into();
+            
+            match twap.try_into() {
+                Option::Some(price) => price,
+                Option::None(_) => self.current_price.read(),
             }
         }
         
